@@ -8,7 +8,8 @@
   if (!overlay || !logoWrap || !introLogo || !navLogoImg) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const alreadyPlayed = sessionStorage.getItem('hwaIntroPlayed') === '1';
+  const forceReplay = new URLSearchParams(location.search).has('intro');
+const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') === '1';
 
   if (reduceMotion || alreadyPlayed) {
     overlay.remove();
