@@ -330,6 +330,13 @@ a { color: inherit; }
   overflow: hidden;
 }
 .portfolio-media { position: relative; }
+.portfolio-media-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  object-position: top;
+}
 .portfolio-media-placeholder {
   aspect-ratio: 16/10;
   background: linear-gradient(135deg, #EDEAE0, #E0DCCF);

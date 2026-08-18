@@ -16,6 +16,34 @@
 <link rel="icon" href="assets/hwa-favicon/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="assets/hwa-favicon/favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="assets/hwa-favicon/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "HWA – Höhn Web & Automatisierung",
+  "image": "https://hwa-hoehn.de/assets/portrait.webp",
+  "url": "https://hwa-hoehn.de/",
+  "email": "info@hwa-hoehn.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Kreutzersweiher 6",
+    "addressLocality": "Bad Berneck i.Fichtelgebirge",
+    "postalCode": "95460",
+    "addressCountry": "DE"
+  },
+  "areaServed": ["Bad Berneck i.Fichtelgebirge", "Bayreuth"],
+  "priceRange": "ab 300 €",
+  "founder": {
+    "@type": "Person",
+    "name": "Veit Höhn"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website-Entwicklung" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Individualsoftware" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatisierung" } }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="intro-overlay" id="introOverlay" aria-hidden="true"></div>
@@ -98,12 +126,13 @@
 
     <div class="portfolio-grid">
       <article class="portfolio-card portfolio-card-main">
-  <div class="portfolio-media">
-    <div class="portfolio-media-placeholder">
-      <span>Check&Sold — Vorschau</span>
-    </div>
-    <span class="portfolio-badge">Eigenes Projekt</span>
-  </div>
+ <div class="portfolio-media">
+  <picture>
+    <source srcset="assets/portfolio/portfolio-checksold.webp" type="image/webp">
+    <img src="assets/portfolio/portfolio-checksold.jpg" alt="Check&Sold Website – Startseite" class="portfolio-media-img">
+  </picture>
+  <span class="portfolio-badge">Eigenes Projekt</span>
+</div>
   <div class="portfolio-body">
     <h3>Check&Sold</h3>
     <p>Plattform für geprüfte Secondhand-Luxusartikel – von Konzept über Design bis zur technischen Umsetzung vollständig selbst gebaut. Editorial geprägte Optik mit Fokus auf Vertrauen und Echtheitsprüfung statt Marktplatz-Beliebigkeit.</p>
@@ -127,7 +156,10 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-photo">
-        <img src="assets/portrait.jpg" alt="Veit Höhn, Gründer von HWA">
+        <picture>
+  <source srcset="assets/portrait.webp" type="image/webp">
+  <img src="assets/portrait-optimized.jpg" alt="Veit Höhn, Gründer von HWA">
+</picture>
       </div>
       <div class="about-text">
         <p class="section-eyebrow">Über mich</p>
@@ -191,7 +223,10 @@
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="assets/logo-mark-dark.png" alt="HWA" class="footer-logo">
+      <picture>
+  <source srcset="assets/logo-mark-dark.webp" type="image/webp">
+  <img src="assets/logo-mark-dark-optimized.png" alt="HWA" class="footer-logo">
+</picture>
       <p>Höhn Web & Automatisierung<br>Kleingewerbe, Bad Berneck i.Fichtelgebirge</p>
     </div>
     <nav class="footer-links">
