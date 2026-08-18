@@ -547,10 +547,12 @@ a { color: inherit; }
   inset: 0;
   z-index: 998;
   background: var(--bg-dark);
+  -webkit-clip-path: inset(0 0 0% 0);
   clip-path: inset(0 0 0% 0);
 }
 .intro-overlay.intro-reveal {
-  transition: clip-path 1.5s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: -webkit-clip-path 1.5s cubic-bezier(0.76, 0, 0.24, 1), clip-path 1.5s cubic-bezier(0.76, 0, 0.24, 1);
+  -webkit-clip-path: inset(0 0 100% 0);
   clip-path: inset(0 0 100% 0);
 }
 .intro-logo-wrap {
