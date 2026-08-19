@@ -155,15 +155,15 @@ if (form) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
-  const phrases = ['Betriebe in der Region', 'Handwerker', 'Gastronomen', 'Ladenbesitzer'];
+  const phrases = ['Betriebe in der Region', 'Handwerker', 'Gastronomen','Ferienwohnungenbetreiber','Friseure', 'Beauty-Studios','Werkstätten','Bäckereien','Ladenbesitzer'];
   let i = 0;
 
   setInterval(() => {
-    el.classList.add('is-fading');
-    setTimeout(() => {
-      i = (i + 1) % phrases.length;
-      el.textContent = phrases[i];
-      el.classList.remove('is-fading');
-    }, 350);
-  }, 2800);
+  el.classList.add('is-fading');
+  setTimeout(() => {
+    i = (i + 1) % phrases.length;
+    el.textContent = phrases[i];
+    el.classList.remove('is-fading');
+  }, 600);
+}, 4200);
 })();
