@@ -13,7 +13,8 @@
 <meta property="og:url" content="https://hwa-hoehn.de/">
 <meta name="twitter:card" content="summary_large_image">
 
-
+<link rel="preload" href="assets/fonts/inter-tight-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-tight-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="assets/hwa-favicon/favicon.ico" sizes="any">
 <link rel="icon" href="assets/hwa-favicon/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -63,6 +64,7 @@
     </a>
     <nav class="nav-links">
       <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#ueber-mich">Über mich</a>
       <a href="#kontakt" class="nav-cta">Projekt anfragen</a>
@@ -120,8 +122,34 @@
   </div>
 </section>
 
+<!-- ABLAUF -->
+<section class="section section-tint" id="ablauf">
+  <div class="section-inner">
+    <p class="section-eyebrow">Ablauf</p>
+    <h2 class="section-title">So läuft's ab.</h2>
+
+    <div class="ablauf-grid">
+      <div class="ablauf-step">
+        <span class="ablauf-number">01</span>
+        <h3>Kurzes Gespräch</h3>
+        <p>Sie schildern, was Sie brauchen – per Mail, Formular oder Anruf. Meist ist in 15 Minuten klar, ob's passt.</p>
+      </div>
+      <div class="ablauf-step">
+        <span class="ablauf-number">02</span>
+        <h3>Angebot</h3>
+        <p>Sie bekommen ein klares Angebot, bevor irgendwas losgeht. Keine versteckten Kosten, keine Überraschungen.</p>
+      </div>
+      <div class="ablauf-step">
+        <span class="ablauf-number">03</span>
+        <h3>Umsetzung</h3>
+        <p>Ich baue, Sie sehen den Fortschritt. Kurze Abstimmungen zwischendurch statt wochenlanger Funkstille.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PORTFOLIO -->
-<section class="section section-tint" id="portfolio">
+<section class="section" id="portfolio">
   <div class="section-inner">
     <p class="section-eyebrow">Portfolio</p>
     <h2 class="section-title">Woran ich zuletzt gearbeitet habe.</h2>
@@ -178,12 +206,39 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section section-tint" id="faq">
+  <div class="section-inner">
+    <p class="section-eyebrow">Fragen</p>
+    <h2 class="section-title">Kurz beantwortet.</h2>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Ich weiß noch nicht genau, was ich brauche – kann ich trotzdem anfragen?</summary>
+        <p>Ja, klar. Die meisten starten genau so. Das klären wir gemeinsam im ersten Gespräch.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wie lange dauert ein Projekt?</summary>
+        <p>Für eine einfache Website meist 1–2 Wochen, je nach Umfang und wie schnell Inhalte und Material von Ihrer Seite da sind.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Kann ich die Website später selbst ändern?</summary>
+        <p>Kleinere Änderungen zeig ich Ihnen gerne. Größere Anpassungen übernehme ich auf Wunsch auch weiterhin.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Was kostet das ungefähr?</summary>
+        <p>Kommt auf den Umfang an. Nach dem ersten Gespräch bekommen Sie ein klares, unverbindliches Angebot.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- KONTAKT -->
 <section class="section section-dark" id="kontakt">
   <div class="section-inner">
     <p class="section-eyebrow section-eyebrow-dark">Kontakt</p>
     <h2 class="section-title section-title-dark">Lassen Sie uns über Ihr Projekt sprechen.</h2>
-    <p class="kontakt-sub">Unverbindlich und ohne Verpflichtung – ich melde mich meist innerhalb von 24 Stunden zurück.</p>
+    <p class="kontakt-sub">Unverbindlich und ohne Verpflichtung – ich melde mich meist innerhalb von 24 Stunden zurück. Die Preisgestaltung richtet sich dann je nach besprochenem Umfang aus.</p>
 
     <div class="kontakt-grid">
       <form class="kontakt-form" id="kontaktForm" action="https://formspree.io/f/xyegbjaa" method="POST">
