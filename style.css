@@ -526,6 +526,10 @@ a { color: inherit; }
   font-weight: 500;
   color: var(--text-on-dark-secondary);
 }
+.form-optional {
+  font-weight: 400;
+  opacity: 0.7;
+}
 .form-row input, .form-row textarea {
   background: rgba(255,255,255,0.04);
   border: 1px solid var(--border-dark);
