@@ -316,7 +316,73 @@ a { color: inherit; }
 @media (max-width: 780px) {
   .services-grid { grid-template-columns: 1fr; }
 }
+/* ===== Ablauf ===== */
+.ablauf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.ablauf-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-text-on-light);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+.ablauf-step h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+.ablauf-step p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+}
 
+@media (max-width: 780px) {
+  .ablauf-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ===== FAQ ===== */
+.faq-list {
+  max-width: 720px;
+  border-top: 1px solid var(--border-light);
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-light);
+  padding: 22px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 14px 0 0;
+  max-width: 600px;
+}
 /* ===== Portfolio ===== */
 .portfolio-grid {
   display: grid;
