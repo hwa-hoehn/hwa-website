@@ -186,6 +186,9 @@ a { color: inherit; }
   position: relative;
   background: var(--bg-dark);
   color: var(--text-on-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   padding: 176px 32px 128px;
 }
 .hero-inner {
@@ -247,7 +250,7 @@ a { color: inherit; }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.28); }
 
 /* ===== Sections ===== */
-.section { padding: 108px 0; }
+.section { padding: 108px 0; scroll-margin-top: 84px; }
 .section-tint { background: var(--bg-tint); }
 .section-dark { background: var(--bg-dark); color: var(--text-on-dark); }
 
