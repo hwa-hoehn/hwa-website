@@ -651,3 +651,101 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .intro-overlay, .intro-logo-wrap { display: none; }
 }
+/* ===== Honeypot (Spam-Schutz, für echte Nutzer unsichtbar) ===== */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+/* ===== Back to top ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-on-accent);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.15s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover { background: var(--accent-hover); }
+
+@media (max-width: 780px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+}
+/* ===== Verfügbarkeits-Status ===== */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-on-dark-secondary);
+  margin: -6px 0 22px;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+  animation: status-pulse 2.2s ease-out infinite;
+}
+@keyframes status-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-dot { animation: none; }
+}
+
+/* ===== Portfolio-Details (Fallstudie) ===== */
+.portfolio-details {
+  margin: 0 0 20px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 16px;
+}
+.portfolio-details summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent-text-on-light);
+  list-style: none;
+}
+.portfolio-details summary::-webkit-details-marker { display: none; }
+.portfolio-details summary::after { content: ' →'; }
+.portfolio-details[open] summary::after { content: ' ↓'; }
+.portfolio-details-content { padding-top: 14px; }
+.portfolio-details-content p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0 0 12px;
+}
+.portfolio-details-content strong { color: var(--text-primary); }
+
+/* ===== Hero-Rotation ===== */
+#heroRotate {
+  display: inline-block;
+  transition: opacity 0.35s ease;
+}
+#heroRotate.is-fading { opacity: 0; }

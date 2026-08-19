@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101012">
 <title>HWA – Höhn Web & Automatisierung | Websites & Automatisierung aus Bad Berneck</title>
 <meta name="description" content="Websites, Individualsoftware und Automatisierung für Betriebe in der Region Bayreuth. Persönlich, direkt, aus Bad Berneck i.Fichtelgebirge.">
 
 <meta property="og:title" content="HWA – Höhn Web & Automatisierung">
 <meta property="og:description" content="Websites und Automatisierung für Betriebe in der Region Bayreuth.">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://hwa-hoehn.de/">
 <meta property="og:image" content="https://hwa-hoehn.de/assets/og-image.jpg">
 <meta property="og:url" content="https://hwa-hoehn.de/">
 <meta name="twitter:card" content="summary_large_image">
@@ -85,7 +87,7 @@
 <section class="hero" id="top">
   <div class="hero-inner">
     <p class="eyebrow">Web & Automatisierung · Bad Berneck / Bayreuth</p>
-    <h1 class="hero-headline">Websites und Automatisierung<br><span class="text-muted-hero">für Betriebe in der Region.</span></h1>
+    <h1 class="hero-headline">Websites und Automatisierung<br><span class="text-muted-hero">für <span id="heroRotate">Betriebe in der Region</span>.</span></h1>
     <p class="hero-sub">Ich baue Ihnen eine schnelle, moderne Website oder automatisiere wiederkehrende Excel-Arbeit im Betrieb – persönlich, direkt, ohne Agentur-Umweg.</p>
     <div class="hero-actions">
       <a href="#kontakt" class="btn btn-primary">Projekt anfragen</a>
@@ -166,6 +168,14 @@
   <div class="portfolio-body">
     <h3>Check&Sold</h3>
     <p>Plattform für geprüfte Secondhand-Luxusartikel – von Konzept über Design bis zur technischen Umsetzung vollständig selbst gebaut. Editorial geprägte Optik mit Fokus auf Vertrauen und Echtheitsprüfung statt Marktplatz-Beliebigkeit.</p>
+    <details class="portfolio-details">
+  <summary>Mehr zum Projekt</summary>
+  <div class="portfolio-details-content">
+    <p><strong>Die Herausforderung:</strong> Wer gebrauchte Luxusartikel online kauft, muss der Echtheit vertrauen, ohne das Stück vorher in der Hand zu haben.</p>
+    <p><strong>Meine Lösung:</strong> Der Prüfprozess wird sichtbar gemacht – mit einem interaktiven Vorher/Nachher-Slider, der Fälschungsmerkmale zeigt, und einer ruhigen, redaktionellen Bildsprache statt Marktplatz-Optik.</p>
+    <p><strong>Das Ergebnis:</strong> Eine Seite, die Vertrauen schafft, bevor der erste Kontakt überhaupt stattfindet.</p>
+  </div>
+</details>
     <a href="#" class="portfolio-link">Website ansehen →</a>
   </div>
 </article>
@@ -260,11 +270,13 @@
 <section class="section section-dark" id="kontakt">
   <div class="section-inner">
     <p class="section-eyebrow section-eyebrow-dark">Kontakt</p>
+    <span class="status-badge"><span class="status-dot"></span>Aktuell frei für neue Projekte</span>
     <h2 class="section-title section-title-dark">Lassen Sie uns über Ihr Projekt sprechen.</h2>
     <p class="kontakt-sub">Unverbindlich und ohne Verpflichtung – ich melde mich meist innerhalb von 24 Stunden zurück. Die Preisgestaltung richtet sich dann je nach besprochenem Umfang aus.</p>
 
     <div class="kontakt-grid">
       <form class="kontakt-form" id="kontaktForm" action="https://formspree.io/f/xyegbjaa" method="POST">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
         <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required autocomplete="name">
@@ -311,7 +323,7 @@
   <source srcset="assets/logo-mark-dark.webp" type="image/webp">
   <img src="assets/logo-mark-dark-optimized.png" alt="HWA" class="footer-logo">
 </picture>
-      <p>Höhn Web & Automatisierung<br>Kleingewerbe, Bad Berneck i.Fichtelgebirge</p>
+      <p>Handgebaut in Bad Berneck.<br>Höhn Web & Automatisierung · Kleingewerbe</p>
     </div>
     <nav class="footer-links">
       <a href="impressum.html">Impressum</a>
@@ -319,7 +331,9 @@
     </nav>
   </div>
 </footer>
-
+<button id="backToTop" class="back-to-top" aria-label="Nach oben scrollen">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 14V4M4 8L9 3L14 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 <script src="script.js"></script>
 </body>
 </html>

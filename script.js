@@ -130,3 +130,40 @@ if (form) {
     }
   });
 }
+// ===== Back to top =====
+(function backToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+// ===== Hero-Textrotation =====
+(function heroRotate() {
+  const el = document.getElementById('heroRotate');
+  if (!el) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  const phrases = ['Betriebe in der Region', 'Handwerker', 'Gastronomen', 'Ladenbesitzer'];
+  let i = 0;
+
+  setInterval(() => {
+    el.classList.add('is-fading');
+    setTimeout(() => {
+      i = (i + 1) % phrases.length;
+      el.textContent = phrases[i];
+      el.classList.remove('is-fading');
+    }, 350);
+  }, 2800);
+})();
