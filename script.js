@@ -155,7 +155,7 @@ if (form) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
-  const phrases = ['Handwerker','Gastronomen','Vermieter','Friseure', 'Beauty-Studios','Werkstätten','Bäckereien','Ladenbesitzer','Selbstständige','Vereine'];
+  const phrases = ['Handwerker','Gastronomen','Vermieter','Friseure', 'Beauty-Studios','Werkstätten','Bäckereien','Selbstständige','Vereine'];
   let i = 0;
 
   setInterval(() => {
