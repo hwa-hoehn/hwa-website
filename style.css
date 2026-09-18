@@ -391,8 +391,11 @@ a { color: inherit; }
 /* ===== Portfolio ===== */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
+}
+.portfolio-card-placeholder {
+  grid-column: 1 / -1;
 }
 .portfolio-card {
   background: var(--bg-card);
