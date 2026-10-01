@@ -31,7 +31,7 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
     introLogo.addEventListener('transitionend', function onFadeEnd(e) {
       if (e.propertyName !== 'opacity') return;
       introLogo.removeEventListener('transitionend', onFadeEnd);
-      setTimeout(moveToTarget, 480);
+      setTimeout(moveToTarget, 150);
     });
   }
 
@@ -50,7 +50,7 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
     const deltaX = toCenterX - fromCenterX;
     const deltaY = toCenterY - fromCenterY;
 
-    introLogo.style.transition = 'transform 1.3s cubic-bezier(0.65, 0, 0.35, 1)';
+    introLogo.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
 
     // Background wipe startet zeitgleich mit der Logo-Bewegung
     overlay.classList.add('intro-reveal');
@@ -146,24 +146,4 @@ if (form) {
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-})();
-// ===== Hero-Textrotation =====
-(function heroRotate() {
-  const el = document.getElementById('heroRotate');
-  if (!el) return;
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) return;
-
-  const phrases = ['Handwerker','Gastronomen','Vermieter','Friseure', 'Beauty-Studios','Werkstätten','Bäckereien','Selbstständige','Vereine'];
-  let i = 0;
-
-  setInterval(() => {
-  el.classList.add('is-fading');
-  setTimeout(() => {
-    i = (i + 1) % phrases.length;
-    el.textContent = phrases[i];
-    el.classList.remove('is-fading');
-  }, 600);
-}, 4200);
 })();
