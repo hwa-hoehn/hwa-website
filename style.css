@@ -427,27 +427,27 @@ a { color: inherit; }
   color: var(--text-secondary);
   margin: 0;
 }
-.price-list, .price-extras {
+.price-list {
   list-style: none;
   padding: 0;
   margin: 0;
   border-top: 1px solid var(--border-light);
 }
-.price-list li, .price-extras li {
+.price-list li {
   font-size: 15.5px;
   color: var(--text-secondary);
   padding: 11px 0;
   border-bottom: 1px solid var(--border-light);
 }
-.price-extras li {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
+.price-list-check li {
+  position: relative;
+  padding-left: 24px;
 }
-.price-extras li span:last-child {
-  color: var(--text-primary);
-  font-weight: 500;
-  white-space: nowrap;
+.price-list-check li::before {
+  content: '+';
+  position: absolute;
+  left: 2px;
+  color: var(--text-muted);
 }
 .pricing-footnote {
   font-size: 14px;
