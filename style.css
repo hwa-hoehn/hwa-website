@@ -885,4 +885,4 @@ summary:focus-visible {
   transition: color 0.15s ease;
 }
 .faq-item summary:hover { color: var(--accent-text-on-light); }
-.portfolio-details summary:hover { color: var(--accent-hover); }
+.portfolio-details summary:hover { color: var(--accent-hover); }.nowrap { white-space: nowrap; }
