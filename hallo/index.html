@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101012">
+<meta name="robots" content="noindex">
+<title>Hallo! | HWA – Höhn Web & Automatisierung</title>
+<meta name="description" content="Websites und Automatisierung für Betriebe in der Region Bayreuth. Ihr Ansprechpartner: Veit Höhn.">
+<link rel="preload" href="../assets/fonts/inter-tight-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../assets/hwa-favicon/favicon.ico" sizes="any">
+<link rel="icon" href="../assets/hwa-favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/hwa-favicon/apple-touch-icon.png">
+<style>
+  .hallo-hero { background: var(--bg-dark); color: var(--text-on-dark); padding: 72px 24px 64px; text-align: center; }
+  .hallo-logo { height: 24px; width: auto; margin: 0 auto 48px; }
+  .hallo-photo { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; }
+  .hallo-hero h1 { font-family: var(--font-display); font-size: clamp(30px, 6vw, 44px); font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 16px; }
+  .hallo-hero p { color: var(--text-on-dark-secondary); font-size: 18px; max-width: 520px; margin: 0 auto 32px; }
+  .hallo-actions { display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto; }
+  .hallo-actions .btn { text-align: center; }
+  .hallo-cards { max-width: 720px; margin: 0 auto; padding: 56px 24px 24px; display: grid; gap: 16px; }
+  .hallo-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 14px; padding: 26px 26px 24px; }
+  .hallo-card h2 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+  .hallo-card p { font-size: 16px; color: var(--text-secondary); margin: 0; }
+  .hallo-card .hallo-price { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--text-primary); margin-top: 12px; }
+  .hallo-more { text-align: center; padding: 24px 24px 72px; }
+  .hallo-more a { color: var(--text-primary); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<main>
+  <section class="hallo-hero">
+    <a href="../"><img src="../assets/logo-mark-light.png" alt="HWA – Höhn Web & Automatisierung" class="hallo-logo"></a>
+    <picture>
+      <source srcset="../assets/portrait.webp" type="image/webp">
+      <img src="../assets/portrait-optimized.jpg" alt="Veit Höhn" class="hallo-photo" width="112" height="112">
+    </picture>
+    <h1>Schön, dass Sie vorbeischauen.</h1>
+    <p>Ich bin Veit Höhn aus Bad Berneck und baue Websites und kleine Programme für Betriebe hier aus der Region. Rufen Sie mich gern an – unverbindlich und ohne Vorbereitung.</p>
+    <div class="hallo-actions">
+      <a href="tel:+491706940908" class="btn btn-primary">Anrufen: 0170 6940908</a>
+      <a href="../?quelle=flyer#kontakt" class="btn btn-ghost">Nachricht schreiben</a>
+    </div>
+  </section>
+
+  <section class="hallo-cards">
+    <article class="hallo-card">
+      <h2>Ihre Website</h2>
+      <p>Modern, schnell und gut auf dem Handy – von Grund auf gebaut statt aus dem Baukasten. Am Ende gehört alles Ihnen, ohne Vertrag und ohne monatliche Gebühren bei mir.</p>
+      <p class="hallo-price">ab 380 € · festes Angebot vorab</p>
+    </article>
+    <article class="hallo-card">
+      <h2>Automatisierung</h2>
+      <p>Kleine Programme für Arbeit, die sich jede Woche wiederholt – zum Beispiel Daten aus PDF-Rechnungen übernehmen oder Listen abgleichen. Läuft bei Ihnen auf dem Rechner, ohne Abo.</p>
+      <p class="hallo-price">Festpreis nach einem kurzen Gespräch</p>
+    </article>
+    <article class="hallo-card">
+      <h2>Persönlich vor Ort</h2>
+      <p>Ich komme gern bei Ihnen vorbei. Sie haben einen festen Ansprechpartner von der ersten Idee bis zum fertigen Ergebnis. Das erste Gespräch ist kostenlos.</p>
+    </article>
+  </section>
+
+  <p class="hallo-more"><a href="../">Zur vollständigen Website mit Preisen, Ablauf und Projekten →</a></p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <picture>
+        <source srcset="../assets/logo-mark-dark.webp" type="image/webp">
+        <img src="../assets/logo-mark-dark-optimized.png" alt="HWA" class="footer-logo">
+      </picture>
+      <p>Handgebaut in Bad Berneck.<br>Höhn Web &amp; Automatisierung</p>
+    </div>
+    <nav class="footer-links">
+      <a href="../impressum.html">Impressum</a>
+      <a href="../datenschutz.html">Datenschutzerklärung</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

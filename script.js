@@ -147,3 +147,12 @@ if (form) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+// ===== Herkunft aus Link übernehmen (z. B. ?quelle=flyer vom QR-Code) =====
+(function presetQuelle() {
+  const select = document.getElementById('quelle');
+  if (!select) return;
+  if (new URLSearchParams(location.search).get('quelle') === 'flyer') {
+    select.value = 'Flyer / persönlicher Besuch';
+  }
+})();
