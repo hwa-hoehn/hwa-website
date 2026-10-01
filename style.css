@@ -892,3 +892,16 @@ summary:focus-visible {
 }
 .faq-item summary:hover { color: var(--accent-text-on-light); }
 .portfolio-details summary:hover { color: var(--accent-hover); }.nowrap { white-space: nowrap; }
+
+/* ===== Portfolio: hervorgehobenes Beispielprojekt ===== */
+.portfolio-card-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  align-items: center;
+}
+.portfolio-card-featured .portfolio-media img { aspect-ratio: 16 / 10; }
+@media (max-width: 860px) {
+  .portfolio-card-featured { grid-template-columns: 1fr; }
+}
+

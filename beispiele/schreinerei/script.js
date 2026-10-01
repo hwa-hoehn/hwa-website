@@ -1,3 +1,6 @@
+// ===== JavaScript aktiv (für das Einblenden beim Scrollen) =====
+document.documentElement.classList.add('js');
+
 // ===== Mobiles Menü =====
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
@@ -45,3 +48,20 @@ form.addEventListener('submit', (e) => {
   status.textContent = 'Vielen Dank! Dies ist ein Beispielprojekt – die Anfrage wurde nicht versendet.';
   form.reset();
 });
+
+// ===== Dezentes Einblenden beim Scrollen =====
+(function reveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  const targets = document.querySelectorAll('.section-head, .service, .work, .testimonial, .holz-figure, .holz-text, .steps li, .job, .karriere-figure');
+  targets.forEach((el) => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  targets.forEach((el) => io.observe(el));
+})();

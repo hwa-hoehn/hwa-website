@@ -373,3 +373,81 @@ figure { margin: 0; }
 @media (max-width: 900px) {
   .footer-inner { grid-template-columns: 1fr; }
 }
+
+/* ===== Feinschliff ===== */
+
+/* Zum Inhalt springen (nur bei Tastaturfokus sichtbar) */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  background: var(--brass);
+  color: var(--forest);
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.skip-link:focus { top: 16px; }
+
+/* Ausgeglichene Umbrüche, Silbentrennung in schmalen Spalten */
+h1, h2, h3, blockquote p { text-wrap: balance; }
+.service p, .work-body > p, .steps p, .holz-text > p, .section-intro, .job-title { hyphens: auto; -webkit-hyphens: auto; }
+
+/* Kundenstimme */
+.testimonial {
+  margin: clamp(80px, 10vw, 140px) auto 0;
+  max-width: 900px;
+  text-align: center;
+}
+.testimonial::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: var(--brass-ink);
+  margin: 0 auto 40px;
+}
+.testimonial blockquote { margin: 0; }
+.testimonial blockquote p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+.testimonial figcaption {
+  display: block;
+  margin-top: 28px;
+  padding: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Projektbilder: ruhiger Zoom beim Überfahren */
+.work figure { overflow: hidden; }
+.work figure img { transition: transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1); }
+.work:hover figure img { transform: scale(1.03); }
+
+/* Dezentes Einblenden beim Scrollen (nur mit JavaScript, nicht bei reduzierter Bewegung) */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+  .work:hover figure img { transform: none; }
+}
+
+/* Kontakt: Karte bündig mit dem Formular */
+.section-forest .section-head { margin-bottom: clamp(40px, 5vw, 64px); }
+
+/* Auf kleinen Bildschirmen etwas kräftigere Schrift für bessere Lesbarkeit */
+@media (max-width: 600px) {
+  .hero-lead, .section-intro, .service p, .work-body > p, .steps p:not(.step-dim), .holz-text > p, .form-note, .field input, .field select, .field textarea, .hours td, .footer-note { font-weight: 400; }
+  .testimonial { text-align: left; }
+  .testimonial::before { margin-left: 0; }
+}
+p { text-wrap: pretty; }
