@@ -92,10 +92,17 @@
   <div class="hero-inner">
     <p class="eyebrow">Webdesign · Bad Berneck / Bayreuth / Kulmbach</p>
     <h1 class="hero-headline">Ihre Website,<br><span class="text-muted-hero">persönlich gebaut in der Region.</span></h1>
-    <p class="hero-sub">Ich baue Websites für Handwerker, Gastronomie und kleine Betriebe aus der Region – im direkten Gespräch mit Ihnen, gern auch bei Ihnen vor Ort. Sie bekommen einen klaren Preis und am Ende gehört alles Ihnen, ohne Vertrag und ohne monatliche Gebühren bei mir.</p>
+    <p class="hero-sub">Für Handwerker, Gastronomie und kleine Betriebe. Wir besprechen alles persönlich, gern bei Ihnen vor Ort – und am Ende gehört die Website Ihnen, ohne Vertrag und ohne monatliche Gebühren.</p>
     <div class="hero-actions">
       <a href="#kontakt" class="btn btn-primary">Projekt anfragen</a>
       <a href="#preise" class="btn btn-ghost">Preise ansehen</a>
+    </div>
+    <div class="hero-contact">
+      <picture>
+        <source srcset="assets/portrait.webp" type="image/webp">
+        <img src="assets/portrait-optimized.jpg" alt="Veit Höhn" width="44" height="44">
+      </picture>
+      <p>Veit Höhn, Ihr Ansprechpartner<br><a href="tel:+491706940908">Direkt anrufen: 0170 6940908</a></p>
     </div>
   </div>
 </section>
@@ -364,6 +371,16 @@
         <div class="form-row">
           <label for="nachricht">Nachricht</label>
           <textarea id="nachricht" name="nachricht" rows="5" required placeholder="Kurz worum es geht – Website, Automatisierung oder etwas anderes."></textarea>
+        </div>
+        <div class="form-row">
+          <label for="quelle">Wie haben Sie von mir erfahren? <span class="form-optional">(optional)</span></label>
+          <select id="quelle" name="quelle">
+            <option value="">Bitte wählen</option>
+            <option>Flyer / persönlicher Besuch</option>
+            <option>Google-Suche</option>
+            <option>Empfehlung</option>
+            <option>Sonstiges</option>
+          </select>
         </div>
         <p class="form-privacy">Ihre Angaben verwende ich nur, um Ihre Anfrage zu beantworten. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
         <button type="submit" class="btn btn-primary btn-form">Anfrage senden</button>
