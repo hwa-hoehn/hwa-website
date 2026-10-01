@@ -427,6 +427,7 @@ a { color: inherit; }
   color: var(--text-secondary);
   margin: 0;
 }
+.price-text + .price-text { margin-top: 14px; }
 .price-list {
   list-style: none;
   padding: 0;
