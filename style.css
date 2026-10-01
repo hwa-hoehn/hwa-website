@@ -458,6 +458,12 @@ a { color: inherit; }
   margin: 0;
 }
 .price-text + .price-text { margin-top: 14px; }
+.price-closing {
+  font-size: 15.5px;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin: 20px 0 0;
+}
 .price-list {
   list-style: none;
   padding: 0;
