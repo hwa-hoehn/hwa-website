@@ -33,8 +33,8 @@
 
 | Wunsch | Lösung auf der Seite |
 |---|---|
-| Ruhig, präzise, ehrlich | Gestaltung wie ein Werkplan: kühles Weiß und Graphit, Millimeterraster im Kopfbereich, Maßlinien als wiederkehrendes Element, keine Schatten und keine runden „App-Karten“ |
-| Qualität ohne Abgehobenheit | Schmale, kräftige Versalien für Überschriften (IBM Plex Sans Condensed), technische Beschriftungen in Monospace, ein einziger Akzent in Zimmermannsbleistift-Rot, klare Sprache ohne Werbefloskeln |
+| Ruhig, präzise, ehrlich | Tiefes Tannengrün und Nussbaumbraun als tragende Flächen, warmes Cremeweiß, feine Messinglinien als einziger Akzent; viel Weißraum, keine Schatten, keine runden „App-Karten“ |
+| Qualität ohne Abgehobenheit | Klassische Buchschrift Libre Caslon für Überschriften und Zitate, elegante Jost (Futura-Tradition) für Texte und gesperrte Beschriftungen; Maßlinien im Ablauf als handwerkliches Detail |
 | Arbeiten mit Fakten | Referenzen mit „Holzliste“: Holzart, Oberfläche, Bauzeit, Ort |
 | Holz aus der Region | Eigener Abschnitt „Woher unser Holz kommt“ mit Zitat der Inhaberin |
 | Qualifizierte Anfragen | Formular mit Projektart, Zeitraum und optionalem Budgetrahmen |
@@ -43,7 +43,7 @@
 
 ## Lizenzen
 
-- Schriften: IBM Plex Sans Condensed, IBM Plex Sans, IBM Plex Mono,
-  SIL Open Font License 1.1 (Lizenztext im Ordner `fonts/`), lokal eingebunden
+- Schriften: Libre Caslon Display, Libre Caslon Text und Jost,
+  SIL Open Font License 1.1 (Lizenztexte im Ordner `fonts/`), lokal eingebunden
 - Fotos: Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung
   erforderlich); Nachweise in `img/BILDNACHWEIS.md`
