@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1E2A23">
-<title>Schreinerei Kühlbrandt – Möbel und Innenausbau im Fichtelgebirge | Beispielprojekt</title>
+<title>Schreinerei Kühlbrandt – Möbel und Innenausbau | Beispielprojekt</title>
 <meta name="description" content="Beispielprojekt von HWA: Website einer fiktiven Schreinerei im Fichtelgebirge – Küchen, Einbaumöbel, Treppen und Einzelstücke aus regionalem Holz.">
 <meta property="og:title" content="Schreinerei Kühlbrandt – Beispielprojekt von HWA">
 <meta property="og:description" content="Demo-Website einer fiktiven Schreinerei im Fichtelgebirge, gestaltet von HWA – Höhn Web &amp; Automatisierung.">
@@ -31,11 +31,12 @@
     <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
       <a href="#arbeiten">Arbeiten</a>
-      <a href="#holz">Werkstatt</a>
+      <a href="#holz">Holz</a>
+      <a href="#ablauf">Ablauf</a>
       <a href="#karriere">Karriere</a>
       <a href="#kontakt" class="nav-cta">Projekt anfragen</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav">
       <span class="nav-toggle-label">Menü</span>
     </button>
   </div>
@@ -43,175 +44,283 @@
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-panel">
-      <div class="hero-text">
-        <p class="kicker">Schreinerei im Fichtelgebirge</p>
-        <h1>Möbel, die <em>bleiben.</em></h1>
-        <p class="hero-lead">Küchen, Einbaumöbel und Treppen aus Massivholz – geplant mit Ihnen, gefertigt in unserer Werkstatt in Lindenreuth und montiert von denselben Menschen, die sie gebaut haben.</p>
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-top">
+        <p>Schreinerei im Fichtelgebirge</p>
+        <p class="hero-top-right">In dritter Generation, seit 1962</p>
+      </div>
+      <h1 class="hero-title" id="hero-title"><span class="sr-only">Schreinerei </span>Kühlbrandt</h1>
+      <div class="hero-row">
+        <p class="hero-lead">Küchen, Einbaumöbel und Treppen aus Massivholz. Geplant mit Ihnen, gebaut in unserer Werkstatt in Lindenreuth und eingebaut von denselben Menschen, die sie gefertigt haben.</p>
         <div class="hero-actions">
           <a href="#kontakt" class="btn btn-brass">Projekt anfragen</a>
-          <a href="#arbeiten" class="btn btn-ghost">Arbeiten ansehen</a>
+          <a href="#arbeiten" class="link-arrow link-arrow-light">Arbeiten ansehen</a>
         </div>
       </div>
-      <dl class="facts">
-        <div class="fact"><dt>Generation</dt><dd>dritte</dd></div>
-        <div class="fact"><dt>Holzherkunft</dt><dd>&lt;&thinsp;60&thinsp;km</dd></div>
-        <div class="fact"><dt>Fertigung</dt><dd>eigene Werkstatt</dd></div>
-      </dl>
     </div>
-    <figure class="hero-image">
-      <img src="img/hero.webp" alt="Lichtdurchflutete Werkstatt: Hobelbank mit Eichenbrettern, Handhobel und Hobelspänen, an der Wand Schraubzwingen" width="1024" height="1536" fetchpriority="high">
+    <figure class="hero-figure">
+      <div class="hero-image">
+        <img src="img/arbeit-kueche.webp" alt="Küche mit grifflosen Eichenfronten und Kochinsel, durch die Fenster Blick auf bewaldete Hügel" width="1536" height="1024" fetchpriority="high">
+      </div>
+      <figcaption class="wrap hero-caption">
+        <span><em>Küche am Hang</em>, Bischofsgrün · Eiche, 2025</span>
+        <button type="button" class="link-plain" data-open="kueche">Projekt ansehen</button>
+      </figcaption>
     </figure>
   </section>
 
-  <!-- LEISTUNGEN -->
-  <section class="section" id="leistungen">
+  <!-- ===== WERKSTATT ===== -->
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="wrap intro-grid">
+      <figure class="intro-figure">
+        <div class="reveal-img"><img src="img/hero.webp" alt="Lichtdurchflutete Werkstatt: Hobelbank mit Eichenbrettern, Handhobel und Hobelspänen, an der Wand Schraubzwingen" width="1024" height="1536" loading="lazy"></div>
+        <figcaption>Die Werkstatt in Lindenreuth, Am Sägewerk 4</figcaption>
+      </figure>
+      <div class="intro-text">
+        <h2 class="eyebrow" id="intro-title">Die Werkstatt</h2>
+        <p class="statement">Seit 1962 bauen wir Möbel für Häuser in Oberfranken. Heute mit vierzehn Leuten, in dritter Generation und mit Holz, das selten mehr als sechzig Kilometer bis zu uns zurücklegt.</p>
+        <p class="body-text">Jeder Auftrag beginnt bei Ihnen zu Hause mit einem Aufmaß. Danach entsteht alles in unserer eigenen Werkstatt, vom ersten Zuschnitt bis zur letzten Ölschicht. Eingebaut wird von denselben Schreinerinnen und Schreinern, die das Stück gefertigt haben.</p>
+        <a href="#holz" class="link-arrow">Woher unser Holz kommt</a>
+      </div>
+    </div>
     <div class="wrap">
-      <header class="section-head">
-        <p class="section-no">01</p>
-        <h2>Was wir bauen</h2>
-        <p class="section-intro">Jedes Stück wird für den Raum geplant, in dem es später steht. Deshalb beginnt jeder Auftrag mit einem Aufmaß bei Ihnen vor Ort.</p>
-      </header>
-
-      <ol class="services">
-        <li class="service">
-          <span class="service-no">01</span>
-          <h3>Küchen</h3>
-          <p>Fronten und Korpusse aus Massivholz oder furnierter Platte, kombiniert mit Geräten Ihrer Wahl. Wir planen Arbeitshöhen, Wege und Stauraum nach Ihrem Alltag.</p>
-          <p class="service-meta">Eiche · Esche · Nussbaum · Lärche</p>
-        </li>
-        <li class="service">
-          <span class="service-no">02</span>
-          <h3>Einbaumöbel</h3>
-          <p>Schränke unter Dachschrägen, Garderoben, Bücherwände und Sitzbänke – millimetergenau eingepasst, auch in Altbauten mit schiefen Wänden.</p>
-          <p class="service-meta">Ankleide · Garderobe · Regal · Bank</p>
-        </li>
-        <li class="service">
-          <span class="service-no">03</span>
-          <h3>Treppen &amp; Innenausbau</h3>
-          <p>Holztreppen, Türen, Wandverkleidungen und Böden. Wir arbeiten eng mit Architekturbüros und anderen Gewerken zusammen.</p>
-          <p class="service-meta">Treppe · Tür · Verkleidung · Boden</p>
-        </li>
-        <li class="service">
-          <span class="service-no">04</span>
-          <h3>Tische &amp; Einzelstücke</h3>
-          <p>Esstische aus einer Bohle, Sideboards, Betten. Auf Wunsch aus Holz mit Geschichte – etwa aus einem Baum von Ihrem eigenen Grundstück.</p>
-          <p class="service-meta">Esstisch · Sideboard · Bett · Aufarbeitung</p>
-        </li>
+      <ol class="timeline">
+        <li><span class="timeline-year">1962</span><p>Heinrich Kühlbrandt übernimmt die kleine Werkstatt neben dem Sägewerk in Lindenreuth.</p></li>
+        <li><span class="timeline-year">1989</span><p>Sohn Martin baut die neue Werkhalle und nimmt Treppen und Innenausbau ins Programm.</p></li>
+        <li><span class="timeline-year">2019</span><p>Schreinermeisterin Johanna Kühlbrandt übernimmt den Betrieb in dritter Generation.</p></li>
+        <li><span class="timeline-year">Heute</span><p>Vierzehn Mitarbeitende, davon drei in Ausbildung. Rund sechzig Aufträge im Jahr.</p></li>
       </ol>
     </div>
   </section>
 
-  <!-- ARBEITEN -->
-  <section class="section section-alt" id="arbeiten">
+  <!-- ===== LEISTUNGEN ===== -->
+  <section class="section section-alt" id="leistungen" aria-labelledby="leistungen-title">
     <div class="wrap">
-      <header class="section-head">
-        <p class="section-no">02</p>
-        <h2>Ausgewählte Arbeiten</h2>
-        <p class="section-intro">Zu jedem Projekt die Holzliste: woraus es gebaut ist, wie die Oberfläche behandelt wurde und wie lange es von der Planung bis zur Montage gedauert hat.</p>
+      <header class="split-head">
+        <h2 id="leistungen-title">Was wir bauen</h2>
+        <p>Jedes Stück wird für den Raum geplant, in dem es später steht. Ob Küche oder einzelnes Regal: Maße, Holz und Oberfläche legen wir gemeinsam mit Ihnen fest.</p>
       </header>
 
-      <div class="works">
-        <article class="work work-wide">
-          <figure>
-            <img src="img/arbeit-kueche.webp" alt="Küche mit grifflosen Eichenfronten, Kochinsel mit Natursteinplatte und offener Nische mit Keramik, Blick auf bewaldete Hügel" width="1536" height="1024" loading="lazy">
-          </figure>
-          <div class="work-body">
-            <h3>Küche in einem Haus am Hang</h3>
-            <p>Grifflose Fronten, eine durchgehende Nische für Gewürze und Messer, Hochschränke bis unter die Decke.</p>
-            <dl class="woodlist">
-              <div><dt>Holz</dt><dd>Eiche, regional</dd></div>
-              <div><dt>Oberfläche</dt><dd>Naturöl, weiß pigmentiert</dd></div>
-              <div><dt>Bauzeit</dt><dd>9 Wochen</dd></div>
-              <div><dt>Ort</dt><dd>Bischofsgrün</dd></div>
-            </dl>
-          </div>
-        </article>
+      <ul class="services">
+        <li>
+          <a class="service" href="#arbeit-kueche" data-preview="img/arbeit-kueche.webp">
+            <span class="service-name">Küchen</span>
+            <span class="service-text">Fronten und Korpusse aus Massivholz oder Furnier, kombiniert mit Geräten Ihrer Wahl. Arbeitshöhen, Wege und Stauraum richten sich nach Ihrem Alltag.</span>
+            <span class="service-meta">Eiche, Esche, Nussbaum</span>
+          </a>
+        </li>
+        <li>
+          <a class="service" href="#arbeit-schrank" data-preview="img/arbeit-schrank.webp">
+            <span class="service-name">Einbaumöbel</span>
+            <span class="service-text">Schränke unter Dachschrägen, Garderoben, Bücherwände und Sitzbänke. Auf den Millimeter eingepasst, auch in Altbauten mit schiefen Wänden.</span>
+            <span class="service-meta">Ankleide, Garderobe, Regal</span>
+          </a>
+        </li>
+        <li>
+          <a class="service" href="#arbeit-treppe" data-preview="img/arbeit-treppe.webp">
+            <span class="service-name">Treppen &amp; Innenausbau</span>
+            <span class="service-text">Holztreppen, Türen, Wandverkleidungen und Böden. Wir arbeiten eng mit Architekturbüros und den anderen Gewerken auf der Baustelle zusammen.</span>
+            <span class="service-meta">Treppe, Tür, Verkleidung</span>
+          </a>
+        </li>
+        <li>
+          <a class="service" href="#arbeit-tisch" data-preview="img/arbeit-tisch.webp">
+            <span class="service-name">Tische &amp; Einzelstücke</span>
+            <span class="service-text">Esstische aus einer Bohle, Sideboards und Betten. Auf Wunsch aus Holz mit Geschichte, etwa aus einem Baum von Ihrem eigenen Grundstück.</span>
+            <span class="service-meta">Esstisch, Sideboard, Bett</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="service-preview" aria-hidden="true"><img src="img/arbeit-kueche.webp" alt="" width="1536" height="1024"></div>
+  </section>
 
-        <article class="work">
-          <figure>
+  <!-- ===== ARBEITEN ===== -->
+  <section class="section" id="arbeiten" aria-labelledby="arbeiten-title">
+    <div class="wrap">
+      <header class="split-head">
+        <h2 id="arbeiten-title">Ausgewählte Arbeiten</h2>
+        <p>Zu jedem Projekt gibt es die Holzliste: woraus es gebaut ist, wie die Oberfläche behandelt wurde und wie lange es von der Planung bis zur Montage gedauert hat.</p>
+      </header>
+    </div>
+
+    <div class="works">
+      <article class="work work-lead wrap" id="arbeit-kueche" data-project="kueche">
+        <button type="button" class="work-image reveal-img" data-open="kueche" aria-label="Details zur Küche am Hang öffnen">
+          <img src="img/arbeit-kueche.webp" alt="Küche mit grifflosen Eichenfronten, Kochinsel mit Natursteinplatte und offener Nische mit Keramik, Blick auf bewaldete Hügel" width="1536" height="1024" loading="lazy">
+        </button>
+        <p class="dimension" aria-hidden="true"><span>4.860</span></p>
+        <div class="work-info work-info-row">
+          <div>
+            <p class="work-meta">01 · Bischofsgrün · 2025</p>
+            <h3>Küche am Hang</h3>
+          </div>
+          <p class="work-text">Grifflose Fronten, eine durchgehende Nische für Gewürze und Messer, Hochschränke bis unter die Decke. Die Insel steht so, dass man beim Kochen ins Tal schaut.</p>
+          <button type="button" class="link-plus" data-open="kueche">Holzliste &amp; Details</button>
+        </div>
+        <div class="work-detail" hidden>
+          <p>Die Familie wollte eine Küche, die zum Haus passt und nicht nach Ausstellung aussieht. Die Fronten stammen aus einem einzigen Eichenstamm, damit die Maserung über alle Türen durchläuft. Die Gewürznische ist so tief wie ein Glas, nicht tiefer.</p>
+          <dl class="woodlist">
+            <div><dt>Holz</dt><dd>Eiche, Frankenwald</dd></div>
+            <div><dt>Oberfläche</dt><dd>Naturöl, weiß pigmentiert</dd></div>
+            <div><dt>Arbeitsplatte</dt><dd>Muschelkalk, geschliffen</dd></div>
+            <div><dt>Länge der Zeile</dt><dd>4.860 mm</dd></div>
+            <div><dt>Bauzeit</dt><dd>9 Wochen</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <div class="wrap works-pair">
+        <article class="work" id="arbeit-schrank" data-project="schrank">
+          <button type="button" class="work-image reveal-img" data-open="schrank" aria-label="Details zur Ankleide unter der Dachschräge öffnen">
             <img src="img/arbeit-schrank.webp" alt="Einbauschränke aus heller Eiche unter der Dachschräge mit Holzbalken und Dachfenster, eine Tür geöffnet" width="1536" height="1024" loading="lazy">
-          </figure>
-          <div class="work-body">
+          </button>
+          <div class="work-info">
+            <p class="work-meta">02 · Bayreuth · 2024</p>
             <h3>Ankleide unter der Dachschräge</h3>
+            <p class="work-text">Jede Tür folgt dem Verlauf der Schräge. Innen Böden aus Zirbe, die beim Öffnen leicht nach Holz duften.</p>
+            <button type="button" class="link-plus" data-open="schrank">Holzliste &amp; Details</button>
+          </div>
+          <div class="work-detail" hidden>
+            <p>Der Dachboden eines Altbaus von 1928: kein Winkel im Lot, die Balken sollten sichtbar bleiben. Wir haben jede Tür einzeln angerissen und vor Ort angepasst. Die Innenböden aus Zirbe hatten sich die Bauherren gewünscht.</p>
             <dl class="woodlist">
               <div><dt>Holz</dt><dd>Eiche, hell</dd></div>
+              <div><dt>Innenböden</dt><dd>Zirbe, unbehandelt</dd></div>
               <div><dt>Oberfläche</dt><dd>Hartwachsöl</dd></div>
               <div><dt>Bauzeit</dt><dd>5 Wochen</dd></div>
-              <div><dt>Ort</dt><dd>Bayreuth</dd></div>
             </dl>
           </div>
         </article>
 
-        <article class="work">
-          <figure>
+        <article class="work work-offset" id="arbeit-treppe" data-project="treppe">
+          <button type="button" class="work-image reveal-img" data-open="treppe" aria-label="Details zur Wangentreppe öffnen">
             <img src="img/arbeit-treppe.webp" alt="Wangentreppe aus astiger Eiche mit schlankem Stahlgeländer in einem hellen Neubau" width="1264" height="848" loading="lazy">
-          </figure>
-          <div class="work-body">
+          </button>
+          <div class="work-info">
+            <p class="work-meta">03 · Kulmbach · 2024</p>
             <h3>Wangentreppe im Neubau</h3>
+            <p class="work-text">Astige Eiche mit Geländer aus Flachstahl, gefertigt zusammen mit einer Schlosserei aus dem Ort.</p>
+            <button type="button" class="link-plus" data-open="treppe">Holzliste &amp; Details</button>
+          </div>
+          <div class="work-detail" hidden>
+            <p>Das Architekturbüro wollte eine Treppe, die fast schwebt. Die Wangen sind verdeckt in der Wand verankert, die Stufen 60 mm stark. Das Geländer hat eine Schlosserei aus Kulmbach nach unseren Zeichnungen gebaut.</p>
             <dl class="woodlist">
               <div><dt>Holz</dt><dd>Eiche, astig</dd></div>
               <div><dt>Oberfläche</dt><dd>Lack, seidenmatt</dd></div>
+              <div><dt>Stufenstärke</dt><dd>60 mm</dd></div>
               <div><dt>Bauzeit</dt><dd>6 Wochen</dd></div>
-              <div><dt>Ort</dt><dd>Kulmbach</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="work work-wide work-reverse">
-          <figure>
-            <img src="img/arbeit-tisch.webp" alt="Langer, gedeckter Esstisch aus zwei Nussbaumbohlen vor einem großen Fenster mit Blick in den Wald" width="1264" height="848" loading="lazy">
-          </figure>
-          <div class="work-body">
-            <h3>Esstisch für zwölf</h3>
-            <p>Aus zwei Bohlen eines Nussbaums, der auf dem Grundstück der Familie stand. Drei Jahre luftgetrocknet, dann in unserer Werkstatt verleimt.</p>
-            <dl class="woodlist">
-              <div><dt>Holz</dt><dd>Nussbaum, aus Kundengarten</dd></div>
-              <div><dt>Oberfläche</dt><dd>Leinöl</dd></div>
-              <div><dt>Bauzeit</dt><dd>4 Wochen</dd></div>
-              <div><dt>Länge</dt><dd>3,20 m</dd></div>
             </dl>
           </div>
         </article>
       </div>
 
+      <article class="work work-bleed" id="arbeit-tisch" data-project="tisch">
+        <button type="button" class="work-image reveal-img" data-open="tisch" aria-label="Details zum Esstisch für zwölf öffnen">
+          <img src="img/arbeit-tisch.webp" alt="Langer, gedeckter Esstisch aus zwei Nussbaumbohlen vor einem großen Fenster mit Blick in den Wald" width="1264" height="848" loading="lazy">
+        </button>
+        <div class="wrap">
+          <div class="work-info work-info-row">
+            <div>
+              <p class="work-meta">04 · Weißenstadt · 2023</p>
+              <h3>Esstisch für zwölf</h3>
+            </div>
+            <p class="work-text">Aus zwei Bohlen eines Nussbaums, der auf dem Grundstück der Familie stand. Drei Jahre luftgetrocknet, dann in unserer Werkstatt verleimt.</p>
+            <button type="button" class="link-plus" data-open="tisch">Holzliste &amp; Details</button>
+          </div>
+        </div>
+        <div class="work-detail" hidden>
+          <p>Der Nussbaum musste wegen eines Anbaus gefällt werden. Statt ihn zu Brennholz zu machen, haben wir ihn zum Sägewerk gebracht und die beiden besten Bohlen drei Jahre bei uns gelagert. Die Baumkante an den Längsseiten ist geblieben, Risse sind mit kleinen Schwalbenschwänzen aus Eiche gesichert.</p>
+          <dl class="woodlist">
+            <div><dt>Holz</dt><dd>Nussbaum, aus dem Garten der Familie</dd></div>
+            <div><dt>Oberfläche</dt><dd>Leinöl</dd></div>
+            <div><dt>Länge</dt><dd>3.200 mm</dd></div>
+            <div><dt>Bauzeit</dt><dd>4 Wochen</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+
+    <div class="wrap">
       <figure class="testimonial">
         <blockquote>
           <p>„Wir hatten drei Angebote für unsere Küche. Bei Kühlbrandt war es das einzige, bei dem vorher jemand bei uns am Tisch saß und gefragt hat, wie wir eigentlich kochen.“</p>
         </blockquote>
-        <figcaption>Familie Reichel, Bischofsgrün · Küche aus Eiche, 2025</figcaption>
+        <figcaption>Familie Reichel, Bischofsgrün</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- HOLZ / HALTUNG -->
-  <section class="section section-walnut" id="holz">
-    <div class="wrap holz-grid">
-      <header class="section-head">
-        <p class="section-no">03</p>
-        <h2>Woher unser Holz kommt</h2>
+  <!-- ===== HOLZ ===== -->
+  <section class="section section-walnut" id="holz" aria-labelledby="holz-title">
+    <div class="wrap">
+      <header class="split-head">
+        <h2 id="holz-title">Woher unser Holz kommt</h2>
+        <p>Kurze Wege sparen Transport. Vor allem aber wissen wir, wie das Holz gewachsen ist und wie lange es getrocknet wurde. Exotische Hölzer verarbeiten wir nur auf ausdrücklichen Wunsch und mit Herkunftsnachweis.</p>
       </header>
-      <figure class="holz-figure">
-        <img src="img/holz.webp" alt="Fichtenwald im Morgennebel mit gestapelten Stämmen an einem Waldweg" width="1264" height="848" loading="lazy">
-      </figure>
-      <div class="holz-text">
-        <blockquote>
-          <p>„Fichte und Lärche holen wir aus dem Fichtelgebirge, Eiche und Esche aus dem Frankenwald. Ich kenne die meisten Sägewerke, von denen wir kaufen, seit ich ein Kind bin.“</p>
-          <footer>Johanna Kühlbrandt, Schreinermeisterin</footer>
-        </blockquote>
-        <p>Kurze Wege sparen Transport, vor allem aber wissen wir, wie das Holz gewachsen ist und wie lange es getrocknet wurde. Exotische Hölzer verarbeiten wir nur auf ausdrücklichen Wunsch und nur mit Herkunftsnachweis.</p>
+
+      <div class="holz-grid">
+        <figure class="holz-figure">
+          <div class="reveal-img"><img src="img/holz.webp" alt="Fichtenwald im Morgennebel mit gestapelten Stämmen an einem Waldweg" width="1264" height="848" loading="lazy"></div>
+          <blockquote>
+            <p>„Ich kenne die meisten Sägewerke, von denen wir kaufen, seit ich ein Kind bin. Das merkt man an dem Holz, das sie uns zurücklegen.“</p>
+          </blockquote>
+          <figcaption>Johanna Kühlbrandt, Schreinermeisterin</figcaption>
+        </figure>
+
+        <div class="woods">
+          <p class="woods-label" id="woods-label">Unsere Hölzer</p>
+          <div class="woods-tabs" role="tablist" aria-labelledby="woods-label">
+            <button type="button" role="tab" id="tab-eiche" aria-controls="wood-eiche" aria-selected="true">Eiche</button>
+            <button type="button" role="tab" id="tab-esche" aria-controls="wood-esche" aria-selected="false" tabindex="-1">Esche</button>
+            <button type="button" role="tab" id="tab-nussbaum" aria-controls="wood-nussbaum" aria-selected="false" tabindex="-1">Nussbaum</button>
+            <button type="button" role="tab" id="tab-laerche" aria-controls="wood-laerche" aria-selected="false" tabindex="-1">Lärche</button>
+            <button type="button" role="tab" id="tab-fichte" aria-controls="wood-fichte" aria-selected="false" tabindex="-1">Fichte</button>
+          </div>
+
+          <div class="wood" role="tabpanel" id="wood-eiche" aria-labelledby="tab-eiche" tabindex="0">
+            <p class="wood-text">Hart, schwer und sehr langlebig. Die lebhafte Maserung wird mit den Jahren dunkler und wärmer. Unser Holz für fast alles, was täglich benutzt wird.</p>
+            <dl class="wood-facts"><div><dt>Bei uns für</dt><dd>Küchen, Treppen, Tische</dd></div><div><dt>Härte</dt><dd>hoch</dd></div></dl>
+            <p class="wood-origin">Herkunft: Frankenwald</p>
+            <div class="wood-distance"><span>41 km bis zur Werkstatt</span></div>
+          </div>
+          <div class="wood" role="tabpanel" id="wood-esche" aria-labelledby="tab-esche" tabindex="0" hidden>
+            <p class="wood-text">Hell, fast cremeweiß, mit ruhiger, gerader Maserung. Zäh und elastisch. Passt gut in helle, moderne Räume und verträgt sich mit Naturstein.</p>
+            <dl class="wood-facts"><div><dt>Bei uns für</dt><dd>Küchenfronten, Regale, Stühle</dd></div><div><dt>Härte</dt><dd>hoch</dd></div></dl>
+            <p class="wood-origin">Herkunft: Frankenwald</p>
+            <div class="wood-distance"><span>46 km bis zur Werkstatt</span></div>
+          </div>
+          <div class="wood" role="tabpanel" id="wood-nussbaum" aria-labelledby="tab-nussbaum" tabindex="0" hidden>
+            <p class="wood-text">Dunkel, schokoladenbraun, oft mit lebhafter Zeichnung. Selten und deshalb für besondere Stücke. Wir kaufen ihn, wenn irgendwo ein alter Baum gefällt werden muss.</p>
+            <dl class="wood-facts"><div><dt>Bei uns für</dt><dd>Esstische, Sideboards, Akzente</dd></div><div><dt>Härte</dt><dd>mittel</dd></div></dl>
+            <p class="wood-origin">Herkunft: einzelne Bäume aus Gärten der Region</p>
+            <div class="wood-distance"><span>meist unter 30 km</span></div>
+          </div>
+          <div class="wood" role="tabpanel" id="wood-laerche" aria-labelledby="tab-laerche" tabindex="0" hidden>
+            <p class="wood-text">Rötlich, harzreich und von Natur aus widerstandsfähig gegen Feuchtigkeit. Riecht beim Hobeln nach Wald. Gut für Bäder und alles, was Wasser abbekommt.</p>
+            <dl class="wood-facts"><div><dt>Bei uns für</dt><dd>Bäder, Böden, Verkleidungen</dd></div><div><dt>Härte</dt><dd>mittel</dd></div></dl>
+            <p class="wood-origin">Herkunft: Fichtelgebirge</p>
+            <div class="wood-distance"><span>18 km bis zur Werkstatt</span></div>
+          </div>
+          <div class="wood" role="tabpanel" id="wood-fichte" aria-labelledby="tab-fichte" tabindex="0" hidden>
+            <p class="wood-text">Hell, leicht und gut zu bearbeiten. Das Holz, das unserer Gegend den Namen gegeben hat, und das, mit dem bei uns jeder Lehrling anfängt.</p>
+            <dl class="wood-facts"><div><dt>Bei uns für</dt><dd>Innenausbau, Verkleidungen, Korpusse</dd></div><div><dt>Härte</dt><dd>gering</dd></div></dl>
+            <p class="wood-origin">Herkunft: Fichtelgebirge</p>
+            <div class="wood-distance"><span>2 km bis zur Werkstatt</span></div>
+          </div>
+          <p class="woods-scale" aria-hidden="true"><span>Werkstatt</span><span>60 km</span></p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ABLAUF -->
-  <section class="section" id="ablauf">
+  <!-- ===== ABLAUF ===== -->
+  <section class="section" id="ablauf" aria-labelledby="ablauf-title">
     <div class="wrap">
-      <header class="section-head">
-        <p class="section-no">04</p>
-        <h2>Vom Aufmaß bis zur Montage</h2>
+      <header class="split-head">
+        <h2 id="ablauf-title">Vom Aufmaß bis zur Montage</h2>
+        <p>Für eine Küche rechnen wir mit acht bis zwölf Wochen, für einen Einbauschrank mit vier bis sechs. Den genauen Termin nennen wir Ihnen mit dem Angebot.</p>
       </header>
       <ol class="steps">
         <li>
@@ -238,143 +347,195 @@
     </div>
   </section>
 
-  <!-- KARRIERE -->
-  <section class="section section-alt" id="karriere">
+  <!-- ===== KARRIERE ===== -->
+  <section class="section section-alt" id="karriere" aria-labelledby="karriere-title">
     <div class="wrap karriere-grid">
-      <div>
-        <header class="section-head">
-          <p class="section-no">05</p>
-          <h2>Bei uns arbeiten</h2>
-          <p class="section-intro">Feste Arbeitszeiten, kein Akkord, eigene Projekte vom Aufmaß bis zur Montage. Und eine Werkstatt, in der Maschinen gewartet werden, bevor sie kaputtgehen.</p>
-        </header>
+      <figure class="karriere-figure">
+        <div class="reveal-img"><img src="img/karriere.webp" alt="Schwalbenschwanzverbindung aus Eiche auf der Hobelbank, daneben Stechbeitel, Streichmaß und Bleistift" width="848" height="1264" loading="lazy"></div>
+      </figure>
+      <div class="karriere-text">
+        <h2 class="eyebrow" id="karriere-title">Bei uns arbeiten</h2>
+        <p class="statement statement-sm">Feste Arbeitszeiten, kein Akkord und eigene Projekte vom Aufmaß bis zur Montage.</p>
+        <p class="body-text">Dazu eine Werkstatt, in der Maschinen gewartet werden, bevor sie kaputtgehen, und ein Team, das Fragen nicht als Störung versteht. Freitags ist um 13 Uhr Schluss.</p>
         <ul class="jobs">
           <li>
             <a href="#kontakt" class="job" data-projekt="Bewerbung">
               <span class="job-title">Schreiner:in / Tischler:in</span>
-              <span class="job-meta">Vollzeit · Werkstatt und Montage</span>
-              <span class="job-arrow" aria-hidden="true">→</span>
+              <span class="job-meta">Vollzeit, Werkstatt und Montage</span>
+              <span class="job-arrow" aria-hidden="true"></span>
             </a>
           </li>
           <li>
             <a href="#kontakt" class="job" data-projekt="Bewerbung">
               <span class="job-title">Ausbildung Schreiner:in 2027</span>
-              <span class="job-meta">Start 1. September · 2 Plätze</span>
-              <span class="job-arrow" aria-hidden="true">→</span>
+              <span class="job-meta">Start 1. September, zwei Plätze</span>
+              <span class="job-arrow" aria-hidden="true"></span>
             </a>
           </li>
           <li>
             <a href="#kontakt" class="job" data-projekt="Bewerbung">
               <span class="job-title">Praktikum</span>
-              <span class="job-meta">1–2 Wochen · jederzeit nach Absprache</span>
-              <span class="job-arrow" aria-hidden="true">→</span>
+              <span class="job-meta">Ein bis zwei Wochen, jederzeit nach Absprache</span>
+              <span class="job-arrow" aria-hidden="true"></span>
             </a>
           </li>
         </ul>
       </div>
-      <figure class="karriere-figure">
-        <img src="img/karriere.webp" alt="Schwalbenschwanzverbindung aus Eiche auf der Hobelbank, daneben Stechbeitel, Streichmaß und Bleistift" width="848" height="1264" loading="lazy">
-      </figure>
     </div>
   </section>
 
-  <!-- KONTAKT -->
-  <section class="section section-forest" id="kontakt">
+  <!-- ===== KONTAKT ===== -->
+  <section class="section section-forest" id="kontakt" aria-labelledby="kontakt-title">
     <div class="wrap">
-      <header class="section-head">
-        <p class="section-no">06</p>
-        <h2>Ihr Projekt</h2>
-        <p class="section-intro">Erzählen Sie uns kurz, was Sie vorhaben. Wir melden uns innerhalb von zwei Werktagen und vereinbaren einen Termin für das Aufmaß.</p>
+      <header class="split-head">
+        <h2 id="kontakt-title">Ihr Projekt</h2>
+        <p>Drei kurze Schritte, dann haben wir alles für ein erstes Gespräch. Wir melden uns innerhalb von zwei Werktagen und vereinbaren einen Termin für das Aufmaß.</p>
       </header>
     </div>
+
     <div class="wrap kontakt-grid">
-      <div>
+      <div class="anfrage">
+        <ol class="progress" id="progress">
+          <li class="is-current" aria-current="step"><span>1</span> Vorhaben</li>
+          <li><span>2</span> Details</li>
+          <li><span>3</span> Kontakt</li>
+        </ol>
+
         <form class="form" id="anfrageForm" novalidate>
-          <fieldset class="form-choice">
-            <legend>Worum geht es?</legend>
-            <div class="chips">
-              <label><input type="radio" name="projekt" value="Küche" required> <span>Küche</span></label>
-              <label><input type="radio" name="projekt" value="Einbaumöbel"> <span>Einbaumöbel</span></label>
-              <label><input type="radio" name="projekt" value="Treppe / Innenausbau"> <span>Treppe / Innenausbau</span></label>
-              <label><input type="radio" name="projekt" value="Tisch / Einzelstück"> <span>Tisch / Einzelstück</span></label>
-              <label><input type="radio" name="projekt" value="Bewerbung"> <span>Bewerbung</span></label>
-              <label><input type="radio" name="projekt" value="Sonstiges"> <span>Sonstiges</span></label>
+          <fieldset class="step" data-step="1">
+            <legend tabindex="-1">Worum geht es?</legend>
+            <div class="choices" aria-describedby="err-projekt">
+              <label><input type="radio" name="projekt" value="Küche"><span>Küche</span></label>
+              <label><input type="radio" name="projekt" value="Einbaumöbel"><span>Einbaumöbel</span></label>
+              <label><input type="radio" name="projekt" value="Treppe / Innenausbau"><span>Treppe / Innenausbau</span></label>
+              <label><input type="radio" name="projekt" value="Tisch / Einzelstück"><span>Tisch / Einzelstück</span></label>
+              <label><input type="radio" name="projekt" value="Bewerbung"><span>Bewerbung</span></label>
+              <label><input type="radio" name="projekt" value="Etwas anderes"><span>Etwas anderes</span></label>
+            </div>
+            <p class="field-error" id="err-projekt"></p>
+            <div class="step-nav">
+              <button type="button" class="btn btn-brass" data-next>Weiter</button>
             </div>
           </fieldset>
 
-          <div class="form-row form-row-2">
+          <fieldset class="step" data-step="2" hidden>
+            <legend tabindex="-1" id="step2-legend">Erzählen Sie uns von Ihrem Vorhaben</legend>
             <div class="field">
-              <label for="zeitraum">Gewünschter Zeitraum</label>
-              <select id="zeitraum" name="zeitraum">
-                <option value="">Bitte wählen</option>
-                <option>In den nächsten 3 Monaten</option>
-                <option>In 3–6 Monaten</option>
-                <option>In mehr als 6 Monaten</option>
-                <option>Noch offen</option>
-              </select>
+              <label for="nachricht" id="nachricht-label">Ihr Vorhaben</label>
+              <textarea id="nachricht" name="nachricht" rows="5" aria-describedby="err-nachricht" placeholder="Was soll entstehen, und für welchen Raum?"></textarea>
+              <p class="field-error" id="err-nachricht"></p>
             </div>
-            <div class="field">
-              <label for="budget">Budgetrahmen <span class="optional">(optional)</span></label>
-              <select id="budget" name="budget">
-                <option value="">Keine Angabe</option>
-                <option>bis 5.000 €</option>
-                <option>5.000–15.000 €</option>
-                <option>15.000–40.000 €</option>
-                <option>über 40.000 €</option>
-              </select>
+            <div class="form-row-2" data-hide-for="Bewerbung">
+              <div class="field">
+                <label for="zeitraum">Gewünschter Zeitraum</label>
+                <select id="zeitraum" name="zeitraum">
+                  <option value="">Noch offen</option>
+                  <option>In den nächsten 3 Monaten</option>
+                  <option>In 3 bis 6 Monaten</option>
+                  <option>In mehr als 6 Monaten</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="budget">Budgetrahmen <span class="optional">(optional)</span></label>
+                <select id="budget" name="budget">
+                  <option value="">Keine Angabe</option>
+                  <option>bis 5.000 €</option>
+                  <option>5.000 bis 15.000 €</option>
+                  <option>15.000 bis 40.000 €</option>
+                  <option>über 40.000 €</option>
+                </select>
+              </div>
             </div>
-          </div>
+            <div class="field" data-hide-for="Bewerbung">
+              <label for="ort">Ort des Projekts <span class="optional">(optional)</span></label>
+              <input id="ort" name="ort" type="text" autocomplete="address-level2" aria-describedby="ort-hint">
+              <p class="field-hint" id="ort-hint">Wir arbeiten im Umkreis von etwa 60 Kilometern um Lindenreuth.</p>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="link-back" data-prev>Zurück</button>
+              <button type="button" class="btn btn-brass" data-next>Weiter</button>
+            </div>
+          </fieldset>
 
-          <div class="field">
-            <label for="nachricht">Ihr Vorhaben</label>
-            <textarea id="nachricht" name="nachricht" rows="5" required placeholder="z. B. Einbauschrank unter der Dachschräge, ca. 4 m breit, Altbau mit schiefen Wänden"></textarea>
-          </div>
+          <fieldset class="step" data-step="3" hidden>
+            <legend tabindex="-1">Wie erreichen wir Sie?</legend>
+            <div class="form-row-2">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" aria-describedby="err-name">
+                <p class="field-error" id="err-name"></p>
+              </div>
+              <div class="field">
+                <label for="email">E-Mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" aria-describedby="err-email">
+                <p class="field-error" id="err-email"></p>
+              </div>
+            </div>
+            <div class="form-row-2">
+              <fieldset class="field field-plain">
+                <legend>Rückmeldung lieber per</legend>
+                <div class="choices choices-sm">
+                  <label><input type="radio" name="rueckmeldung" value="E-Mail" checked><span>E-Mail</span></label>
+                  <label><input type="radio" name="rueckmeldung" value="Telefon"><span>Telefon</span></label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="telefon">Telefon <span class="optional" id="telefon-optional">(optional)</span></label>
+                <input id="telefon" name="telefon" type="tel" autocomplete="tel" aria-describedby="err-telefon">
+                <p class="field-error" id="err-telefon"></p>
+              </div>
+            </div>
 
-          <div class="form-row form-row-2">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="ort">Ort</label>
-              <input id="ort" name="ort" type="text" autocomplete="address-level2">
-            </div>
-          </div>
-          <div class="form-row form-row-2">
-            <div class="field">
-              <label for="email">E-Mail</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="telefon">Telefon <span class="optional">(optional)</span></label>
-              <input id="telefon" name="telefon" type="tel" autocomplete="tel">
-            </div>
-          </div>
+            <div class="summary" id="summary"></div>
 
-          <p class="form-note">Pläne oder Fotos senden Sie uns gern im Anschluss per E-Mail. Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage.</p>
-          <button type="submit" class="btn btn-brass">Anfrage senden</button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <label class="consent">
+              <input type="checkbox" name="einwilligung" id="einwilligung" aria-describedby="err-einwilligung">
+              <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.</span>
+            </label>
+            <p class="field-error" id="err-einwilligung"></p>
+
+            <div class="step-nav">
+              <button type="button" class="link-back" data-prev>Zurück</button>
+              <button type="submit" class="btn btn-brass">Anfrage senden</button>
+            </div>
+          </fieldset>
         </form>
+
+        <div class="success" id="formSuccess" hidden tabindex="-1">
+          <p class="success-title" id="successTitle">Vielen Dank.</p>
+          <p class="success-lead">So geht es jetzt weiter:</p>
+          <ol class="success-steps">
+            <li>Innerhalb von zwei Werktagen meldet sich Johanna Kühlbrandt persönlich bei Ihnen.</li>
+            <li>Wir vereinbaren einen Termin für Beratung und Aufmaß bei Ihnen vor Ort.</li>
+            <li>Etwa zwei Wochen später erhalten Sie Entwurf und Festpreis.</li>
+          </ol>
+          <p class="success-demo">Hinweis: Dies ist ein Beispielprojekt. Ihre Angaben wurden weder versendet noch gespeichert.</p>
+          <button type="button" class="link-back" id="formRestart">Neue Anfrage beginnen</button>
+        </div>
       </div>
 
       <aside class="kontakt-card" aria-label="Kontaktdaten">
+        <p class="open-status" id="openStatus" hidden><span class="open-dot" aria-hidden="true"></span><span id="openStatusText"></span></p>
         <div class="kontakt-block">
           <h3>Werkstatt &amp; Ausstellung</h3>
           <p>Am Sägewerk 4<br>Lindenreuth im Fichtelgebirge</p>
         </div>
         <div class="kontakt-block">
           <h3>Telefon</h3>
-          <p><a href="tel:+491713920042">0171 39200 42</a></p>
+          <p><a href="tel:+491713920042">0171&nbsp;39200&nbsp;42</a></p>
         </div>
         <div class="kontakt-block">
           <h3>E-Mail</h3>
           <p><a href="mailto:werkstatt@kuehlbrandt.example">werkstatt@kuehlbrandt.example</a></p>
         </div>
         <div class="kontakt-block">
-          <h3>Ausstellung geöffnet</h3>
+          <h3>Öffnungszeiten Ausstellung</h3>
           <table class="hours">
-            <tr><th scope="row">Mo–Do</th><td>7:30–16:30</td></tr>
-            <tr><th scope="row">Fr</th><td>7:30–13:00</td></tr>
+            <tbody>
+            <tr><th scope="row">Mo–Do</th><td>7:30–16:30 Uhr</td></tr>
+            <tr><th scope="row">Fr</th><td>7:30–13:00 Uhr</td></tr>
             <tr><th scope="row">Sa</th><td>nach Vereinbarung</td></tr>
+            </tbody>
           </table>
         </div>
       </aside>
@@ -384,15 +545,45 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p class="footer-mark">Kühlbrandt</p>
-    <p class="footer-note">Schreinerei Kühlbrandt ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert, Schriften: Libre Caslon und Jost (SIL Open Font License).</p>
-    <nav class="footer-links" aria-label="Rechtliches">
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
-    </nav>
+  <div class="wrap">
+    <p class="footer-mark" aria-hidden="true">Kühlbrandt</p>
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-h">Werkstatt</h2>
+        <p>Am Sägewerk 4<br>Lindenreuth im Fichtelgebirge</p>
+      </div>
+      <div>
+        <h2 class="footer-h">Kontakt</h2>
+        <p><a href="tel:+491713920042">0171&nbsp;39200&nbsp;42</a><br><a href="mailto:werkstatt@kuehlbrandt.example">werkstatt@kuehlbrandt.example</a></p>
+      </div>
+      <nav aria-label="Seitennavigation">
+        <h2 class="footer-h">Seite</h2>
+        <p><a href="#leistungen">Leistungen</a><br><a href="#arbeiten">Arbeiten</a><br><a href="#karriere">Karriere</a></p>
+      </nav>
+      <nav aria-label="Rechtliches">
+        <h2 class="footer-h">Rechtliches</h2>
+        <p><a href="/impressum.html">Impressum</a><br><a href="/datenschutz.html">Datenschutz</a></p>
+      </nav>
+    </div>
+    <p class="footer-note">Schreinerei Kühlbrandt ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert. Schriften: Libre Caslon und Jost (SIL Open Font License).</p>
   </div>
 </footer>
+
+<dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle">
+  <div class="dialog-inner">
+    <div class="dialog-image"><img id="dialogImg" src="img/arbeit-kueche.webp" alt="" width="1536" height="1024"></div>
+    <div class="dialog-body">
+      <button type="button" class="dialog-close" id="dialogClose">Schließen</button>
+      <p class="work-meta" id="dialogMeta"></p>
+      <h2 id="dialogTitle">Projekt</h2>
+      <div class="dialog-content" id="dialogContent"></div>
+      <div class="dialog-nav">
+        <button type="button" class="link-back" id="dialogPrev">Vorheriges</button>
+        <button type="button" class="link-arrow" id="dialogNext">Nächstes Projekt</button>
+      </div>
+    </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>
