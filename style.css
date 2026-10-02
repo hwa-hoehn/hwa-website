@@ -905,3 +905,4 @@ summary:focus-visible {
   .portfolio-card-featured { grid-template-columns: 1fr; }
 }
 
+.portfolio-card-featured .portfolio-badge { top: auto; bottom: 16px; left: auto; right: 16px; }

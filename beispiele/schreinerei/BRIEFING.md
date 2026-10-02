@@ -45,5 +45,5 @@
 
 - Schriften: Libre Caslon Display, Libre Caslon Text und Jost,
   SIL Open Font License 1.1 (Lizenztexte im Ordner `fonts/`), lokal eingebunden
-- Fotos: Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung
-  erforderlich); Nachweise in `img/BILDNACHWEIS.md`
+- Bilder: KI-generiert (ChatGPT und Gemini), auf der Seite gekennzeichnet;
+  Nachweis in `img/BILDNACHWEIS.md`
