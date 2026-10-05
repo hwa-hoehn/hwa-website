@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2B302E">
+<title>Gutscheine | Gasthof Grünlinger (Beispielprojekt)</title>
+<meta name="description" content="Gutschein für den Gasthof Grünlinger gestalten: Betrag, Motiv und Widmung wählen. Beispielprojekt von HWA.">
+<meta property="og:title" content="Gutscheine | Gasthof Grünlinger (Beispielprojekt)">
+<meta property="og:description" content="Gutschein für den Gasthof Grünlinger gestalten: Betrag, Motiv und Widmung wählen. Beispielprojekt von HWA.">
+<meta property="og:type" content="website">
+<link rel="preload" href="fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/kueche.webp" as="image">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%237A2E24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F5EFE3' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="demo-bar" role="note">
+  <p>Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Betrieb, Personen, Preise und Kontaktdaten sind frei erfunden, die Bilder KI-generiert. Es werden keine Daten versendet.</p>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo" aria-label="Gasthof Grünlinger, zur Startseite">
+      <span class="logo-small">Gasthof</span>
+      <span class="logo-name">Grünlinger</span>
+    </a>
+    <p class="header-status status-line" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="zimmer.html">Zimmer</a>
+      <a href="feiern.html">Feiern</a>
+      <a href="termine.html">Termine</a>
+      <a href="gutscheine.html" aria-current="page">Gutscheine</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="reservieren.html" class="nav-cta">Tisch reservieren</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav"><span class="nav-toggle-label">Menü</span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-image"><img src="img/kueche.webp" alt="Hände eines Kochs formen Kartoffelklöße auf einem bemehlten Holzbrett" width="1024" height="1536" fetchpriority="high" class="pos-40"></div>
+    <div class="wrap page-hero-content">
+      <p class="hero-kicker">Gutscheine</p>
+      <h1 id="page-title">Ein Abend bei uns zum Verschenken</h1>
+      <p class="hero-lead">Für Geburtstage, Jubiläen oder einfach so. Gestalten Sie Ihren Gutschein hier selbst.</p>
+    </div>
+  </section>
+
+<section class="section gutschein-section" id="gutschein" aria-label="Gutschein gestalten">
+    <div class="wrap gutschein-grid">
+      <div>
+        <p class="gutschein-intro">Betrag wählen, Motiv aussuchen, ein paar Worte dazu. Im echten Betrieb bezahlen Sie online und bekommen den Gutschein sofort als PDF.</p>
+
+        <div class="voucher-form" id="voucherForm">
+          <fieldset>
+            <legend>Betrag</legend>
+            <div class="amounts">
+              <label><input type="radio" name="betrag" value="25"><span>25 €</span></label>
+              <label><input type="radio" name="betrag" value="50" checked><span>50 €</span></label>
+              <label><input type="radio" name="betrag" value="75"><span>75 €</span></label>
+              <label><input type="radio" name="betrag" value="100"><span>100 €</span></label>
+              <label><input type="radio" name="betrag" value="frei"><span>Freier Betrag</span></label>
+            </div>
+            <div class="field field-inline" id="freeAmountField" hidden>
+              <label for="v-free">Betrag in Euro (10 bis 500)</label>
+              <input id="v-free" type="number" min="10" max="500" step="5" inputmode="numeric" value="60" aria-describedby="err-v-free">
+              <p class="field-error" id="err-v-free"></p>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Motiv</legend>
+            <div class="motifs">
+              <label><input type="radio" name="motiv" value="stube" checked><span class="motif motif-stube">Wirtsstube</span></label>
+              <label><input type="radio" name="motiv" value="garten"><span class="motif motif-garten">Biergarten</span></label>
+              <label><input type="radio" name="motiv" value="fest"><span class="motif motif-fest">Festtag</span></label>
+            </div>
+          </fieldset>
+          <div class="calc-row">
+            <div class="field">
+              <label for="v-to">Für</label>
+              <input id="v-to" type="text" maxlength="40" placeholder="z. B. Oma Gerda">
+            </div>
+            <div class="field">
+              <label for="v-from">Von</label>
+              <input id="v-from" type="text" maxlength="40" placeholder="z. B. Lisa und Jonas">
+            </div>
+          </div>
+          <div class="field">
+            <label for="v-msg">Ein paar Worte <span class="optional" id="v-count">(noch 140 Zeichen)</span></label>
+            <textarea id="v-msg" rows="3" maxlength="140" placeholder="z. B. Für einen Sonntag mit Schäufele und ohne Abwasch."></textarea>
+          </div>
+          <button type="button" class="btn btn-red" id="voucherPrint">Vorschau drucken</button>
+        </div>
+      </div>
+
+      <div class="voucher-wrap">
+        <div class="voucher voucher-stube" id="voucher" aria-live="polite">
+          <div class="voucher-inner">
+            <p class="voucher-top"><span class="logo-small">Gasthof</span> Grünlinger</p>
+            <p class="voucher-title">Gutschein</p>
+            <p class="voucher-amount" id="vAmount">50 €</p>
+            <p class="voucher-for" id="vFor">für einen Besuch in unserem Gasthof</p>
+            <p class="voucher-msg" id="vMsg"></p>
+            <div class="voucher-foot">
+              <span id="vFrom"></span>
+              <span id="vCode">Nr. GG-0000</span>
+            </div>
+            <p class="voucher-muster">Muster · Beispielprojekt · nicht einlösbar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="logo logo-footer"><span class="logo-small">Gasthof</span><span class="logo-name">Grünlinger</span></p>
+        <p>Dorfplatz 3<br>Lindenreuth im Fichtelgebirge</p>
+        <p><a href="tel:+491713920087">0171&nbsp;39200&nbsp;87</a></p>
+      </div>
+      <div>
+        <h2 class="footer-h">Öffnungszeiten</h2>
+        <p class="status-line footer-status" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+        <p>Mi–Sa 11:30–14:00 und 17:00–23:00 Uhr<br>So &amp; Feiertag 11:00–21:00 Uhr<br>Mo, Di Ruhetag</p>
+      </div>
+      <nav aria-label="Seiten">
+        <h2 class="footer-h">Gasthof</h2>
+        <ul class="footer-list">
+          <li><a href="speisekarte.html">Speisekarte</a></li>
+          <li><a href="reservieren.html">Tisch reservieren</a></li>
+          <li><a href="zimmer.html">Zimmer</a></li>
+          <li><a href="feiern.html">Feiern</a></li>
+          <li><a href="termine.html">Termine</a></li>
+          <li><a href="gutscheine.html">Gutscheine</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Rechtliches">
+        <h2 class="footer-h">Rechtliches</h2>
+        <ul class="footer-list">
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-note">Gasthof Grünlinger ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert. Schriften: Young Serif, UnifrakturMaguntia, Grenze und Albert Sans (SIL Open Font License).</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

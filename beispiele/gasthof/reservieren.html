@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2B302E">
+<title>Tisch reservieren | Gasthof Grünlinger (Beispielprojekt)</title>
+<meta name="description" content="Tisch im Gasthof Grünlinger reservieren: Tag wählen, freie Uhrzeiten sehen, fertig. Beispielprojekt von HWA.">
+<meta property="og:title" content="Tisch reservieren | Gasthof Grünlinger (Beispielprojekt)">
+<meta property="og:description" content="Tisch im Gasthof Grünlinger reservieren: Tag wählen, freie Uhrzeiten sehen, fertig. Beispielprojekt von HWA.">
+<meta property="og:type" content="website">
+<link rel="preload" href="fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/stube.webp" as="image">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%237A2E24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F5EFE3' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="demo-bar" role="note">
+  <p>Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Betrieb, Personen, Preise und Kontaktdaten sind frei erfunden, die Bilder KI-generiert. Es werden keine Daten versendet.</p>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo" aria-label="Gasthof Grünlinger, zur Startseite">
+      <span class="logo-small">Gasthof</span>
+      <span class="logo-name">Grünlinger</span>
+    </a>
+    <p class="header-status status-line" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="zimmer.html">Zimmer</a>
+      <a href="feiern.html">Feiern</a>
+      <a href="termine.html">Termine</a>
+      <a href="gutscheine.html">Gutscheine</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="reservieren.html" class="nav-cta" aria-current="page">Tisch reservieren</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav"><span class="nav-toggle-label">Menü</span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-image"><img src="img/stube.webp" alt="Die Wirtsstube mit Holzvertäfelung, grünem Kachelofen und gedeckten Eichentischen" width="1536" height="1024" fetchpriority="high" class="pos-60"></div>
+    <div class="wrap page-hero-content">
+      <p class="hero-kicker">Reservierung</p>
+      <h1 id="page-title">Tisch reservieren</h1>
+      <p class="hero-lead">Für bis zu zwölf Personen direkt hier. Sie sehen sofort, welche Zeiten noch frei sind. Für größere Gesellschaften schauen Sie bitte bei <a href="feiern.html">Feiern</a>.</p>
+    </div>
+  </section>
+
+<section class="section reserve-section" id="reservieren" aria-labelledby="reserve-title">
+    <div class="wrap">
+
+      <form class="reserve" id="reserveForm" novalidate>
+        <div class="reserve-grid">
+          <fieldset class="reserve-step">
+            <legend><span class="step-no">1</span> Tag</legend>
+            <div class="calendar" id="calendar">
+              <div class="cal-head">
+                <button type="button" class="cal-nav" data-cal="-1" aria-label="Vorheriger Monat">‹</button>
+                <p class="cal-month" id="calMonth" aria-live="polite"></p>
+                <button type="button" class="cal-nav" data-cal="1" aria-label="Nächster Monat">›</button>
+              </div>
+              <div class="cal-grid" id="calGrid" role="grid" aria-labelledby="calMonth"></div>
+              <p class="cal-legend"><span class="lg lg-closed"></span> Ruhetag oder Betriebsurlaub</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="reserve-step">
+            <legend><span class="step-no">2</span> Personen &amp; Uhrzeit</legend>
+            <div class="stepper" role="group" aria-label="Anzahl Personen">
+              <button type="button" class="stepper-btn" data-step="-1" aria-label="Eine Person weniger">−</button>
+              <output class="stepper-value" id="guestsOut" aria-live="polite">2 Personen</output>
+              <button type="button" class="stepper-btn" data-step="1" aria-label="Eine Person mehr">+</button>
+            </div>
+            <p class="field-hint" id="guestsHint">Ab 13 Personen planen wir gern Ihre Feier mit Ihnen.</p>
+
+            <div class="area-choice" id="areaChoice">
+              <label><input type="radio" name="bereich" value="Wirtsstube" checked><span>Wirtsstube</span></label>
+              <label><input type="radio" name="bereich" value="Biergarten"><span>Biergarten</span></label>
+            </div>
+            <p class="field-hint" id="areaHint" hidden></p>
+
+            <div class="slots" id="slots" aria-live="polite">
+              <p class="slots-empty">Bitte wählen Sie zuerst einen Tag.</p>
+            </div>
+            <p class="field-error" id="err-slot"></p>
+          </fieldset>
+
+          <fieldset class="reserve-step">
+            <legend><span class="step-no">3</span> Ihre Angaben</legend>
+            <div class="field">
+              <label for="r-name">Name</label>
+              <input id="r-name" name="name" type="text" autocomplete="name" aria-describedby="err-r-name">
+              <p class="field-error" id="err-r-name"></p>
+            </div>
+            <div class="field">
+              <label for="r-email">E-Mail</label>
+              <input id="r-email" name="email" type="email" autocomplete="email" aria-describedby="err-r-email">
+              <p class="field-error" id="err-r-email"></p>
+            </div>
+            <div class="field">
+              <label for="r-tel">Telefon <span class="optional">(für Rückfragen)</span></label>
+              <input id="r-tel" name="telefon" type="tel" autocomplete="tel">
+            </div>
+            <fieldset class="extras">
+              <legend>Darf es etwas mehr sein? <span class="optional">(optional)</span></legend>
+              <label><input type="checkbox" name="extra-kinderstuhl" value="Kinderstuhl"><span>Kinderstuhl</span></label>
+              <label><input type="checkbox" name="extra-hund" value="Hund dabei"><span>Hund dabei</span></label>
+              <label><input type="checkbox" name="extra-barrierefrei" value="Barrierefreier Platz"><span>Barrierefreier Platz</span></label>
+              <label><input type="checkbox" name="extra-geburtstag" value="Geburtstag"><span>Wir feiern Geburtstag</span></label>
+            </fieldset>
+          </fieldset>
+        </div>
+
+        <div class="reserve-bar">
+          <p class="reserve-summary" id="reserveSummary">Noch kein Termin gewählt.</p>
+          <button type="submit" class="btn btn-mustard">Verbindlich reservieren</button>
+        </div>
+      </form>
+
+      <div class="reserve-done" id="reserveDone" hidden tabindex="-1">
+        <p class="done-title">Ihr Tisch ist vorgemerkt.</p>
+        <p class="done-text" id="reserveDoneText"></p>
+        <div class="done-actions">
+          <button type="button" class="btn btn-mustard" id="reserveIcs">In den Kalender eintragen</button>
+          <button type="button" class="link-arrow link-arrow-light" id="reserveAgain">Weitere Reservierung</button>
+        </div>
+        <p class="demo-note">Beispielprojekt: Die Reservierung wurde nicht versendet. Im echten Betrieb landet sie direkt im Reservierungsbuch, und Sie erhalten eine Bestätigung per E-Mail.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="logo logo-footer"><span class="logo-small">Gasthof</span><span class="logo-name">Grünlinger</span></p>
+        <p>Dorfplatz 3<br>Lindenreuth im Fichtelgebirge</p>
+        <p><a href="tel:+491713920087">0171&nbsp;39200&nbsp;87</a></p>
+      </div>
+      <div>
+        <h2 class="footer-h">Öffnungszeiten</h2>
+        <p class="status-line footer-status" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+        <p>Mi–Sa 11:30–14:00 und 17:00–23:00 Uhr<br>So &amp; Feiertag 11:00–21:00 Uhr<br>Mo, Di Ruhetag</p>
+      </div>
+      <nav aria-label="Seiten">
+        <h2 class="footer-h">Gasthof</h2>
+        <ul class="footer-list">
+          <li><a href="speisekarte.html">Speisekarte</a></li>
+          <li><a href="reservieren.html">Tisch reservieren</a></li>
+          <li><a href="zimmer.html">Zimmer</a></li>
+          <li><a href="feiern.html">Feiern</a></li>
+          <li><a href="termine.html">Termine</a></li>
+          <li><a href="gutscheine.html">Gutscheine</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Rechtliches">
+        <h2 class="footer-h">Rechtliches</h2>
+        <ul class="footer-list">
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-note">Gasthof Grünlinger ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert. Schriften: Young Serif, UnifrakturMaguntia, Grenze und Albert Sans (SIL Open Font License).</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

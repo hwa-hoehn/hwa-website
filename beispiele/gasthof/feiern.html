@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2B302E">
+<title>Feiern | Gasthof Grünlinger (Beispielprojekt)</title>
+<meta name="description" content="Taufe, Hochzeit, Geburtstag oder Trauerfeier im Gasthof Grünlinger: Raumfinder und Menüvorschläge. Beispielprojekt von HWA.">
+<meta property="og:title" content="Feiern | Gasthof Grünlinger (Beispielprojekt)">
+<meta property="og:description" content="Taufe, Hochzeit, Geburtstag oder Trauerfeier im Gasthof Grünlinger: Raumfinder und Menüvorschläge. Beispielprojekt von HWA.">
+<meta property="og:type" content="website">
+<link rel="preload" href="fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/saal.webp" as="image">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%237A2E24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F5EFE3' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="demo-bar" role="note">
+  <p>Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Betrieb, Personen, Preise und Kontaktdaten sind frei erfunden, die Bilder KI-generiert. Es werden keine Daten versendet.</p>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo" aria-label="Gasthof Grünlinger, zur Startseite">
+      <span class="logo-small">Gasthof</span>
+      <span class="logo-name">Grünlinger</span>
+    </a>
+    <p class="header-status status-line" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="zimmer.html">Zimmer</a>
+      <a href="feiern.html" aria-current="page">Feiern</a>
+      <a href="termine.html">Termine</a>
+      <a href="gutscheine.html">Gutscheine</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="reservieren.html" class="nav-cta">Tisch reservieren</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav"><span class="nav-toggle-label">Menü</span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-image"><img src="img/saal.webp" alt="Festlich gedeckte lange Tafel im Saal mit weißer Tischdecke, Kerzen und Wiesenblumen unter Holzbalken" width="1536" height="1024" fetchpriority="high" class="pos-50"></div>
+    <div class="wrap page-hero-content">
+      <p class="hero-kicker">Feiern</p>
+      <h1 id="page-title">Von der Taufe bis zum Leichenschmaus</h1>
+      <p class="hero-lead">Kachelofenstube, Saal oder Biergarten: Für jeden Anlass haben wir den passenden Raum und kochen, was zu Ihrer Feier passt.</p>
+    </div>
+  </section>
+
+  <section class="section feiern-section" aria-label="Raum und Menü finden">
+    <div class="wrap feiern-grid">
+      <div class="feiern-text">
+        <h2 class="feiern-h">Wo passt Ihre Feier hin?</h2>
+        <p>Schieben Sie den Regler auf Ihre Gästezahl, dann sehen Sie, welcher Raum passt und womit Sie ungefähr rechnen können.</p>
+        <div class="finder">
+          <p class="finder-label"><label for="guestRange">Gäste:</label> <output for="guestRange" id="guestRangeOut">30</output></p>
+          <input type="range" id="guestRange" min="10" max="120" step="5" value="30" aria-describedby="finderResult">
+          <ul class="rooms" id="roomList">
+            <li data-max="28"><strong>Kachelofenstube</strong><span>bis 28 Personen, gemütlich und für sich</span></li>
+            <li data-max="70"><strong>Saal</strong><span>bis 70 Personen, mit Platz zum Tanzen</span></li>
+            <li data-max="120" data-season="summer"><strong>Biergarten</strong><span>bis 120 Personen, Mai bis September</span></li>
+          </ul>
+          <p class="finder-result" id="finderResult" aria-live="polite"></p>
+        </div>
+        <button type="button" class="btn btn-red" id="feierAsk">Feier anfragen</button>
+      </div>
+      <div class="offers">
+        <h2 class="feiern-h">Vorschläge für Ihre Feier</h2>
+        <ul class="offer-list">
+          <li class="offer"><div class="dish-line"><span class="dish-name">Kaffee und Kuchen nach der Taufe</span><span class="dish-dots"></span><span class="dish-price">ab 14 €</span></div><p class="dish-desc">Hausgemachte Torten und Kaffee, so viel Sie mögen. Auf Wunsch abends eine Brotzeit.</p></li>
+          <li class="offer"><div class="dish-line"><span class="dish-name">Festmenü in drei Gängen</span><span class="dish-dots"></span><span class="dish-price">ab 42 €</span></div><p class="dish-desc">Suppe, Braten mit Klößen, Dessert. Die Gänge stellen wir gemeinsam mit Ihnen zusammen.</p></li>
+          <li class="offer"><div class="dish-line"><span class="dish-name">Fränkisches Buffet</span><span class="dish-dots"></span><span class="dish-price">ab 36 €</span></div><p class="dish-desc">Schäufele, Sauerbraten, Klöße, Salate und Nachspeisen. Ab 30 Personen.</p></li>
+          <li class="offer"><div class="dish-line"><span class="dish-name">Nach der Trauerfeier</span><span class="dish-dots"></span><span class="dish-price">ab 24 €</span></div><p class="dish-desc">Suppe, Braten oder Brotzeit, auch kurzfristig. Sprechen Sie uns einfach an.</p></li>
+        </ul>
+        <p class="offer-note">Preise pro Person ohne Getränke. Für Feiern ab 40 Personen gehört der Saal Ihnen allein.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="logo logo-footer"><span class="logo-small">Gasthof</span><span class="logo-name">Grünlinger</span></p>
+        <p>Dorfplatz 3<br>Lindenreuth im Fichtelgebirge</p>
+        <p><a href="tel:+491713920087">0171&nbsp;39200&nbsp;87</a></p>
+      </div>
+      <div>
+        <h2 class="footer-h">Öffnungszeiten</h2>
+        <p class="status-line footer-status" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+        <p>Mi–Sa 11:30–14:00 und 17:00–23:00 Uhr<br>So &amp; Feiertag 11:00–21:00 Uhr<br>Mo, Di Ruhetag</p>
+      </div>
+      <nav aria-label="Seiten">
+        <h2 class="footer-h">Gasthof</h2>
+        <ul class="footer-list">
+          <li><a href="speisekarte.html">Speisekarte</a></li>
+          <li><a href="reservieren.html">Tisch reservieren</a></li>
+          <li><a href="zimmer.html">Zimmer</a></li>
+          <li><a href="feiern.html">Feiern</a></li>
+          <li><a href="termine.html">Termine</a></li>
+          <li><a href="gutscheine.html">Gutscheine</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Rechtliches">
+        <h2 class="footer-h">Rechtliches</h2>
+        <ul class="footer-list">
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-note">Gasthof Grünlinger ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert. Schriften: Young Serif, UnifrakturMaguntia, Grenze und Albert Sans (SIL Open Font License).</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

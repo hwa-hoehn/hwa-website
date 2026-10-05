@@ -1,15 +1,13 @@
 /* ===== Schriften (lokal, SIL Open Font License) ===== */
-/* Grenze Gotisch: moderne Mischung aus Fraktur und Antiqua, passt zum Wirtshaus ohne altbacken zu wirken */
-@font-face { font-family: 'Grenze Gotisch'; src: url('fonts/grenze-gotisch-latin-300-normal.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-@font-face { font-family: 'Grenze Gotisch'; src: url('fonts/grenze-gotisch-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Grenze Gotisch'; src: url('fonts/grenze-gotisch-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Young Serif'; src: url('fonts/young-serif-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Maguntia'; src: url('fonts/unifrakturmaguntia-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
 @font-face { font-family: 'Grenze'; src: url('fonts/grenze-latin-300-normal.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Grenze'; src: url('fonts/grenze-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Grenze'; src: url('fonts/grenze-latin-300-italic.woff2') format('woff2'); font-weight: 300; font-style: italic; font-display: swap; }
 @font-face { font-family: 'Grenze'; src: url('fonts/grenze-latin-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: 'Schibsted Grotesk'; src: url('fonts/schibsted-grotesk-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Schibsted Grotesk'; src: url('fonts/schibsted-grotesk-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
-@font-face { font-family: 'Schibsted Grotesk'; src: url('fonts/schibsted-grotesk-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Albert Sans'; src: url('fonts/albert-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Albert Sans'; src: url('fonts/albert-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Albert Sans'; src: url('fonts/albert-sans-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
 
 /* ===== Farben und Maße ===== */
 :root {
@@ -33,9 +31,10 @@
   --error: #A3321F;
   --error-light: #F0B8A6;
 
-  --display: 'Grenze Gotisch', Georgia, serif;
+  --display: 'Young Serif', Georgia, serif;
+  --fraktur: 'Maguntia', 'Old English Text MT', serif;
   --serif: 'Grenze', Georgia, serif;
-  --sans: 'Schibsted Grotesk', system-ui, sans-serif;
+  --sans: 'Albert Sans', system-ui, sans-serif;
 
   --wrap: 1240px;
   --gutter: clamp(20px, 4.5vw, 56px);
@@ -86,7 +85,7 @@ h1, h2, h3 { text-wrap: balance; }
 .eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; }
 
 .section { padding: clamp(88px, 10vw, 150px) 0; scroll-margin-top: calc(var(--header) - 8px); }
-.section h2 { font-family: var(--display); font-size: clamp(42px, 5.4vw, 76px); line-height: 0.98; }
+.section h2 { font-family: var(--display); font-size: clamp(36px, 4.6vw, 62px); line-height: 1.05; letter-spacing: -0.005em; }
 .section-head { max-width: 760px; margin-bottom: clamp(44px, 5vw, 72px); }
 .section-head > p:last-child { margin-top: 20px; font-size: 18px; color: var(--ink-2); max-width: 36em; }
 .section-head-light .eyebrow { color: var(--mustard-light); }
@@ -144,8 +143,8 @@ h1, h2, h3 { text-wrap: balance; }
 .site-header.is-solid { background: var(--kalk); backdrop-filter: none; color: var(--ink); box-shadow: 0 1px 0 var(--line); }
 .header-inner { display: flex; align-items: center; gap: 28px; min-height: var(--header); }
 .logo { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; text-decoration: none; margin-right: auto; }
-.logo-small { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 0.34em; text-transform: uppercase; margin-right: -0.34em; }
-.logo-name { font-family: var(--display); font-weight: 500; font-size: 32px; margin-top: 3px; }
+.logo-small { font-family: var(--fraktur); font-size: 18px; }
+.logo-name { font-family: var(--display); font-size: 27px; margin-top: 1px; }
 .site-header.is-solid .logo { color: var(--red); }
 
 .status-line { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; }
@@ -157,7 +156,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 .main-nav { display: flex; align-items: center; gap: clamp(16px, 2vw, 28px); }
 .main-nav a { font-size: 15px; font-weight: 500; text-decoration: none; padding: 6px 0; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
-.main-nav a:hover { border-bottom-color: currentColor; }
+.main-nav a:hover, .main-nav a[aria-current="page"]:not(.nav-cta) { border-bottom-color: currentColor; }
 .main-nav .nav-cta { padding: 10px 18px; border: 1px solid currentColor; border-radius: var(--radius); }
 .site-header.is-solid .nav-cta { background: var(--red); border-color: var(--red); color: var(--kalk); }
 .main-nav .nav-cta:hover { background: var(--kalk); color: var(--ink); border-color: var(--kalk); }
@@ -165,7 +164,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 .nav-toggle { display: none; background: none; border: 1px solid currentColor; border-radius: var(--radius); padding: 8px 14px; cursor: pointer; font-size: 15px; font-weight: 500; position: relative; z-index: 2; }
 
-@media (max-width: 1340px) { .header-status { display: none !important; } }
+@media (max-width: 1480px) { .header-status { display: none !important; } }
 .header-status, .main-nav .nav-cta { white-space: nowrap; }
 @media (max-width: 960px) {
   .nav-toggle { display: block; }
@@ -201,7 +200,7 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .hero-content { align-self: end; padding-top: calc(var(--header) + 40px); padding-bottom: clamp(40px, 5vw, 64px); }
 .hero-kicker { font-family: var(--serif); font-style: italic; font-size: 20px; margin-bottom: 10px; opacity: 0.9; }
-.hero h1 { font-family: var(--display); font-weight: 300; font-size: clamp(64px, 10vw, 152px); line-height: 0.9; letter-spacing: -0.005em; max-width: 9em; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.25); }
+.hero h1 { font-family: var(--display); font-size: clamp(54px, 8.4vw, 124px); line-height: 0.98; letter-spacing: -0.01em; max-width: 9em; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.25); }
 .hero-lead { max-width: 31em; margin-top: 22px; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.6; color: rgba(245, 239, 227, 0.9); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
@@ -218,8 +217,8 @@ h1, h2, h3 { text-wrap: balance; }
 .sign { position: absolute; top: calc(var(--header) + 12px); right: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter))); width: clamp(140px, 17vw, 236px); z-index: 1; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.35)); }
 .sign-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .sign-swing { transform-origin: 130px 14px; transform-box: view-box; animation: swing-in 3.2s var(--ease) 0.3s both, sway 7s ease-in-out 3.5s infinite; }
-.sign-gasthof { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.34em; fill: var(--kalk); }
-.sign-name { font-family: var(--display); font-weight: 500; font-size: 40px; fill: var(--kalk); }
+.sign-gasthof { font-family: var(--fraktur); font-size: 30px; fill: var(--kalk); }
+.sign-name { font-family: var(--display); font-size: 29px; fill: var(--kalk); }
 .sign-year { font-family: var(--serif); font-style: italic; font-size: 20px; fill: var(--mustard-light); }
 @keyframes swing-in {
   0% { transform: rotate(9deg); }
@@ -602,9 +601,9 @@ input[type="range"] { width: 100%; accent-color: var(--red); height: 28px; curso
 }
 .voucher:hover { transform: rotate(0deg) translateY(-4px); }
 .voucher-inner { height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 34px 26px 22px; border: 1px solid currentColor; outline: 1px solid currentColor; outline-offset: -7px; }
-.voucher-top { display: flex; flex-direction: column; align-items: center; font-family: var(--display); font-weight: 500; font-size: 28px; line-height: 1; }
-.voucher-top .logo-small { margin-bottom: 4px; }
-.voucher-title { margin-top: 26px; font-family: var(--display); font-weight: 300; font-size: 56px; line-height: 1; }
+.voucher-top { display: flex; flex-direction: column; align-items: center; font-family: var(--display); font-size: 24px; line-height: 1; }
+.voucher-top .logo-small { font-size: 17px; margin-bottom: 2px; }
+.voucher-title { margin-top: 28px; font-family: var(--fraktur); font-size: 44px; line-height: 1; }
 .voucher-amount { margin-top: 18px; font-family: var(--display); font-size: clamp(56px, 7vw, 80px); line-height: 1; }
 .voucher-for { margin-top: 14px; font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.35; }
 .voucher-msg { margin-top: auto; padding-top: 18px; font-family: var(--serif); font-size: 17px; line-height: 1.45; max-width: 20em; overflow-wrap: anywhere; }
@@ -642,15 +641,91 @@ input[type="range"] { width: 100%; accent-color: var(--red); height: 28px; curso
 @media (max-width: 520px) { .calc-row { grid-template-columns: 1fr; } }
 
 /* ===== Footer ===== */
-.site-footer { background: var(--slate); color: var(--chalk-2); padding: 56px 0 44px; }
-.footer-inner { display: grid; grid-template-columns: 1fr auto; gap: 28px 40px; align-items: center; }
-.logo-footer { color: var(--chalk); align-items: flex-start; margin: 0 0 10px; }
-.footer-brand p:last-child { font-size: 15px; }
-.footer-links { display: flex; gap: 24px; font-size: 15px; }
-.footer-links a, .footer-note a { color: var(--chalk); }
-.footer-note { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid var(--line-dark); font-size: 13px; }
+.site-footer { background: var(--slate); color: var(--chalk-2); padding: clamp(56px, 7vw, 88px) 0 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1.4fr 1fr 1fr; gap: 36px clamp(24px, 4vw, 56px); }
+.logo-footer { color: var(--chalk); align-items: flex-start; margin: 0 0 16px; }
+.site-footer p { font-size: 15px; line-height: 1.65; }
+.site-footer a { color: var(--chalk); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+.site-footer a:hover { border-bottom-color: var(--mustard); }
+.footer-brand p + p { margin-top: 10px; }
+.footer-h { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mustard-light); margin-bottom: 12px; }
+.footer-status { margin-bottom: 10px; color: var(--chalk); }
+.footer-list { display: grid; gap: 6px; font-size: 15px; }
+.footer-note { margin-top: clamp(40px, 5vw, 64px); padding-top: 22px; border-top: 1px solid var(--line-dark); font-size: 13px !important; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 
-@media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr; } }
+/* ===== Unterseiten: Kopfbereich ===== */
+.page-hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  margin-top: calc(-1 * var(--header));
+  min-height: clamp(380px, 58vh, 580px);
+  display: grid; grid-template-columns: minmax(0, 1fr); align-items: end;
+  color: var(--kalk); background: var(--slate);
+}
+.page-hero-image { position: absolute; inset: 0; z-index: -1; }
+.page-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.page-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22, 20, 19, 0.62) 0%, rgba(22, 20, 19, 0.2) 35%, rgba(22, 20, 19, 0.78) 100%); }
+.page-hero-content { padding-top: calc(var(--header) + 48px); padding-bottom: clamp(40px, 5vw, 64px); }
+.page-hero h1 { font-family: var(--display); font-size: clamp(40px, 6.4vw, 92px); hyphens: auto; -webkit-hyphens: auto; line-height: 1; letter-spacing: -0.01em; max-width: 13em; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.25); }
+.page-hero .hero-lead { max-width: 34em; }
+.page-hero .hero-lead a { color: var(--kalk); }
+.js .page-hero-content { animation: rise 1s var(--ease) both; }
+.js .page-hero-image img { animation: settle 2s var(--ease) both; }
+.menu-page { padding-top: clamp(56px, 6vw, 88px); }
+
+/* ===== Startseite: Teaser ===== */
+.teaser-section { }
+.teasers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
+.teaser { display: flex; flex-direction: column; height: 100%; text-decoration: none; }
+.teaser-image { display: block; overflow: hidden; border-radius: var(--radius); }
+.teaser-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 0.9s var(--ease); }
+.teaser:hover .teaser-image img { transform: scale(1.04); }
+.teaser-title { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; font-family: var(--display); font-size: 26px; line-height: 1.15; }
+.teaser-title::after { content: '→'; font-family: var(--sans); font-size: 20px; color: var(--red); transition: transform 0.3s var(--ease); }
+.teaser:hover .teaser-title::after { transform: translateX(5px); }
+.teaser-text { margin-top: 6px; font-size: 15px; color: var(--ink-2); }
+@media (max-width: 960px) { .teasers { grid-template-columns: 1fr 1fr; row-gap: 40px; } }
+@media (max-width: 480px) { .teasers { grid-template-columns: 1fr; } .teaser-image img { aspect-ratio: 3 / 2; } }
+
+.termine-mini { background: var(--kalk-2); }
+.termine-mini-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 32px; margin-bottom: clamp(36px, 4vw, 56px); }
+.termine-mini-head .section-head { margin-bottom: 0; }
+
+.gift-strip { background: var(--red); color: var(--kalk); padding: clamp(56px, 7vw, 96px) 0; }
+.gift-strip .eyebrow { color: var(--mustard-light); }
+.gift-strip h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height: 1.05; }
+.gift-strip-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px 40px; }
+.btn-light-solid { background: var(--kalk); color: var(--red); }
+.btn-light-solid:hover { background: #fff; }
+
+/* ===== Zimmer-Seite ===== */
+.room-list { display: grid; gap: 18px; }
+.room-card { padding: 24px 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
+.room-card h2 { display: flex; align-items: baseline; gap: 12px; font-family: var(--display); font-size: 30px; line-height: 1.1; }
+.room-count { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--kalk-2); color: var(--red); }
+.room-meta { margin: 6px 0 12px; font-size: 14px; font-weight: 500; color: var(--muted); }
+.room-card p:not(.room-meta):not(.room-price) { color: var(--ink-2); }
+.room-price { margin-top: 12px; font-family: var(--serif); font-size: 20px; color: var(--red); }
+.room-facts { margin: 12px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.room-facts div { display: grid; grid-template-columns: 8em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.room-facts dt { font-weight: 600; }
+.room-facts dd { margin: 0; color: var(--ink-2); }
+.zimmer-section .zimmer-grid { align-items: start; }
+.zimmer-section .calc { position: sticky; top: calc(var(--header) + 24px); }
+@media (max-width: 900px) { .zimmer-section .calc { position: static; } }
+
+/* ===== Feiern-Seite ===== */
+.feiern-section .feiern-grid { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); align-items: start; }
+@media (max-width: 900px) { .feiern-section .feiern-grid { grid-template-columns: 1fr; } }
+.feiern-h { font-family: var(--display); font-size: clamp(28px, 2.8vw, 38px) !important; line-height: 1.1; margin-bottom: 14px; }
+.offers { background: var(--paper); border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: -10px; padding: clamp(28px, 4vw, 48px); }
+.offer-list { display: grid; gap: 4px; margin-top: 18px; }
+.offer { padding: 12px 0; }
+.offer-note { margin-top: 18px; font-size: 14px; color: var(--muted); }
+
+/* Termine-Seite */
+.termine-section { padding-top: clamp(56px, 6vw, 88px); }
 
 /* ===== Einblenden ===== */
 .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.9s ease, transform 0.9s var(--ease); }
@@ -688,3 +763,10 @@ input[type="range"] { width: 100%; accent-color: var(--red); height: 28px; curso
 /* Grenze kursiv setzt Wortabstände sehr eng, deshalb etwas mehr Luft */
 :is(.eyebrow, .hero-kicker, .tafel-note, .tafel-chalk, .tafel-dish small, .voucher-for, .band-quote, .menu-season, .coasters-title span, .coaster-label, .slots-empty, .menu-empty, .hero-caption em, .intro-figure figcaption) { word-spacing: 0.14em; }
 .sign-year { word-spacing: 0.14em; }
+
+/* Bildausschnitt der Seitenköpfe */
+.page-hero-image .pos-40 { object-position: 50% 40%; }
+.page-hero-image .pos-50 { object-position: 50% 50%; }
+.page-hero-image .pos-55 { object-position: 50% 55%; }
+.page-hero-image .pos-60 { object-position: 50% 60%; }
+.room-count, .dish-price { white-space: nowrap; }

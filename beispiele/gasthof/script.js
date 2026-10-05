@@ -74,7 +74,7 @@ const TODAY = NOW.date;
 // ---------- Header, Menü ----------
 (function header() {
   const headerEl = document.querySelector('.site-header');
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero, .page-hero');
   const update = () => {
     const limit = hero ? hero.offsetHeight - headerEl.offsetHeight - 40 : 40;
     headerEl.classList.toggle('is-solid', window.scrollY > limit);
@@ -165,6 +165,7 @@ setInterval(renderStatus, 60000);
 (function tafel() {
   const tabs = [...document.querySelectorAll('.tafel-days [role="tab"]')];
   const board = document.getElementById('tafelBoard');
+  if (!board) return;
   const dayEl = board.querySelector('[data-tafel-day]');
   const noteEl = board.querySelector('[data-tafel-note]');
   const list = board.querySelector('[data-tafel-list]');
@@ -233,6 +234,7 @@ document.querySelectorAll('.coaster').forEach((c) => {
 // ---------- Speisekarte: Kategorien, Filter, Allergene, Drucken ----------
 (function menu() {
   const card = document.getElementById('menuCard');
+  if (!card) return;
   const cats = [...document.querySelectorAll('.menu-cats [role="tab"]')];
   const filters = [...document.querySelectorAll('[data-filter]')];
   const empty = card.querySelector('[data-menu-empty]');
@@ -310,8 +312,33 @@ function downloadIcs(filename, events) {
 }
 
 // ---------- Tischreservierung ----------
+const LAST_BOOKING = addDays(TODAY, BOOKING_DAYS);
+function isBookable(d) {
+  if (d < TODAY && !sameDay(d, TODAY)) return false;
+  if (d > LAST_BOOKING) return false;
+  if (!isOpenDay(d)) return false;
+  if (sameDay(d, TODAY)) return slotsFor(d).length > 0;
+  return true;
+}
+
+// Zeitfenster: alle 30 Minuten, letzte Reservierung 30 Minuten vor Küchenschluss
+function slotsFor(d) {
+  const h = hoursFor(d);
+  if (!h) return [];
+  const out = [];
+  h.kitchen.forEach(([a, b], idx) => {
+    for (let t = a; t <= b - 30; t += 30) {
+      if (sameDay(d, TODAY) && t < NOW.minutes + 60) continue;
+      out.push({ t, meal: idx === 0 ? 'Mittags' : 'Abends' });
+    }
+  });
+  return out;
+}
+
 const Reservation = (function reservation() {
   const form = document.getElementById('reserveForm');
+  // Auf anderen Seiten führt „Tisch reservieren“ zur Reservierungsseite, mit vorgewähltem Datum
+  if (!form) return { bookable: isBookable, open(d) { window.location.href = `reservieren.html?datum=${iso(d)}`; } };
   const grid = document.getElementById('calGrid');
   const monthEl = document.getElementById('calMonth');
   const navs = [...document.querySelectorAll('.cal-nav')];
@@ -326,27 +353,7 @@ const Reservation = (function reservation() {
 
   const state = { date: null, time: null, guests: 2, view: new Date(TODAY.getFullYear(), TODAY.getMonth(), 1, 12) };
 
-  function bookable(d) {
-    if (d < TODAY && !sameDay(d, TODAY)) return false;
-    if (d > last) return false;
-    if (!isOpenDay(d)) return false;
-    if (sameDay(d, TODAY)) return slotsFor(d).length > 0;
-    return true;
-  }
-
-  // Zeitfenster: alle 30 Minuten, letzte Reservierung 30 Minuten vor Küchenschluss
-  function slotsFor(d) {
-    const h = hoursFor(d);
-    if (!h) return [];
-    const out = [];
-    h.kitchen.forEach(([a, b], idx) => {
-      for (let t = a; t <= b - 30; t += 30) {
-        if (sameDay(d, TODAY) && t < NOW.minutes + 60) continue;
-        out.push({ t, meal: idx === 0 ? 'Mittags' : 'Abends' });
-      }
-    });
-    return out;
-  }
+  const bookable = isBookable;
 
   // Simulierte Auslastung, damit die Demo realistisch wirkt (im echten Betrieb aus dem Reservierungsbuch)
   function load(d, t) {
@@ -554,11 +561,14 @@ const Reservation = (function reservation() {
   renderCalendar();
   renderArea();
 
+  const wanted = new URLSearchParams(window.location.search).get('datum');
+  if (wanted && /^\d{4}-\d{2}-\d{2}$/.test(wanted) && isBookable(fromIso(wanted))) selectDate(fromIso(wanted));
+
   return {
     bookable,
     open(d) {
       if (!form.hidden && bookable(d)) selectDate(d);
-      document.getElementById('reservieren').scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+      form.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
     }
   };
 })();
@@ -566,6 +576,7 @@ const Reservation = (function reservation() {
 // ---------- Zimmer-Preisrechner ----------
 (function roomCalc() {
   const form = document.getElementById('roomCalc');
+  if (!form) return;
   const arrival = document.getElementById('c-arrival');
   const nights = document.getElementById('c-nights');
   const dog = document.getElementById('c-dog');
@@ -612,6 +623,7 @@ const Reservation = (function reservation() {
 // ---------- Raumfinder für Feiern ----------
 (function finder() {
   const range = document.getElementById('guestRange');
+  if (!range) return;
   const out = document.getElementById('guestRangeOut');
   const rooms = [...document.querySelectorAll('#roomList li')];
   const result = document.getElementById('finderResult');
@@ -643,6 +655,7 @@ const Reservation = (function reservation() {
 // ---------- Termine (werden aus dem heutigen Datum berechnet, die Seite veraltet nie) ----------
 (function events() {
   const list = document.getElementById('events');
+  if (!list) return;
   const nthWeekday = (y, m, weekday, n) => { const first = new Date(y, m, 1, 12); return addDays(first, ((weekday - first.getDay() + 7) % 7) + (n - 1) * 7); };
   const firstAdvent = (y) => { const xmas = new Date(y, 11, 25, 12); return addDays(xmas, -((xmas.getDay() || 7) + 21)); };
 
@@ -671,7 +684,7 @@ const Reservation = (function reservation() {
     .filter((e) => e.title !== 'Schlachtschüssel' || isOpenDay(e.start))
     .sort((a, b) => a.start - b.start)
     .filter((e, i, arr) => arr.findIndex((x) => x.title === e.title) === i)
-    .slice(0, 6);
+    .slice(0, Number(list.dataset.limit) || 6);
 
   all.forEach((ev) => {
     const running = ev.end && ev.start <= TODAY;
@@ -714,6 +727,7 @@ const Reservation = (function reservation() {
 // ---------- Gutschein ----------
 (function voucher() {
   const form = document.getElementById('voucherForm');
+  if (!form) return;
   const card = document.getElementById('voucher');
   const freeField = document.getElementById('freeAmountField');
   const free = document.getElementById('v-free');
@@ -756,6 +770,11 @@ const Reservation = (function reservation() {
 
 // ---------- Kontaktformular ----------
 function prefillAsk(topic, text) {
+  // Liegt das Formular auf einer anderen Seite, werden Thema und Text über die Adresse mitgegeben
+  if (!document.getElementById('askForm')) {
+    window.location.href = `kontakt.html?thema=${encodeURIComponent(topic)}&nachricht=${encodeURIComponent(text)}`;
+    return;
+  }
   const select = document.getElementById('a-topic');
   [...select.options].forEach((o) => { if (o.text === topic) select.value = o.value; });
   const msg = document.getElementById('a-msg');
@@ -766,6 +785,7 @@ function prefillAsk(topic, text) {
 
 (function ask() {
   const form = document.getElementById('askForm');
+  if (!form) return;
   const status = document.getElementById('askStatus');
   const fields = { msg: document.getElementById('a-msg'), name: document.getElementById('a-name'), email: document.getElementById('a-email') };
   const set = (id, m, f) => { document.getElementById(id).textContent = m; f.setAttribute('aria-invalid', m ? 'true' : 'false'); return !m; };
@@ -782,13 +802,21 @@ function prefillAsk(topic, text) {
     status.textContent = 'Danke! Dies ist ein Beispielprojekt, die Nachricht wurde nicht versendet. Im echten Betrieb antworten wir innerhalb eines Tages.';
     form.reset();
   });
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('nachricht')) {
+    const select = document.getElementById('a-topic');
+    [...select.options].forEach((o) => { if (o.text === params.get('thema')) select.value = o.value; });
+    fields.msg.value = params.get('nachricht').slice(0, 1000);
+    setTimeout(() => { form.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' }); fields.name.focus({ preventScroll: true }); }, 300);
+  }
 })();
 
 // ---------- Ruhiges Einblenden ----------
 (function reveal() {
   const imgs = [...document.querySelectorAll('.reveal-img')];
   if (reducedMotion || !('IntersectionObserver' in window)) { imgs.forEach((el) => el.classList.add('is-visible')); return; }
-  const targets = [...document.querySelectorAll('.section-head, .tafel-intro, .haus-text, .coasters li, .event, .calc, .finder, .voucher-wrap, .ask, .kontakt-info, .band-text')];
+  const targets = [...document.querySelectorAll('.section-head, .tafel-intro, .haus-text, .coasters li, .teasers li, .event, .calc, .finder, .offers, .room-card, .room-facts, .voucher-wrap, .ask, .kontakt-info, .band-text, .gift-strip-inner, .termine-mini-head > .link-arrow')];
   document.querySelectorAll('.coasters li').forEach((el, i) => { el.style.transitionDelay = `${i * 90}ms`; });
   targets.forEach((el) => el.classList.add('reveal'));
   const io = new IntersectionObserver((entries) => {
