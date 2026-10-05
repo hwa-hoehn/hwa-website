@@ -906,3 +906,9 @@ summary:focus-visible {
 }
 
 .portfolio-card-featured .portfolio-badge { top: auto; bottom: 16px; left: auto; right: 16px; }
+.portfolio-card-featured.portfolio-card-reverse { grid-template-columns: 5fr 7fr; }
+.portfolio-card-reverse .portfolio-media { order: 2; }
+@media (max-width: 860px) {
+  .portfolio-card-featured.portfolio-card-reverse { grid-template-columns: 1fr; }
+  .portfolio-card-reverse .portfolio-media { order: 0; }
+}

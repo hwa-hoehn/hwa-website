@@ -1,1 +1,4 @@
 .DS_Store
+
+# Lokale Vorschau-Konfiguration
+.claude/

@@ -17,6 +17,7 @@ const HOURS = {
 };
 const VACATION = { from: [1, 7], to: [1, 20] };       // Betriebsurlaub 7. bis 20. Januar
 const BEERGARDEN_MONTHS = [5, 6, 7, 8, 9];            // Mai bis September
+const WILD_SEASON = { from: [10, 1], to: [11, 15] };  // Wildgerichte 1. Oktober bis 15. November
 const BOOKING_DAYS = 90;                              // so weit im Voraus reservierbar
 
 const TAFEL = {
@@ -58,6 +59,10 @@ const fmtTime = (m) => `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}
 const fmtDate = (d) => `${DAY_NAMES[d.getDay()]}, ${d.getDate()}. ${MONTHS[d.getMonth()]}`;
 const euro = (n) => n.toLocaleString('de-DE', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 }) + ' €';
 
+function isWildSeason(d) {
+  const v = (d.getMonth() + 1) * 100 + d.getDate();
+  return v >= WILD_SEASON.from[0] * 100 + WILD_SEASON.from[1] && v <= WILD_SEASON.to[0] * 100 + WILD_SEASON.to[1];
+}
 function isVacation(d) {
   const m = d.getMonth() + 1, day = d.getDate();
   return m === VACATION.from[0] && day >= VACATION.from[1] && day <= VACATION.to[1];
@@ -80,8 +85,12 @@ const TODAY = NOW.date;
     headerEl.classList.toggle('is-solid', window.scrollY > limit);
     headerEl.classList.toggle('is-scrolled', window.scrollY > 10);
   };
+  // Höhe der Demo-Leiste, damit das Titelbild mit Infozeile genau in den Bildschirm passt
+  const bar = document.querySelector('.demo-bar');
+  const setBar = () => { if (bar) document.documentElement.style.setProperty('--demo-h', `${bar.offsetHeight}px`); };
   window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
+  window.addEventListener('resize', () => { setBar(); update(); });
+  setBar();
   update();
 
   const toggle = document.getElementById('navToggle');
@@ -235,6 +244,13 @@ document.querySelectorAll('.coaster').forEach((c) => {
 (function menu() {
   const card = document.getElementById('menuCard');
   if (!card) return;
+  // Wild gibt es nur in der Saison, außerhalb verschwinden Kategorie und Gerichte
+  const seasonNote = document.querySelector('[data-menu-season]');
+  if (isWildSeason(TODAY)) {
+    if (seasonNote) seasonNote.textContent = `Jetzt mit Wildgerichten aus heimischer Jagd, bis zum ${WILD_SEASON.to[1]}. ${MONTHS[WILD_SEASON.to[0] - 1]}. Fragen Sie gern nach kleinen Portionen.`;
+  } else {
+    document.querySelectorAll('[data-cat="wild"]').forEach((el) => el.remove());
+  }
   const cats = [...document.querySelectorAll('.menu-cats [role="tab"]')];
   const filters = [...document.querySelectorAll('[data-filter]')];
   const empty = card.querySelector('[data-menu-empty]');
@@ -355,7 +371,7 @@ const Reservation = (function reservation() {
 
   const bookable = isBookable;
 
-  // Simulierte Auslastung, damit die Demo realistisch wirkt (im echten Betrieb aus dem Reservierungsbuch)
+  // Simulierte Auslastung, damit die Demo realistisch wirkt (im echten Betrieb pflegt der Gasthof die belegten Zeiten selbst)
   function load(d, t) {
     const key = `${iso(d)}-${t}-${state.guests > 6 ? 'g' : 's'}`;
     let h = 2166136261;
@@ -667,7 +683,7 @@ const Reservation = (function reservation() {
     });
     const kirchweih = addDays(nthWeekday(y, 9, 0, 3), -1);
     out.push({ start: kirchweih, end: addDays(kirchweih, 2), title: 'Kirchweih in Lindenreuth', text: 'Drei Tage Kirchweih mit Küchla, Braten und Blasmusik am Sonntagnachmittag. Am Kirchweihmontag haben wir ausnahmsweise geöffnet.' });
-    out.push({ start: new Date(y, 9, 1, 12), end: new Date(y, 10, 15, 12), title: 'Wildwochen', tag: 'bis 15. November', text: 'Reh und Wildschwein aus heimischer Jagd, dazu Serviettenknödel und Preiselbeerbirne.' });
+    out.push({ start: new Date(y, WILD_SEASON.from[0] - 1, WILD_SEASON.from[1], 12), end: new Date(y, WILD_SEASON.to[0] - 1, WILD_SEASON.to[1], 12), title: 'Wildwochen', tag: `bis ${WILD_SEASON.to[1]}. ${MONTHS[WILD_SEASON.to[0] - 1]}`, text: 'Reh und Wildschwein aus heimischer Jagd, dazu Serviettenknödel und Preiselbeerbirne.' });
     out.push({ start: nthWeekday(y, 10, 5, 1), title: 'Bockbieranstich', text: 'Das erste Fass Bockbier vom Holzfass. Ab 18 Uhr, mit Brotzeit und Musik vom Stammtisch.' });
     out.push({ start: new Date(y, 10, 11, 12), title: 'Martinsgans', tag: 'auf Vorbestellung', text: 'Ganze Gans für vier Personen oder halbe Gans für zwei, mit Klößen und Blaukraut. Bitte drei Tage vorher bestellen.' });
     const advent2 = addDays(firstAdvent(y), 6);

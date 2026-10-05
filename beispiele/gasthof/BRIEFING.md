@@ -1,44 +1,53 @@
-# Gasthof Grünlinger – Übergabe für die Weiterarbeit
+# Kundenbriefing (fiktiv) – Gasthof Grünlinger
 
-Fiktiver Gasthof (Demo von HWA), Ort: fiktives Lindenreuth im Fichtelgebirge (gleicher Ort wie die Schreinerei-Demo).
-Stand: Branch `claude/quirky-heisenberg-8ppght`, noch nicht live. `main` (live) enthält die Gasthof-Demo noch nicht.
+> Beispielprojekt von HWA – Höhn Web & Automatisierung. Betrieb, Personen,
+> Preise, Adresse und Telefonnummer sind frei erfunden. Die Telefonnummer
+> stammt aus dem Nummernbereich, den die Mobilfunkbetreiber für
+> Medienproduktionen freihalten (0171 39200-00 bis -99).
 
-## Aufbau
-Statische Seiten, gemeinsames `style.css` und `script.js`, keine Build-Tools:
-`index.html` (Start), `speisekarte.html`, `reservieren.html`, `zimmer.html`, `feiern.html`, `termine.html`, `gutscheine.html`, `kontakt.html`.
-Header und Footer stehen in jeder Datei identisch und müssen bei Änderungen überall angepasst werden.
+## Der Betrieb
 
-## Funktionen (alle im Browser getestet)
-- Live-Öffnungsstatus nach deutscher Zeit (Ruhetage Mo/Di, Betriebsurlaub 7.–20.1., Kirchweihmontag geöffnet)
-- Tageskarte mit Wochentag-Auswahl, wählt den heutigen Tag
-- Speisekarte mit Kategorien, Filtern (vegetarisch, ohne Gluten), Allergenen, Druckansicht
-- Reservierung mit Kalender, simulierter Auslastung, .ics-Download; `reservieren.html?datum=JJJJ-MM-TT` wählt ein Datum vor
-- Zimmer-Preisrechner, Raumfinder für Feiern; beide füllen `kontakt.html?thema=…&nachricht=…` vor
-- Termine werden aus dem aktuellen Datum berechnet (Startseite zeigt 3, Terminseite 8)
-- Gutschein-Generator mit Live-Vorschau und Druck (als „Muster, nicht einlösbar“ gekennzeichnet)
-- Alle Daten (Öffnungszeiten, Tageskarte, Zimmerpreise) stehen oben in `script.js`
+- **Gasthof Grünlinger**, Dorfplatz 3, Lindenreuth im Fichtelgebirge, seit 1887
+- Wirtin: **Lena Grünlinger** (5. Generation), in der Küche ihr Mann **Tobias**
+- Wirtsstube mit Kachelofen, Saal für 70 Personen, Biergarten unter Kastanien,
+  sieben Gästezimmer
+- Fränkische Küche mit kurzer Karte, Zutaten von Metzger, Brauerei und
+  Bauern aus der Umgebung
+- Gäste: Einheimische, Wanderer und Ausflügler, Familien mit Feiern,
+  Übernachtungsgäste
 
-## Gestaltung, aktueller Stand (Richtung „Abendstube“, vom Auftraggeber gewählt am 5.10.2026)
-- Dunkel geführt: Rauchbraun- und Weinrot-Flächen im Wechsel mit Leinen, Messing für feine Linien. Keine Schatten, keine runden Ecken.
-- Farben: Weinrot #5A1E29, Messing #B08D57 / hell #D2B888 / Schrift auf Hell #7A5C2E, Leinen #F8F6F2, Rauchbraun #241C1D (Token-Block oben in `style.css`)
-- Schriften: Bodoni Moda (Überschriften, Kursive als Akzent; große Grade mit `opsz` 28, sonst zu feine Haarstriche), Geist (Text, Labels in Versalien mit Sperrung), UnifrakturMaguntia nur für „Gasthof“ im Logo. Alle Umlaute und ß sind in den Schriftdateien enthalten, geprüft.
-- Header: Logo mittig, Navigation links und rechts; unter 1180 px Vollbild-Menü
-- Startseite: Titelbild (Außenansicht, Text mittig), Das Haus, Tageskarte auf Weinrot, Herkunft (Bierdeckel), Biergarten-Zitat, Teaser auf Dunkel, Termine, Gutschein
-- Wirtshausschild-SVG entfernt (das Foto zeigt bereits ein Schild)
+## Was die Wirtin sich wünscht (O-Ton aus dem Erstgespräch)
 
-## Feedback des Auftraggebers
-- Weinrot & Leinen passt. Alte Schriften (Young Serif, Albert Sans) und die „Autobahngastro“-Anordnung waren der Grund für den Umbau.
-- Zielbild: moderner Geheimtipp, traditionelles Gasthaus mit modernem Touch, hochwertig, repräsentativ für HWA. Unterseiten-Aufbau bleibt.
-- Aus drei Vorschlägen (Tageslicht, Abendstube, Hauszeichen) gewählt: Abendstube. Ausdrücklicher Hinweis: Umlaute sauber darstellen.
-- Nicht verwenden: Beige + Terrakotta, Gelb/Schwarz, Instrument Serif, generische „KI-Website“-Muster
-- Offen: Rückmeldung zum Umbau
+1. „Wir sind ein Wirtshaus, aber kein Autobahnrasthof. Die Seite soll
+   zeigen, dass bei uns jemand mit Liebe kocht und einrichtet.“
+2. „Traditionell ja, verstaubt nein. Gern so, dass auch Jüngere sagen:
+   Da müssen wir mal hin.“
+3. „Das Telefon klingelt den ganzen Tag wegen Öffnungszeiten und der
+   Frage, was es heute gibt. Das soll man online sehen.“
+4. „Tischanfragen bitte mit allem, was wir wissen müssen: Tag, Uhrzeit,
+   Personen, Kinderstuhl, Hund.“
+5. „Zimmer und Feiern sollen die Leute grob selbst durchrechnen können,
+   bevor sie anfragen.“
+6. „Gutscheine verkaufen wir vor Weihnachten haufenweise. Das muss
+   einfacher gehen.“
+7. „Keine Cookie-Banner, kein Tracking, und auf dem Handy muss alles
+   funktionieren.“
 
-## Bilder
-Die 9 Bilder des Auftraggebers sind eingebaut (WebP, Qualität 80, 1264 × 848 bzw. 848 × 1264), Ecken auf Wasserzeichen geprüft, Alt-Texte an die Motive angepasst.
-Statt „brotzeit“ gibt es ein zweites Küchenbild `kloesse.webp` (Speisekarte). Kopf der Speisekarte: Schäufele.
+## Umsetzung
 
-## Regeln
-- Nichts live schalten ohne ausdrückliches „live“ (dann Fast-Forward von Branch auf `main`)
-- Schriften nur lokal und mit freier Lizenz (OFL), Lizenzdateien in `fonts/`
-- Vor jeder Vorlage selbst prüfen: Screenshots Desktop (1440) und Handy (390), keine Konsolenfehler, kein seitliches Scrollen, Kontraste ≥ 4,5:1, HTML-Validierung
-- Ton gegenüber dem Auftraggeber: professionell, sachlich, nicht salopp
+| Wunsch | Lösung auf der Seite |
+|---|---|
+| Kein Rasthof, Sinn für Ästhetik | Dunkle Flächen in Rauchbraun und Weinrot im Wechsel mit Leinen, feine Messinglinien, großzügige Fotos, keine Schatten und keine runden „App-Karten“ |
+| Traditionell, nicht verstaubt | Bodoni Moda mit eleganter Kursive für Überschriften, die nüchterne Geist für Texte, Fraktur nur im Logo |
+| Weniger Anrufe | Öffnungsstatus live nach deutscher Zeit (Ruhetage, Betriebsurlaub, Kirchweih), Tageskarte mit Wochentagen, Speisekarte mit Filter für vegetarisch, glutenfrei und Allergene |
+| Vollständige Tischanfragen | Reservierung mit Kalender, freien Zeiten, Personenzahl, Bereich und Extras; Eintrag in den eigenen Kalender per .ics |
+| Selbst durchrechnen | Zimmer-Preisrechner und Raumfinder für Feiern, beide füllen das Kontaktformular vor |
+| Gutscheine | Gutschein mit Betrag, Motiv und Widmung gestalten, Vorschau drucken; der Gasthof legt ihn zum Abholen bereit oder schickt ihn per Post |
+| Seite veraltet nicht | Termine und Saisongerichte (Wild) richten sich nach dem aktuellen Datum |
+| Datenschutz, Mobil | Schriften lokal, keine externen Dienste, kein Tracking, Bilder in drei Größen für Smartphone und Desktop |
+
+## Lizenzen
+
+- Schriften: Bodoni Moda, Geist und UnifrakturMaguntia,
+  SIL Open Font License 1.1 (Lizenztexte im Ordner `fonts/`), lokal eingebunden
+- Bilder: KI-generiert, auf der Seite gekennzeichnet; Nachweis in `img/BILDNACHWEIS.md`

@@ -228,7 +228,7 @@ em { font-style: italic; }
 .hero {
   position: relative; isolation: isolate;
   margin-top: calc(-1 * var(--header));
-  min-height: min(100svh, 980px);
+  min-height: min(calc(100svh - var(--demo-h, 34px)), 980px);
   display: grid; grid-template-rows: 1fr auto;
   color: var(--on-dark); background: var(--rauch);
   overflow: hidden;
@@ -277,7 +277,9 @@ em { font-style: italic; }
 .haus-figure figcaption, .figcap { margin-top: 12px; font-size: 13px; color: var(--muted); }
 .haus-text { position: sticky; top: calc(var(--header) + 48px); padding-top: clamp(0px, 3vw, 40px); }
 .haus-text .lead { font-family: var(--display); font-size: clamp(22px, 1.9vw, 27px); line-height: 1.45; }
-.haus-text .lead + p { margin-top: 20px; color: var(--ink-2); }
+.haus-text .lead ~ p:not(.haus-sign) { margin-top: 20px; color: var(--ink-2); }
+.haus-text a { color: var(--wein); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.haus-text a:hover { text-decoration-thickness: 2px; }
 .haus-figure-small { margin: clamp(36px, 4vw, 64px) 0 0 auto; width: 46%; }
 .haus-figure-small img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .haus-sign { margin-top: 28px; font-family: var(--display); font-style: italic; font-size: 19px; color: var(--wein); }
