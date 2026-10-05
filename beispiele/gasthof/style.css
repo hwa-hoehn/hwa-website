@@ -288,7 +288,10 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* ===== Haus ===== */
 .haus-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+.haus-media { position: relative; padding-bottom: 12%; }
 .haus-figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.haus-figure-small { position: absolute; right: -4%; bottom: 0; width: 34%; border: 8px solid var(--kalk); border-radius: var(--radius); background: var(--kalk); }
+.haus-figure-small img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 2px; }
 .haus-text .lead { margin-top: 22px; font-family: var(--serif); font-size: clamp(21px, 1.9vw, 25px); line-height: 1.45; }
 .haus-text .lead + p { margin-top: 18px; color: var(--ink-2); }
 
@@ -322,6 +325,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 @media (max-width: 900px) {
   .haus-grid { grid-template-columns: 1fr; }
+  .haus-figure-small { right: 0; }
   .coasters { grid-template-columns: 1fr 1fr; row-gap: 28px; }
 }
 
@@ -534,6 +538,10 @@ input[type="range"] { width: 100%; accent-color: var(--red); height: 28px; curso
 @media (max-width: 900px) { .feiern-grid { grid-template-columns: 1fr; } .feiern-figure { order: -1; } }
 
 /* ===== Termine ===== */
+.termine-top { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 6vw, 96px); align-items: end; margin-bottom: clamp(44px, 5vw, 72px); }
+.termine-top .section-head { margin-bottom: 0; }
+.termine-figure img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+@media (max-width: 760px) { .termine-top { grid-template-columns: 1fr; } .termine-figure { max-width: 300px; } }
 .events { border-top: 2px solid var(--ink); }
 .event { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 16px clamp(20px, 3vw, 44px); align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); }
 .event-date { display: grid; justify-items: start; line-height: 1; }
