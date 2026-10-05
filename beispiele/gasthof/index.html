@@ -10,8 +10,9 @@
 <meta property="og:title" content="Gasthof Grünlinger – Fränkisches Wirtshaus | Beispielprojekt">
 <meta property="og:description" content="Beispielprojekt von HWA: Website eines fiktiven fränkischen Gasthofs im Fichtelgebirge mit Tageskarte, Speisekarte, Tischreservierung, Zimmern und Gutscheinen.">
 <meta property="og:type" content="website">
-<link rel="preload" href="fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bodoni-moda-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/aussen.webp" as="image">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%235A1E29'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F3ECE3' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
 </head>
@@ -28,15 +29,19 @@
       <span class="logo-small">Gasthof</span>
       <span class="logo-name">Grünlinger</span>
     </a>
-    <p class="header-status status-line" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
     <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
-      <a href="speisekarte.html">Speisekarte</a>
-      <a href="zimmer.html">Zimmer</a>
-      <a href="feiern.html">Feiern</a>
-      <a href="termine.html">Termine</a>
-      <a href="gutscheine.html">Gutscheine</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="reservieren.html" class="nav-cta">Tisch reservieren</a>
+      <div class="nav-group">
+        <a href="speisekarte.html">Speisekarte</a>
+        <a href="zimmer.html">Zimmer</a>
+        <a href="feiern.html">Feiern</a>
+        <a href="termine.html">Termine</a>
+      </div>
+      <div class="nav-group">
+        <a href="gutscheine.html">Gutscheine</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="reservieren.html" class="nav-cta">Tisch reservieren</a>
+      </div>
+      <p class="header-status status-line" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
     </nav>
     <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav"><span class="nav-toggle-label">Menü</span></button>
   </div>
@@ -44,38 +49,15 @@
 
 <main id="main">
 
-<section class="hero" aria-labelledby="hero-title">
+  <section class="hero" aria-labelledby="hero-title">
     <div class="hero-image">
-      <img src="img/aussen.webp" alt="Der Gasthof zur blauen Stunde: Erdgeschoss aus Granit, Giebel mit Schiefer verkleidet, warmes Licht in allen Fenstern, davor zwei Kastanien" width="1536" height="1024" fetchpriority="high">
-    </div>
-
-    <!-- Wirtshausschild -->
-    <div class="sign" aria-hidden="true">
-      <svg viewBox="0 0 260 300" class="sign-svg">
-        <g class="sign-bracket" fill="none" stroke="#1E1C1A" stroke-width="5" stroke-linecap="round">
-          <path d="M8 14 H230"/>
-          <path d="M8 14 V70"/>
-          <path d="M8 66 C 60 66, 70 18, 130 16"/>
-          <path d="M40 54 c 10 -18 30 -18 34 -4 c 3 10 -10 14 -14 6"/>
-          <circle cx="230" cy="14" r="5" fill="#1E1C1A"/>
-        </g>
-        <g class="sign-swing">
-          <path d="M98 14 V44 M162 14 V44" stroke="#1E1C1A" stroke-width="3"/>
-          <ellipse cx="130" cy="150" rx="104" ry="112" fill="#1E1C1A"/>
-          <ellipse cx="130" cy="150" rx="98" ry="106" fill="#5A1E29"/>
-          <ellipse cx="130" cy="150" rx="88" ry="96" fill="none" stroke="#B08D57" stroke-width="2"/>
-          <text x="130" y="112" text-anchor="middle" class="sign-gasthof">Gasthof</text>
-          <text x="130" y="160" text-anchor="middle" class="sign-name">Grünlinger</text>
-          <path d="M88 178 H172" stroke="#B08D57" stroke-width="1.5"/>
-          <text x="130" y="204" text-anchor="middle" class="sign-year">seit 1887</text>
-        </g>
-      </svg>
+      <img src="img/aussen.webp" alt="Der Gasthof zur blauen Stunde: Erdgeschoss aus Granit, Giebel mit Schiefer verkleidet, grüne Fensterläden, warmes Licht in allen Fenstern, davor Kastanien auf dem gepflasterten Dorfplatz" width="1264" height="848" fetchpriority="high">
     </div>
 
     <div class="wrap hero-content">
       <p class="hero-kicker">Lindenreuth im Fichtelgebirge</p>
-      <h1 id="hero-title">Wo Franken<br>einkehrt.</h1>
-      <p class="hero-lead">Fränkische Küche mit Zutaten aus der Nachbarschaft, sieben Gästezimmer und ein Biergarten unter alten Kastanien. Seit fünf Generationen in der Familie.</p>
+      <h1 id="hero-title">Seit 1887 <em>am Dorfplatz.</em></h1>
+      <p class="hero-lead">Fränkische Küche mit Zutaten aus der Nachbarschaft, sieben Gästezimmer und ein Biergarten unter alten Kastanien. In fünfter Generation geführt.</p>
       <div class="hero-actions">
         <a href="reservieren.html" class="btn btn-mustard">Tisch reservieren</a>
         <a href="speisekarte.html" class="btn btn-light">Zur Speisekarte</a>
@@ -100,11 +82,35 @@
     </div>
   </section>
 
-<section class="section tafel-section" id="tafel" aria-labelledby="tafel-title">
+  <section class="section haus-section" aria-labelledby="haus-title">
+    <div class="wrap">
+      <header class="haus-statement section-head">
+        <p class="eyebrow">Das Haus</p>
+        <h2 id="haus-title">Zwölf Gerichte, die wir <em>richtig gut</em> können.</h2>
+      </header>
+      <div class="haus-grid">
+        <div class="haus-media">
+          <figure class="haus-figure reveal-img">
+            <img src="img/stube.webp" alt="Die Wirtsstube mit Holzvertäfelung, grünem Kachelofen mit Ofenbank, Schieferboden und gedeckten Eichentischen im Nachmittagslicht" width="1264" height="848" loading="lazy">
+          </figure>
+            <figure class="haus-figure-small reveal-img">
+              <img src="img/kueche.webp" alt="Ein Koch formt Kartoffelklöße auf einem bemehlten Holzbrett, daneben ein Blech mit fertigen Klößen" width="848" height="1264" loading="lazy">
+            </figure>
+        </div>
+        <div class="haus-text">
+          <p class="lead">Bei uns gibt es keine Karte mit hundert Gerichten. Dafür kennen wir jeden, der uns Fleisch, Bier und Kartoffeln liefert, beim Vornamen.</p>
+          <p>Lena Grünlinger führt den Gasthof in fünfter Generation. In der Küche steht ihr Mann Tobias, gelernt hat er in einem Münchner Wirtshaus. Die Klöße macht er jeden Morgen selbst, die Soßen brauchen bei ihm einen ganzen Tag.</p>
+          <p class="haus-sign">Lena und Tobias Grünlinger</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tafel-section" id="tafel" aria-labelledby="tafel-title">
     <div class="wrap tafel-grid">
       <div class="tafel-intro">
         <p class="eyebrow">Tageskarte</p>
-        <h2 id="tafel-title">Was heute auf der Tafel steht</h2>
+        <h2 id="tafel-title">Nur heute, <em>solange es reicht</em></h2>
         <p>Neben der festen Karte kocht Tobias jeden Tag ein Gericht, das es nur an diesem Wochentag gibt. Wenn es aus ist, ist es aus.</p>
         <div class="tafel-days" role="tablist" aria-label="Wochentag wählen">
           <button type="button" role="tab" data-day="3" aria-selected="true">Mi</button>
@@ -122,31 +128,14 @@
           <li><span class="tafel-dish">Saure Zipfel mit Bauernbrot</span><span class="tafel-price">12,50</span></li>
           <li><span class="tafel-dish">Kartoffelsuppe mit Majoran</span><span class="tafel-price">6,90</span></li>
         </ul>
-        <p class="tafel-chalk">Solange der Vorrat reicht!</p>
+        <p class="tafel-chalk">Solange der Vorrat reicht</p>
       </div>
     </div>
   </section>
 
-<section class="section haus-section" aria-labelledby="haus-title">
-    <div class="wrap haus-grid">
-      <div class="haus-media">
-        <figure class="haus-figure reveal-img">
-          <img src="img/stube.webp" alt="Die Wirtsstube mit Holzvertäfelung, grünem Kachelofen mit Ofenbank und gedeckten Eichentischen im Nachmittagslicht" width="1536" height="1024" loading="lazy">
-        </figure>
-        <figure class="haus-figure-small reveal-img">
-          <img src="img/kueche.webp" alt="Hände eines Kochs formen Kartoffelklöße auf einem bemehlten Holzbrett" width="1024" height="1536" loading="lazy">
-        </figure>
-      </div>
-      <div class="haus-text">
-        <p class="eyebrow">Das Haus</p>
-        <h2 id="haus-title">Zwölf Gerichte, die wir richtig gut können</h2>
-        <p class="lead">Bei uns gibt es keine Karte mit hundert Gerichten. Dafür kennen wir jeden, der uns Fleisch, Bier und Kartoffeln liefert, beim Vornamen.</p>
-        <p>Lena Grünlinger führt den Gasthof in fünfter Generation. In der Küche steht ihr Mann Tobias, gelernt hat er in einem Münchner Wirtshaus. Die Klöße macht er jeden Morgen selbst, die Soßen brauchen bei ihm einen ganzen Tag.</p>
-      </div>
-    </div>
-
+  <section class="section herkunft-section" aria-labelledby="herkunft-title">
     <div class="wrap">
-      <p class="coasters-title">Wie weit es unsere Zutaten haben <span>(zum Umdrehen auf die Bierdeckel tippen)</span></p>
+      <h2 class="coasters-title" id="herkunft-title">Wie weit es unsere Zutaten haben <span>Zum Umdrehen auf die Bierdeckel tippen</span></h2>
       <ul class="coasters">
         <li>
           <button type="button" class="coaster" aria-pressed="false">
@@ -176,8 +165,8 @@
     </div>
   </section>
 
-<section class="band" aria-label="Biergarten">
-    <img src="img/biergarten.webp" alt="Biergarten unter alten Kastanien am Abend, lange Holztische, Lichterketten, tiefstehende Sonne" width="1536" height="1024" loading="lazy">
+  <section class="band" aria-label="Biergarten">
+    <img src="img/biergarten.webp" alt="Biergarten unter alten Kastanien am Abend, Holztische und Bänke auf Kies, Lichterketten, dahinter das Haus mit grünen Fensterläden" width="1264" height="848" loading="lazy">
     <div class="band-text">
       <p class="band-quote">„Unter den Kastanien schmeckt das Kellerbier einfach besser. Das ist keine Werbung, das ist Physik.“</p>
       <p class="band-cite">Lena Grünlinger, Wirtin</p>
@@ -188,33 +177,33 @@
     <div class="wrap">
       <header class="section-head">
         <p class="eyebrow">Mehr vom Gasthof</p>
-        <h2 id="teaser-title">Essen, schlafen, feiern</h2>
+        <h2 id="teaser-title">Essen, schlafen, <em>feiern</em></h2>
       </header>
       <ul class="teasers">
         <li>
           <a class="teaser" href="speisekarte.html">
-            <span class="teaser-image"><img src="img/schaeufele.webp" alt="" width="1536" height="1024" loading="lazy"></span>
+            <span class="teaser-image"><img src="img/schaeufele.webp" alt="" width="1264" height="848" loading="lazy"></span>
             <span class="teaser-title">Speisekarte</span>
             <span class="teaser-text">Schäufele, Brotzeit, Wild im Herbst. Mit Filter für vegetarisch und Allergenen.</span>
           </a>
         </li>
         <li>
           <a class="teaser" href="zimmer.html">
-            <span class="teaser-image"><img src="img/zimmer.webp" alt="" width="1536" height="1024" loading="lazy"></span>
+            <span class="teaser-image"><img src="img/zimmer.webp" alt="" width="1264" height="848" loading="lazy"></span>
             <span class="teaser-title">Zimmer</span>
             <span class="teaser-text">Sieben Zimmer über der Wirtsstube, Preis direkt ausrechnen.</span>
           </a>
         </li>
         <li>
           <a class="teaser" href="feiern.html">
-            <span class="teaser-image"><img src="img/saal.webp" alt="" width="1536" height="1024" loading="lazy"></span>
+            <span class="teaser-image"><img src="img/saal.webp" alt="" width="1264" height="848" loading="lazy"></span>
             <span class="teaser-title">Feiern</span>
             <span class="teaser-text">Stube, Saal oder Biergarten. Finden Sie den passenden Raum.</span>
           </a>
         </li>
         <li>
           <a class="teaser" href="termine.html">
-            <span class="teaser-image"><img src="img/zapfen.webp" alt="" width="1024" height="1536" loading="lazy"></span>
+            <span class="teaser-image"><img src="img/zapfen.webp" alt="" width="848" height="1264" loading="lazy"></span>
             <span class="teaser-title">Termine</span>
             <span class="teaser-text">Schlachtschüssel, Kirchweih, Bockbieranstich und Martinsgans.</span>
           </a>
@@ -228,7 +217,7 @@
       <div class="termine-mini-head">
         <header class="section-head">
           <p class="eyebrow">Termine</p>
-          <h2 id="next-title">Als Nächstes bei uns</h2>
+          <h2 id="next-title">Als Nächstes <em>bei uns</em></h2>
         </header>
         <a href="termine.html" class="link-arrow">Alle Termine</a>
       </div>
@@ -240,7 +229,7 @@
     <div class="wrap gift-strip-inner">
       <div>
         <p class="eyebrow">Gutscheine</p>
-        <h2 id="gift-title">Ein Abend bei uns zum Verschenken</h2>
+        <h2 id="gift-title">Ein Abend bei uns <em>zum Verschenken</em></h2>
       </div>
       <a href="gutscheine.html" class="btn btn-light-solid">Gutschein gestalten</a>
     </div>
@@ -250,6 +239,10 @@
 
 <footer class="site-footer">
   <div class="wrap">
+    <div class="footer-top">
+      <p class="footer-claim">Wir freuen uns auf Ihren Besuch am Dorfplatz.</p>
+      <a href="reservieren.html" class="btn btn-mustard">Tisch reservieren</a>
+    </div>
     <div class="footer-grid">
       <div class="footer-brand">
         <p class="logo logo-footer"><span class="logo-small">Gasthof</span><span class="logo-name">Grünlinger</span></p>
@@ -281,7 +274,7 @@
         </ul>
       </nav>
     </div>
-    <p class="footer-note">Gasthof Grünlinger ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert. Schriften: Young Serif, UnifrakturMaguntia, Grenze und Albert Sans (SIL Open Font License).</p>
+    <p class="footer-note">Gasthof Grünlinger ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert. Schriften: Bodoni Moda, Geist und UnifrakturMaguntia (SIL Open Font License).</p>
   </div>
 </footer>
 

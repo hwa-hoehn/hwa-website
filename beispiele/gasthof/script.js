@@ -455,7 +455,7 @@ const Reservation = (function reservation() {
     guestsOut.textContent = `${state.guests} ${state.guests === 1 ? 'Person' : 'Personen'}`;
     form.querySelector('[data-step="-1"]').disabled = state.guests === 1;
     form.querySelector('[data-step="1"]').disabled = state.guests === 12;
-    guestsHint.innerHTML = state.guests === 12 ? 'Mehr als zwölf Personen? <a href="#feiern">Dann planen wir Ihre Feier mit Ihnen.</a>' : 'Ab 13 Personen planen wir gern Ihre Feier mit Ihnen.';
+    guestsHint.innerHTML = state.guests === 12 ? 'Mehr als zwölf Personen? <a href="feiern.html">Dann planen wir Ihre Feier mit Ihnen.</a>' : 'Ab 13 Personen planen wir gern Ihre Feier mit Ihnen.';
     renderSlots();
     renderSummary();
   }

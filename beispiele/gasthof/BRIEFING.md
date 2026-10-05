@@ -10,7 +10,7 @@ Header und Footer stehen in jeder Datei identisch und müssen bei Änderungen ü
 
 ## Funktionen (alle im Browser getestet)
 - Live-Öffnungsstatus nach deutscher Zeit (Ruhetage Mo/Di, Betriebsurlaub 7.–20.1., Kirchweihmontag geöffnet)
-- Tageskarte als Schiefertafel, wählt den heutigen Tag
+- Tageskarte mit Wochentag-Auswahl, wählt den heutigen Tag
 - Speisekarte mit Kategorien, Filtern (vegetarisch, ohne Gluten), Allergenen, Druckansicht
 - Reservierung mit Kalender, simulierter Auslastung, .ics-Download; `reservieren.html?datum=JJJJ-MM-TT` wählt ein Datum vor
 - Zimmer-Preisrechner, Raumfinder für Feiern; beide füllen `kontakt.html?thema=…&nachricht=…` vor
@@ -18,22 +18,24 @@ Header und Footer stehen in jeder Datei identisch und müssen bei Änderungen ü
 - Gutschein-Generator mit Live-Vorschau und Druck (als „Muster, nicht einlösbar“ gekennzeichnet)
 - Alle Daten (Öffnungszeiten, Tageskarte, Zimmerpreise) stehen oben in `script.js`
 
-## Gestaltung, aktueller Stand
-- Farben „Weinrot & Leinen“: Weinrot #5A1E29, Messing #B08D57, Leinenweiß #F8F6F2, Rauchbraun #241C1D (Token-Block am Ende von `style.css`)
-- Schriften: Young Serif (Überschriften), UnifrakturMaguntia (nur „Gasthof“ im Logo), Grenze (Speisekarte, Kursives), Albert Sans (Fließtext)
-- Wirtshausschild als SVG im Titelbild der Startseite
+## Gestaltung, aktueller Stand (Richtung „Abendstube“, vom Auftraggeber gewählt am 5.10.2026)
+- Dunkel geführt: Rauchbraun- und Weinrot-Flächen im Wechsel mit Leinen, Messing für feine Linien. Keine Schatten, keine runden Ecken.
+- Farben: Weinrot #5A1E29, Messing #B08D57 / hell #D2B888 / Schrift auf Hell #7A5C2E, Leinen #F8F6F2, Rauchbraun #241C1D (Token-Block oben in `style.css`)
+- Schriften: Bodoni Moda (Überschriften, Kursive als Akzent; große Grade mit `opsz` 28, sonst zu feine Haarstriche), Geist (Text, Labels in Versalien mit Sperrung), UnifrakturMaguntia nur für „Gasthof“ im Logo. Alle Umlaute und ß sind in den Schriftdateien enthalten, geprüft.
+- Header: Logo mittig, Navigation links und rechts; unter 1180 px Vollbild-Menü
+- Startseite: Titelbild (Außenansicht, Text mittig), Das Haus, Tageskarte auf Weinrot, Herkunft (Bierdeckel), Biergarten-Zitat, Teaser auf Dunkel, Termine, Gutschein
+- Wirtshausschild-SVG entfernt (das Foto zeigt bereits ein Schild)
 
-## Feedback des Auftraggebers (offen)
-- Farbe Weinrot & Leinen: „deutlich besser“, Richtung passt
-- **Schriften (primär und sekundär) gefallen noch nicht**, sollen ersetzt werden
-- Wirkt insgesamt **noch zu billig, auch von der Anordnung** („Autobahngastro“)
-- Zielbild: **moderner Geheimtipp** – traditionelles Gasthaus mit modernem Touch und Sinn für Ästhetik, hochwertig, repräsentativ für HWA
-- Unterseiten-Aufbau beibehalten, aber hochwertiger gestalten
-- Nicht verwenden: Beige + Terrakotta (wirkt wie Claude), Gelb/Schwarz, Instrument Serif, generische „KI-Website“-Muster
+## Feedback des Auftraggebers
+- Weinrot & Leinen passt. Alte Schriften (Young Serif, Albert Sans) und die „Autobahngastro“-Anordnung waren der Grund für den Umbau.
+- Zielbild: moderner Geheimtipp, traditionelles Gasthaus mit modernem Touch, hochwertig, repräsentativ für HWA. Unterseiten-Aufbau bleibt.
+- Aus drei Vorschlägen (Tageslicht, Abendstube, Hauszeichen) gewählt: Abendstube. Ausdrücklicher Hinweis: Umlaute sauber darstellen.
+- Nicht verwenden: Beige + Terrakotta, Gelb/Schwarz, Instrument Serif, generische „KI-Website“-Muster
+- Offen: Rückmeldung zum Umbau
 
 ## Bilder
-Platzhalter in `img/`. Der Auftraggeber generiert 9 Bilder (aussen, stube, schaeufele, brotzeit, biergarten, kueche, zimmer, saal, zapfen) und legt sie in `img/original/`.
-Danach: zuschneiden, als WebP (Qualität ca. 80) speichern, Ecken auf Gemini-Wasserzeichen prüfen, Alt-Texte prüfen, `img/original/` wieder entfernen, Bildnachweis „KI-generiert“ ergänzen.
+Die 9 Bilder des Auftraggebers sind eingebaut (WebP, Qualität 80, 1264 × 848 bzw. 848 × 1264), Ecken auf Wasserzeichen geprüft, Alt-Texte an die Motive angepasst.
+Statt „brotzeit“ gibt es ein zweites Küchenbild `kloesse.webp` (Speisekarte). Kopf der Speisekarte: Schäufele.
 
 ## Regeln
 - Nichts live schalten ohne ausdrückliches „live“ (dann Fast-Forward von Branch auf `main`)
