@@ -217,9 +217,9 @@ h1, h2, h3 { text-wrap: balance; }
 .sign { position: absolute; top: calc(var(--header) + 12px); right: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter))); width: clamp(140px, 17vw, 236px); z-index: 1; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.35)); }
 .sign-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .sign-swing { transform-origin: 130px 14px; transform-box: view-box; animation: swing-in 3.2s var(--ease) 0.3s both, sway 7s ease-in-out 3.5s infinite; }
-.sign-gasthof { font-family: var(--fraktur); font-size: 30px; fill: var(--kalk); }
-.sign-name { font-family: var(--display); font-size: 29px; fill: var(--kalk); }
-.sign-year { font-family: var(--serif); font-style: italic; font-size: 20px; fill: var(--mustard-light); }
+.sign-gasthof { font-family: var(--fraktur); font-size: 30px; fill: #1B1E20; }
+.sign-name { font-family: var(--display); font-size: 29px; fill: #1B1E20; }
+.sign-year { font-family: var(--serif); font-style: italic; font-size: 20px; fill: #1B1E20; }
 @keyframes swing-in {
   0% { transform: rotate(9deg); }
   25% { transform: rotate(-6deg); }
@@ -517,7 +517,7 @@ h1, h2, h3 { text-wrap: balance; }
 .calc-result .saving { color: #3F6E35; }
 .calc-hint { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
 
-@media (max-width: 900px) { .zimmer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .zimmer-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* ===== Feiern ===== */
 .feiern-section { background: var(--kalk-2); }
@@ -702,13 +702,13 @@ input[type="range"] { width: 100%; accent-color: var(--red); height: 28px; curso
 /* ===== Zimmer-Seite ===== */
 .room-list { display: grid; gap: 18px; }
 .room-card { padding: 24px 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
-.room-card h2 { display: flex; align-items: baseline; gap: 12px; font-family: var(--display); font-size: 30px; line-height: 1.1; }
+.room-card h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-family: var(--display); font-size: 30px; line-height: 1.1; }
 .room-count { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--kalk-2); color: var(--red); }
 .room-meta { margin: 6px 0 12px; font-size: 14px; font-weight: 500; color: var(--muted); }
 .room-card p:not(.room-meta):not(.room-price) { color: var(--ink-2); }
 .room-price { margin-top: 12px; font-family: var(--serif); font-size: 20px; color: var(--red); }
 .room-facts { margin: 12px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
-.room-facts div { display: grid; grid-template-columns: 8em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.room-facts div { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .room-facts dt { font-weight: 600; }
 .room-facts dd { margin: 0; color: var(--ink-2); }
 .zimmer-section .zimmer-grid { align-items: start; }
@@ -770,3 +770,70 @@ input[type="range"] { width: 100%; accent-color: var(--red); height: 28px; curso
 .page-hero-image .pos-55 { object-position: 50% 55%; }
 .page-hero-image .pos-60 { object-position: 50% 60%; }
 .room-count, .dish-price { white-space: nowrap; }
+
+/* ===================================================================
+   Farbwelt „Senf & Schiefer“: Anthrazit, Senfgelb, kühles Kalkgrau
+   (überschreibt die ursprüngliche Ochsenblut-Palette)
+   =================================================================== */
+:root {
+  --kalk: #ECEDEA;
+  --kalk-2: #E0E2DE;
+  --paper: #F8F8F6;
+  --ink: #1B1E20;
+  --ink-2: #3E4448;
+  --muted: #575D61;
+  --line: #CDD0CC;
+  --red: #23292D;          /* Hauptfarbe: Anthrazit (Name bleibt aus Kompatibilität) */
+  --red-dark: #0F1315;
+  --mustard: #E2A82B;      /* Senfgelb */
+  --mustard-light: #EBB948;
+  --mustard-ink: #6E5108;  /* Senfton für Schrift auf hellem Grund */
+  --slate: #1B1E20;
+  --slate-2: #272C2F;
+  --error: #9E2A16;
+  --radius: 6px;
+}
+
+/* Runde Buttons wirken moderner */
+.btn, .main-nav .nav-cta, .nav-toggle { border-radius: 999px; }
+.btn { padding: 15px 28px; }
+
+.eyebrow { color: var(--mustard-ink); }
+.site-header.is-solid .logo { color: var(--ink); }
+.field input:focus, .field select:focus, .field textarea:focus { box-shadow: 0 0 0 3px rgba(35, 41, 45, 0.15); }
+
+/* Tageskarte auf Senfgelb */
+.tafel-section { background: var(--mustard); }
+.tafel-section .eyebrow { color: var(--ink); }
+.tafel-intro > p:not(.eyebrow) { color: var(--ink); }
+.tafel-days button { border-color: rgba(27, 30, 32, 0.35); color: var(--ink); }
+.tafel-days button:hover { border-color: var(--ink); }
+.tafel-days button.is-today::after { color: var(--ink); font-weight: 600; }
+
+/* Bierdeckel */
+.coaster-front { background: #FFFFFF; }
+.coaster-back { background: var(--mustard); color: var(--ink); }
+
+/* Termine, Öffnungszeiten */
+.event-tag { background: var(--mustard); color: var(--ink); }
+.hours tr.is-today th, .hours tr.is-today td { color: var(--ink); font-weight: 600; }
+.hours tr.is-today th::after { color: var(--mustard-ink); }
+
+/* Gutscheine auf Senfgelb */
+.gutschein-section, .gift-strip { background: var(--mustard); color: var(--ink); }
+.gutschein-section .eyebrow, .gift-strip .eyebrow { color: var(--ink); }
+.gutschein-intro { color: var(--ink-2); }
+.voucher-form legend { color: var(--ink); }
+.amounts span, .motif { border-color: rgba(27, 30, 32, 0.4); }
+.amounts input:checked + span { background: var(--ink); color: var(--mustard-light); border-color: var(--ink); }
+.motif::before { border-color: var(--ink); }
+.motifs input:checked + .motif { background: rgba(27, 30, 32, 0.1); border-color: var(--ink); }
+.amounts input:focus-visible + span, .motifs input:focus-visible + .motif { outline-color: var(--ink); }
+.gutschein-section .field label { color: var(--ink); }
+.gutschein-section .optional { color: var(--ink-2); }
+.gutschein-section .field input:focus, .gutschein-section .field textarea:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(27, 30, 32, 0.25); }
+.gutschein-section .field-error { color: #5E1608; }
+.gutschein-section .btn-red, .btn-light-solid { background: var(--ink); color: var(--kalk); }
+.gutschein-section .btn-red:hover, .btn-light-solid:hover { background: #000; }
+.voucher-stube { background: var(--paper); color: var(--ink); }
+.voucher { box-shadow: 0 40px 70px -30px rgba(60, 40, 0, 0.55); }
