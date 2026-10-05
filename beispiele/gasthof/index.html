@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2B302E">
+<title>Gasthof Grünlinger – Fränkisches Wirtshaus | Beispielprojekt</title>
+<meta name="description" content="Beispielprojekt von HWA: Website eines fiktiven fränkischen Gasthofs im Fichtelgebirge mit Tageskarte, Speisekarte, Tischreservierung, Zimmern und Gutscheinen.">
+<meta property="og:title" content="Gasthof Grünlinger – Beispielprojekt von HWA">
+<meta property="og:description" content="Demo-Website eines fiktiven Gasthofs im Fichtelgebirge, gestaltet von HWA – Höhn Web &amp; Automatisierung.">
+<meta property="og:type" content="website">
+<link rel="preload" href="fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%237A2E24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F5EFE3' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="demo-bar" role="note">
+  <p>Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Betrieb, Personen, Preise und Kontaktdaten sind frei erfunden, die Bilder KI-generiert. Es werden keine Daten versendet.</p>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo" aria-label="Gasthof Grünlinger, zum Seitenanfang">
+      <span class="logo-small">Gasthof</span>
+      <span class="logo-name">Grünlinger</span>
+    </a>
+    <p class="header-status status-line" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <a href="#speisekarte">Speisekarte</a>
+      <a href="#zimmer">Zimmer</a>
+      <a href="#feiern">Feiern</a>
+      <a href="#termine">Termine</a>
+      <a href="#gutschein">Gutscheine</a>
+      <a href="#reservieren" class="nav-cta">Tisch reservieren</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav"><span class="nav-toggle-label">Menü</span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-image">
+      <img src="img/aussen.webp" alt="Der Gasthof zur blauen Stunde: Erdgeschoss aus Granit, Giebel mit Schiefer verkleidet, warmes Licht in allen Fenstern, davor zwei Kastanien" width="1536" height="1024" fetchpriority="high">
+    </div>
+
+    <!-- Wirtshausschild -->
+    <div class="sign" aria-hidden="true">
+      <svg viewBox="0 0 260 300" class="sign-svg">
+        <g class="sign-bracket" fill="none" stroke="#1E1C1A" stroke-width="5" stroke-linecap="round">
+          <path d="M8 14 H230"/>
+          <path d="M8 14 V70"/>
+          <path d="M8 66 C 60 66, 70 18, 130 16"/>
+          <path d="M40 54 c 10 -18 30 -18 34 -4 c 3 10 -10 14 -14 6"/>
+          <circle cx="230" cy="14" r="5" fill="#1E1C1A"/>
+        </g>
+        <g class="sign-swing">
+          <path d="M98 14 V44 M162 14 V44" stroke="#1E1C1A" stroke-width="3"/>
+          <ellipse cx="130" cy="150" rx="104" ry="112" fill="#1E1C1A"/>
+          <ellipse cx="130" cy="150" rx="98" ry="106" fill="#7A2E24"/>
+          <ellipse cx="130" cy="150" rx="88" ry="96" fill="none" stroke="#C99A2E" stroke-width="2"/>
+          <text x="130" y="112" text-anchor="middle" class="sign-gasthof">Gasthof</text>
+          <text x="130" y="160" text-anchor="middle" class="sign-name">Grünlinger</text>
+          <path d="M88 178 H172" stroke="#C99A2E" stroke-width="1.5"/>
+          <text x="130" y="204" text-anchor="middle" class="sign-year">seit 1887</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="wrap hero-content">
+      <p class="hero-kicker">Lindenreuth im Fichtelgebirge</p>
+      <h1 id="hero-title">Wo Franken<br>einkehrt.</h1>
+      <p class="hero-lead">Fränkische Küche mit Zutaten aus der Nachbarschaft, sieben Gästezimmer und ein Biergarten unter alten Kastanien. Seit fünf Generationen in der Familie.</p>
+      <div class="hero-actions">
+        <a href="#reservieren" class="btn btn-red">Tisch reservieren</a>
+        <a href="#speisekarte" class="btn btn-light">Zur Speisekarte</a>
+      </div>
+    </div>
+
+    <div class="hero-facts">
+      <div class="wrap hero-facts-inner">
+        <div class="hero-fact">
+          <p class="hero-fact-label">Heute</p>
+          <p class="hero-fact-value" data-status-long>Mittwoch bis Sonntag ab 11:30 Uhr</p>
+        </div>
+        <div class="hero-fact">
+          <p class="hero-fact-label">Auf der Tafel</p>
+          <p class="hero-fact-value"><a href="#tafel" data-today-dish>Jeden Tag ein Gericht, das es nur heute gibt</a></p>
+        </div>
+        <div class="hero-fact">
+          <p class="hero-fact-label">Biergarten</p>
+          <p class="hero-fact-value" data-beergarden>Von Mai bis September bei schönem Wetter</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAFEL ===== -->
+  <section class="section tafel-section" id="tafel" aria-labelledby="tafel-title">
+    <div class="wrap tafel-grid">
+      <div class="tafel-intro">
+        <p class="eyebrow">Tageskarte</p>
+        <h2 id="tafel-title">Was heute auf der Tafel steht</h2>
+        <p>Neben der festen Karte kocht Tobias jeden Tag ein Gericht, das es nur an diesem Wochentag gibt. Wenn es aus ist, ist es aus.</p>
+        <div class="tafel-days" role="tablist" aria-label="Wochentag wählen">
+          <button type="button" role="tab" data-day="3" aria-selected="true">Mi</button>
+          <button type="button" role="tab" data-day="4" aria-selected="false" tabindex="-1">Do</button>
+          <button type="button" role="tab" data-day="5" aria-selected="false" tabindex="-1">Fr</button>
+          <button type="button" role="tab" data-day="6" aria-selected="false" tabindex="-1">Sa</button>
+          <button type="button" role="tab" data-day="0" aria-selected="false" tabindex="-1">So</button>
+        </div>
+      </div>
+
+      <div class="tafel" role="tabpanel" aria-live="polite" id="tafelBoard">
+        <p class="tafel-day" data-tafel-day>Mittwoch</p>
+        <p class="tafel-note" data-tafel-note hidden></p>
+        <ul class="tafel-list" data-tafel-list>
+          <li><span class="tafel-dish">Saure Zipfel mit Bauernbrot</span><span class="tafel-price">12,50</span></li>
+          <li><span class="tafel-dish">Kartoffelsuppe mit Majoran</span><span class="tafel-price">6,90</span></li>
+        </ul>
+        <p class="tafel-chalk">Solange der Vorrat reicht!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HAUS ===== -->
+  <section class="section haus-section" aria-labelledby="haus-title">
+    <div class="wrap haus-grid">
+      <figure class="haus-figure reveal-img">
+        <img src="img/stube.webp" alt="Die Wirtsstube mit Holzvertäfelung, grünem Kachelofen mit Ofenbank und gedeckten Eichentischen im Nachmittagslicht" width="1536" height="1024" loading="lazy">
+      </figure>
+      <div class="haus-text">
+        <p class="eyebrow">Das Haus</p>
+        <h2 id="haus-title">Zwölf Gerichte, die wir richtig gut können</h2>
+        <p class="lead">Bei uns gibt es keine Karte mit hundert Gerichten. Dafür kennen wir jeden, der uns Fleisch, Bier und Kartoffeln liefert, beim Vornamen.</p>
+        <p>Lena Grünlinger führt den Gasthof in fünfter Generation. In der Küche steht ihr Mann Tobias, gelernt hat er in einem Münchner Wirtshaus. Die Klöße macht er jeden Morgen selbst, die Soßen brauchen bei ihm einen ganzen Tag.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <p class="coasters-title">Wie weit es unsere Zutaten haben <span>(zum Umdrehen auf die Bierdeckel tippen)</span></p>
+      <ul class="coasters">
+        <li>
+          <button type="button" class="coaster" aria-pressed="false">
+            <span class="coaster-face coaster-front"><span class="coaster-km">12 km</span><span class="coaster-label">bis zum Metzger</span></span>
+            <span class="coaster-face coaster-back">Fleisch und Wurst kommen von einer Metzgerei im Nachbarort, die noch selbst schlachtet.</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="coaster" aria-pressed="false">
+            <span class="coaster-face coaster-front"><span class="coaster-km">8 km</span><span class="coaster-label">bis zur Brauerei</span></span>
+            <span class="coaster-face coaster-back">Das Kellerbier kommt von einer Familienbrauerei aus dem Landkreis, im Holzfass.</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="coaster" aria-pressed="false">
+            <span class="coaster-face coaster-front"><span class="coaster-km">3 km</span><span class="coaster-label">bis zum Kartoffelacker</span></span>
+            <span class="coaster-face coaster-back">Die Kartoffeln für unsere Klöße baut ein Bauer am Ortsrand eigens für uns an.</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="coaster" aria-pressed="false">
+            <span class="coaster-face coaster-front"><span class="coaster-km">0 km</span><span class="coaster-label">bis zum Kräutergarten</span></span>
+            <span class="coaster-face coaster-back">Majoran, Liebstöckel und Schnittlauch wachsen im Garten hinter der Küche.</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== SPEISEKARTE ===== -->
+  <section class="section menu-section" id="speisekarte" aria-labelledby="menu-title">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Speisekarte</p>
+        <h2 id="menu-title">Unsere Karte</h2>
+        <p>Gültig ab Oktober, mit Wildgerichten bis Mitte November. Fragen Sie gern nach kleinen Portionen.</p>
+      </header>
+
+      <div class="menu-tools">
+        <div class="menu-cats" role="tablist" aria-label="Kategorie">
+          <button type="button" role="tab" aria-selected="true" data-cat="alle">Alles</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-cat="brotzeit">Brotzeit</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-cat="suppe">Suppen</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-cat="haupt">Hauptgerichte</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-cat="wild">Wild</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-cat="suess">Süßes</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-cat="trinken">Getränke</button>
+        </div>
+        <div class="menu-filters">
+          <label class="toggle"><input type="checkbox" data-filter="veg"><span>Vegetarisch</span></label>
+          <label class="toggle"><input type="checkbox" data-filter="gf"><span>Ohne Gluten</span></label>
+          <label class="toggle"><input type="checkbox" id="showAllergens"><span>Allergene zeigen</span></label>
+        </div>
+      </div>
+
+      <div class="menu-layout">
+        <div class="menu-card" id="menuCard">
+          <section class="menu-group" data-cat="brotzeit">
+            <h3>Brotzeit</h3>
+            <ul>
+              <li class="dish" data-tags="veg"><div class="dish-line"><span class="dish-name">Obatzda mit Bauernbrot und Radi</span><span class="dish-dots"></span><span class="dish-price">9,50</span></div><p class="dish-desc">Camembert, Butter, Zwiebeln, Paprika. Angemacht nach Omas Rezept.</p><p class="dish-allergens">A, G</p></li>
+              <li class="dish"><div class="dish-line"><span class="dish-name">Brotzeitbrett für zwei</span><span class="dish-dots"></span><span class="dish-price">24,00</span></div><p class="dish-desc">Pressack, Bauernschinken, Leberwurst aus dem Glas, Obatzda, Essiggurken, Bauernbrot.</p><p class="dish-allergens">A, G, L, M</p></li>
+              <li class="dish" data-tags="veg"><div class="dish-line"><span class="dish-name">Gebackener Camembert mit Preiselbeeren</span><span class="dish-dots"></span><span class="dish-price">11,90</span></div><p class="dish-desc">Mit Salat vom Tag.</p><p class="dish-allergens">A, C, G, M</p></li>
+            </ul>
+          </section>
+          <section class="menu-group" data-cat="suppe">
+            <h3>Suppen</h3>
+            <ul>
+              <li class="dish" data-tags="gf"><div class="dish-line"><span class="dish-name">Leberknödelsuppe</span><span class="dish-dots"></span><span class="dish-price">6,50</span></div><p class="dish-desc">Kräftige Rinderbrühe, ein großer Knödel.</p><p class="dish-allergens">A, C, L</p></li>
+              <li class="dish" data-tags="veg gf"><div class="dish-line"><span class="dish-name">Kartoffelsuppe mit Majoran</span><span class="dish-dots"></span><span class="dish-price">6,90</span></div><p class="dish-desc">Auf Wunsch mit Wiener Würstchen (+ 2,50).</p><p class="dish-allergens">G, L</p></li>
+            </ul>
+          </section>
+          <section class="menu-group" data-cat="haupt">
+            <h3>Hauptgerichte</h3>
+            <ul>
+              <li class="dish dish-signature"><div class="dish-line"><span class="dish-name">Schäufele mit Kloß und Blaukraut</span><span class="dish-dots"></span><span class="dish-price">19,90</span></div><p class="dish-desc">Unser Klassiker. Schweineschulter mit Kruste, Dunkelbiersoße. Freitag bis Sonntag.</p><p class="dish-allergens">A, L, O</p></li>
+              <li class="dish"><div class="dish-line"><span class="dish-name">Sauerbraten mit Lebkuchensoße</span><span class="dish-dots"></span><span class="dish-price">21,50</span></div><p class="dish-desc">Fünf Tage eingelegt, dazu Klöße und Apfelrotkohl.</p><p class="dish-allergens">A, C, L, O</p></li>
+              <li class="dish" data-tags="gf"><div class="dish-line"><span class="dish-name">Drei Bratwürste mit Sauerkraut</span><span class="dish-dots"></span><span class="dish-price">13,50</span></div><p class="dish-desc">Fränkische Bratwurst vom Metzger nebenan, auf Buchenholz gegrillt.</p><p class="dish-allergens">M</p></li>
+              <li class="dish" data-tags="veg"><div class="dish-line"><span class="dish-name">Käsespätzle mit Röstzwiebeln</span><span class="dish-dots"></span><span class="dish-price">15,90</span></div><p class="dish-desc">Handgeschabt, mit Bergkäse aus dem Allgäu, kleiner Salat.</p><p class="dish-allergens">A, C, G</p></li>
+              <li class="dish" data-tags="veg"><div class="dish-line"><span class="dish-name">Krautkrapfen mit Kräuterrahm</span><span class="dish-dots"></span><span class="dish-price">14,50</span></div><p class="dish-desc">Gerollter Nudelteig mit Sauerkraut, im Ofen gebacken.</p><p class="dish-allergens">A, C, G</p></li>
+            </ul>
+          </section>
+          <section class="menu-group" data-cat="wild">
+            <h3>Wild <span class="menu-season">bis 15. November</span></h3>
+            <ul>
+              <li class="dish"><div class="dish-line"><span class="dish-name">Rehragout mit Serviettenknödel</span><span class="dish-dots"></span><span class="dish-price">23,90</span></div><p class="dish-desc">Aus heimischer Jagd, mit Pilzen und Preiselbeerbirne.</p><p class="dish-allergens">A, C, G, L, O</p></li>
+              <li class="dish" data-tags="gf"><div class="dish-line"><span class="dish-name">Wildschweinbraten mit Kartoffelklößen</span><span class="dish-dots"></span><span class="dish-price">22,50</span></div><p class="dish-desc">Mit Wacholdersoße und Rosenkohl.</p><p class="dish-allergens">L, O</p></li>
+            </ul>
+          </section>
+          <section class="menu-group" data-cat="suess">
+            <h3>Süßes</h3>
+            <ul>
+              <li class="dish" data-tags="veg"><div class="dish-line"><span class="dish-name">Apfelküchla mit Zimtzucker</span><span class="dish-dots"></span><span class="dish-price">7,50</span></div><p class="dish-desc">In Bierteig gebacken, mit Vanilleeis.</p><p class="dish-allergens">A, C, G</p></li>
+              <li class="dish" data-tags="veg gf"><div class="dish-line"><span class="dish-name">Holunderküchla im Juni, Zwetschgenröster im Herbst</span><span class="dish-dots"></span><span class="dish-price">6,90</span></div><p class="dish-desc">Was der Garten gerade hergibt, im Herbst mit Quarkschaum.</p><p class="dish-allergens">G</p></li>
+            </ul>
+          </section>
+          <section class="menu-group" data-cat="trinken">
+            <h3>Getränke</h3>
+            <ul>
+              <li class="dish" data-tags="veg gf"><div class="dish-line"><span class="dish-name">Kellerbier vom Holzfass, 0,5 l</span><span class="dish-dots"></span><span class="dish-price">4,40</span></div><p class="dish-desc">Ungefiltert, aus einer Familienbrauerei im Landkreis.</p><p class="dish-allergens">A</p></li>
+              <li class="dish" data-tags="veg gf"><div class="dish-line"><span class="dish-name">Apfelschorle mit Saft von der Streuobstwiese, 0,4 l</span><span class="dish-dots"></span><span class="dish-price">3,60</span></div><p class="dish-desc"></p><p class="dish-allergens">–</p></li>
+              <li class="dish" data-tags="veg gf"><div class="dish-line"><span class="dish-name">Silvaner vom Main, 0,25 l</span><span class="dish-dots"></span><span class="dish-price">6,20</span></div><p class="dish-desc">Trocken, aus dem Bocksbeutel.</p><p class="dish-allergens">O</p></li>
+            </ul>
+          </section>
+          <p class="menu-empty" data-menu-empty hidden>Für diese Auswahl haben wir gerade nichts auf der Karte. Sprechen Sie uns an, die Küche macht gern etwas möglich.</p>
+          <div class="allergen-legend" id="allergenLegend" hidden>
+            <p><strong>Allergene:</strong> A Gluten · B Krebstiere · C Eier · D Fisch · E Erdnüsse · F Soja · G Milch · H Schalenfrüchte · L Sellerie · M Senf · N Sesam · O Sulfite · P Lupinen · R Weichtiere</p>
+            <p>Beispielangaben für diese Demo. Bei Allergien fragen Sie bitte immer im Service nach.</p>
+          </div>
+        </div>
+
+        <aside class="menu-aside">
+          <figure class="menu-photo reveal-img">
+            <img src="img/schaeufele.webp" alt="Fränkisches Schäufele mit Kruste, Kloß, Dunkelbiersoße und Blaukraut auf einem Steingutteller" width="1536" height="1024" loading="lazy">
+          </figure>
+          <figure class="menu-photo menu-photo-small reveal-img">
+            <img src="img/brotzeit.webp" alt="Brotzeitbrett mit Bauernbrot, Obatzda, Pressack, Radi und Essiggurken, daneben ein Steinkrug" width="1536" height="1024" loading="lazy">
+          </figure>
+          <button type="button" class="link-arrow" id="printMenu">Speisekarte drucken</button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVIERUNG ===== -->
+  <section class="section reserve-section" id="reservieren" aria-labelledby="reserve-title">
+    <div class="wrap">
+      <header class="section-head section-head-light">
+        <p class="eyebrow">Reservierung</p>
+        <h2 id="reserve-title">Tisch reservieren</h2>
+        <p>Für bis zu zwölf Personen direkt hier. Sie sehen sofort, welche Zeiten noch frei sind. Für größere Gesellschaften schauen Sie bitte bei <a href="#feiern">Feiern</a>.</p>
+      </header>
+
+      <form class="reserve" id="reserveForm" novalidate>
+        <div class="reserve-grid">
+          <fieldset class="reserve-step">
+            <legend><span class="step-no">1</span> Tag</legend>
+            <div class="calendar" id="calendar">
+              <div class="cal-head">
+                <button type="button" class="cal-nav" data-cal="-1" aria-label="Vorheriger Monat">‹</button>
+                <p class="cal-month" id="calMonth" aria-live="polite"></p>
+                <button type="button" class="cal-nav" data-cal="1" aria-label="Nächster Monat">›</button>
+              </div>
+              <div class="cal-grid" id="calGrid" role="grid" aria-labelledby="calMonth"></div>
+              <p class="cal-legend"><span class="lg lg-closed"></span> Ruhetag oder Betriebsurlaub</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="reserve-step">
+            <legend><span class="step-no">2</span> Personen &amp; Uhrzeit</legend>
+            <div class="stepper" role="group" aria-label="Anzahl Personen">
+              <button type="button" class="stepper-btn" data-step="-1" aria-label="Eine Person weniger">−</button>
+              <output class="stepper-value" id="guestsOut" aria-live="polite">2 Personen</output>
+              <button type="button" class="stepper-btn" data-step="1" aria-label="Eine Person mehr">+</button>
+            </div>
+            <p class="field-hint" id="guestsHint">Ab 13 Personen planen wir gern Ihre Feier mit Ihnen.</p>
+
+            <div class="area-choice" id="areaChoice">
+              <label><input type="radio" name="bereich" value="Wirtsstube" checked><span>Wirtsstube</span></label>
+              <label><input type="radio" name="bereich" value="Biergarten"><span>Biergarten</span></label>
+            </div>
+            <p class="field-hint" id="areaHint" hidden></p>
+
+            <div class="slots" id="slots" aria-live="polite">
+              <p class="slots-empty">Bitte wählen Sie zuerst einen Tag.</p>
+            </div>
+            <p class="field-error" id="err-slot"></p>
+          </fieldset>
+
+          <fieldset class="reserve-step">
+            <legend><span class="step-no">3</span> Ihre Angaben</legend>
+            <div class="field">
+              <label for="r-name">Name</label>
+              <input id="r-name" name="name" type="text" autocomplete="name" aria-describedby="err-r-name">
+              <p class="field-error" id="err-r-name"></p>
+            </div>
+            <div class="field">
+              <label for="r-email">E-Mail</label>
+              <input id="r-email" name="email" type="email" autocomplete="email" aria-describedby="err-r-email">
+              <p class="field-error" id="err-r-email"></p>
+            </div>
+            <div class="field">
+              <label for="r-tel">Telefon <span class="optional">(für Rückfragen)</span></label>
+              <input id="r-tel" name="telefon" type="tel" autocomplete="tel">
+            </div>
+            <fieldset class="extras">
+              <legend>Darf es etwas mehr sein? <span class="optional">(optional)</span></legend>
+              <label><input type="checkbox" name="extra-kinderstuhl" value="Kinderstuhl"><span>Kinderstuhl</span></label>
+              <label><input type="checkbox" name="extra-hund" value="Hund dabei"><span>Hund dabei</span></label>
+              <label><input type="checkbox" name="extra-barrierefrei" value="Barrierefreier Platz"><span>Barrierefreier Platz</span></label>
+              <label><input type="checkbox" name="extra-geburtstag" value="Geburtstag"><span>Wir feiern Geburtstag</span></label>
+            </fieldset>
+          </fieldset>
+        </div>
+
+        <div class="reserve-bar">
+          <p class="reserve-summary" id="reserveSummary">Noch kein Termin gewählt.</p>
+          <button type="submit" class="btn btn-mustard">Verbindlich reservieren</button>
+        </div>
+      </form>
+
+      <div class="reserve-done" id="reserveDone" hidden tabindex="-1">
+        <p class="done-title">Ihr Tisch ist vorgemerkt.</p>
+        <p class="done-text" id="reserveDoneText"></p>
+        <div class="done-actions">
+          <button type="button" class="btn btn-mustard" id="reserveIcs">In den Kalender eintragen</button>
+          <button type="button" class="link-arrow link-arrow-light" id="reserveAgain">Weitere Reservierung</button>
+        </div>
+        <p class="demo-note">Beispielprojekt: Die Reservierung wurde nicht versendet. Im echten Betrieb landet sie direkt im Reservierungsbuch, und Sie erhalten eine Bestätigung per E-Mail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BIERGARTEN (Bildband) ===== -->
+  <section class="band" aria-label="Biergarten">
+    <img src="img/biergarten.webp" alt="Biergarten unter alten Kastanien am Abend, lange Holztische, Lichterketten, tiefstehende Sonne" width="1536" height="1024" loading="lazy">
+    <div class="band-text">
+      <p class="band-quote">„Unter den Kastanien schmeckt das Kellerbier einfach besser. Das ist keine Werbung, das ist Physik.“</p>
+      <p class="band-cite">Lena Grünlinger, Wirtin</p>
+    </div>
+  </section>
+
+  <!-- ===== ZIMMER ===== -->
+  <section class="section zimmer-section" id="zimmer" aria-labelledby="zimmer-title">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Übernachten</p>
+        <h2 id="zimmer-title">Sieben Zimmer über der Wirtsstube</h2>
+        <p>Ruhig, mit Blick in den Wald und einem Frühstück, für das man gern früher aufsteht. Wanderwege beginnen direkt vor der Haustür.</p>
+      </header>
+
+      <div class="zimmer-grid">
+        <figure class="zimmer-figure reveal-img">
+          <img src="img/zimmer.webp" alt="Gästezimmer mit Leinenbettwäsche, Kopfteil aus Lärchenholz und großem Fenster mit Blick auf nebligen Fichtenwald" width="1536" height="1024" loading="lazy">
+        </figure>
+
+        <div class="calc" id="roomCalc" role="group" aria-labelledby="calcTitle">
+          <p class="calc-title" id="calcTitle">Preis berechnen</p>
+          <div class="room-options" role="radiogroup" aria-label="Zimmer">
+            <label><input type="radio" name="room" value="kammer" checked><span><strong>Kammer</strong><em>Einzelzimmer · 1 Person</em><b>72 €</b></span></label>
+            <label><input type="radio" name="room" value="stube"><span><strong>Stubenzimmer</strong><em>Doppelzimmer · bis 2 Personen</em><b>104 €</b></span></label>
+            <label><input type="radio" name="room" value="boden"><span><strong>Dachboden</strong><em>Familienzimmer · bis 4 Personen</em><b>138 €</b></span></label>
+          </div>
+          <div class="calc-row">
+            <div class="field">
+              <label for="c-arrival">Anreise</label>
+              <input id="c-arrival" type="date" name="anreise">
+            </div>
+            <div class="field">
+              <label for="c-nights">Nächte</label>
+              <select id="c-nights" name="naechte"></select>
+            </div>
+          </div>
+          <label class="check"><input type="checkbox" name="hund" id="c-dog"><span>Mit Hund (+ 12 € pro Nacht)</span></label>
+          <dl class="calc-result" id="calcResult" aria-live="polite"></dl>
+          <p class="calc-hint">Preise pro Nacht inklusive Frühstück. Ab drei Nächten 10&nbsp;% günstiger.</p>
+          <button type="button" class="btn btn-red" id="roomAsk">Zimmer anfragen</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEIERN ===== -->
+  <section class="section feiern-section" id="feiern" aria-labelledby="feiern-title">
+    <div class="wrap feiern-grid">
+      <div class="feiern-text">
+        <p class="eyebrow">Feiern</p>
+        <h2 id="feiern-title">Von der Taufe bis zum Leichenschmaus</h2>
+        <p>Für jeden Anlass haben wir den passenden Raum. Schieben Sie den Regler auf Ihre Gästezahl, dann sehen Sie, wo Ihre Feier Platz hat und womit Sie ungefähr rechnen können.</p>
+
+        <div class="finder">
+          <p class="finder-label"><label for="guestRange">Gäste:</label> <output for="guestRange" id="guestRangeOut">30</output></p>
+          <input type="range" id="guestRange" min="10" max="120" step="5" value="30" aria-describedby="finderResult">
+          <ul class="rooms" id="roomList">
+            <li data-max="28"><strong>Kachelofenstube</strong><span>bis 28 Personen, gemütlich und für sich</span></li>
+            <li data-max="70"><strong>Saal</strong><span>bis 70 Personen, mit Platz zum Tanzen</span></li>
+            <li data-max="120" data-season="summer"><strong>Biergarten</strong><span>bis 120 Personen, Mai bis September</span></li>
+          </ul>
+          <p class="finder-result" id="finderResult" aria-live="polite"></p>
+        </div>
+        <button type="button" class="btn btn-red" id="feierAsk">Feier anfragen</button>
+      </div>
+      <figure class="feiern-figure reveal-img">
+        <img src="img/saal.webp" alt="Festlich gedeckte lange Tafel im Saal mit weißer Tischdecke, Kerzen und Wiesenblumen unter Holzbalken" width="1536" height="1024" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== TERMINE ===== -->
+  <section class="section termine-section" id="termine" aria-labelledby="termine-title">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Termine</p>
+        <h2 id="termine-title">Was demnächst los ist</h2>
+        <p>Schlachtschüssel, Kirchweih, Martinsgans. Jeden Termin können Sie sich mit einem Klick in den Kalender eintragen oder gleich einen Tisch dafür reservieren.</p>
+      </header>
+      <ol class="events" id="events"></ol>
+      <noscript><p>Unsere Termine finden Sie aktuell auf dem Aushang im Gasthof.</p></noscript>
+    </div>
+  </section>
+
+  <!-- ===== GUTSCHEIN ===== -->
+  <section class="section gutschein-section" id="gutschein" aria-labelledby="gutschein-title">
+    <div class="wrap gutschein-grid">
+      <div>
+        <p class="eyebrow">Gutscheine</p>
+        <h2 id="gutschein-title">Ein Abend bei uns zum Verschenken</h2>
+        <p class="gutschein-intro">Betrag wählen, Motiv aussuchen, ein paar Worte dazu. Im echten Betrieb bezahlen Sie online und bekommen den Gutschein sofort als PDF.</p>
+
+        <div class="voucher-form" id="voucherForm">
+          <fieldset>
+            <legend>Betrag</legend>
+            <div class="amounts">
+              <label><input type="radio" name="betrag" value="25"><span>25 €</span></label>
+              <label><input type="radio" name="betrag" value="50" checked><span>50 €</span></label>
+              <label><input type="radio" name="betrag" value="75"><span>75 €</span></label>
+              <label><input type="radio" name="betrag" value="100"><span>100 €</span></label>
+              <label><input type="radio" name="betrag" value="frei"><span>Freier Betrag</span></label>
+            </div>
+            <div class="field field-inline" id="freeAmountField" hidden>
+              <label for="v-free">Betrag in Euro (10 bis 500)</label>
+              <input id="v-free" type="number" min="10" max="500" step="5" inputmode="numeric" value="60" aria-describedby="err-v-free">
+              <p class="field-error" id="err-v-free"></p>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Motiv</legend>
+            <div class="motifs">
+              <label><input type="radio" name="motiv" value="stube" checked><span class="motif motif-stube">Wirtsstube</span></label>
+              <label><input type="radio" name="motiv" value="garten"><span class="motif motif-garten">Biergarten</span></label>
+              <label><input type="radio" name="motiv" value="fest"><span class="motif motif-fest">Festtag</span></label>
+            </div>
+          </fieldset>
+          <div class="calc-row">
+            <div class="field">
+              <label for="v-to">Für</label>
+              <input id="v-to" type="text" maxlength="40" placeholder="z. B. Oma Gerda">
+            </div>
+            <div class="field">
+              <label for="v-from">Von</label>
+              <input id="v-from" type="text" maxlength="40" placeholder="z. B. Lisa und Jonas">
+            </div>
+          </div>
+          <div class="field">
+            <label for="v-msg">Ein paar Worte <span class="optional" id="v-count">(noch 140 Zeichen)</span></label>
+            <textarea id="v-msg" rows="3" maxlength="140" placeholder="z. B. Für einen Sonntag mit Schäufele und ohne Abwasch."></textarea>
+          </div>
+          <button type="button" class="btn btn-red" id="voucherPrint">Vorschau drucken</button>
+        </div>
+      </div>
+
+      <div class="voucher-wrap">
+        <div class="voucher voucher-stube" id="voucher" aria-live="polite">
+          <div class="voucher-inner">
+            <p class="voucher-top"><span class="logo-small">Gasthof</span> Grünlinger</p>
+            <p class="voucher-title">Gutschein</p>
+            <p class="voucher-amount" id="vAmount">50 €</p>
+            <p class="voucher-for" id="vFor">für einen Besuch in unserem Gasthof</p>
+            <p class="voucher-msg" id="vMsg"></p>
+            <div class="voucher-foot">
+              <span id="vFrom"></span>
+              <span id="vCode">Nr. GG-0000</span>
+            </div>
+            <p class="voucher-muster">Muster · Beispielprojekt · nicht einlösbar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KONTAKT ===== -->
+  <section class="section kontakt-section" id="kontakt" aria-labelledby="kontakt-title">
+    <div class="wrap kontakt-grid">
+      <div class="kontakt-info">
+        <p class="eyebrow">Kontakt</p>
+        <h2 id="kontakt-title">So finden Sie uns</h2>
+        <p class="status-line status-big" data-status hidden><span class="status-dot" aria-hidden="true"></span><span data-status-text></span></p>
+        <address>
+          Gasthof Grünlinger<br>
+          Dorfplatz 3<br>
+          Lindenreuth im Fichtelgebirge
+        </address>
+        <p class="kontakt-links"><a href="tel:+491713920087">0171&nbsp;39200&nbsp;87</a><br><a href="mailto:wirtshaus@gruenlinger.example">wirtshaus@gruenlinger.example</a></p>
+        <table class="hours" id="hoursTable">
+          <caption>Öffnungszeiten</caption>
+          <tbody>
+            <tr data-days="1,2"><th scope="row">Mo, Di</th><td>Ruhetag</td></tr>
+            <tr data-days="3,4,5,6"><th scope="row">Mi–Sa</th><td>11:30–14:00 und 17:00–23:00 Uhr</td></tr>
+            <tr data-days="0"><th scope="row">So &amp; Feiertag</th><td>11:00–21:00 Uhr</td></tr>
+          </tbody>
+        </table>
+        <p class="hours-note">Warme Küche bis 13:30 und 21:00 Uhr, sonntags bis 14:00 und 20:00 Uhr. Betriebsurlaub vom 7. bis 20. Januar.</p>
+        <p class="hours-note">Parkplätze direkt am Haus. Die Bushaltestelle „Dorfplatz“ liegt gegenüber.</p>
+      </div>
+
+      <div class="kontakt-form-wrap">
+        <form class="ask" id="askForm" novalidate>
+          <p class="ask-title">Schreiben Sie uns</p>
+          <div class="field">
+            <label for="a-topic">Worum geht es?</label>
+            <select id="a-topic" name="anliegen">
+              <option>Allgemeine Frage</option>
+              <option>Zimmeranfrage</option>
+              <option>Feier oder Gesellschaft</option>
+              <option>Gutschein</option>
+              <option>Lob oder Kritik</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-msg">Nachricht</label>
+            <textarea id="a-msg" name="nachricht" rows="6" aria-describedby="err-a-msg"></textarea>
+            <p class="field-error" id="err-a-msg"></p>
+          </div>
+          <div class="calc-row">
+            <div class="field">
+              <label for="a-name">Name</label>
+              <input id="a-name" name="name" type="text" autocomplete="name" aria-describedby="err-a-name">
+              <p class="field-error" id="err-a-name"></p>
+            </div>
+            <div class="field">
+              <label for="a-email">E-Mail</label>
+              <input id="a-email" name="email" type="email" autocomplete="email" aria-describedby="err-a-email">
+              <p class="field-error" id="err-a-email"></p>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-red">Nachricht senden</button>
+          <p class="form-status" id="askStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="logo logo-footer"><span class="logo-small">Gasthof</span><span class="logo-name">Grünlinger</span></p>
+      <p>Dorfplatz 3 · Lindenreuth im Fichtelgebirge</p>
+    </div>
+    <nav class="footer-links" aria-label="Rechtliches">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
+    <p class="footer-note">Gasthof Grünlinger ist ein fiktiver Betrieb. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder: KI-generiert. Schriften: Young Serif, UnifrakturMaguntia, Newsreader und Albert Sans (SIL Open Font License).</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
