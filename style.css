@@ -727,7 +727,7 @@ a { color: inherit; }
   gap: 20px;
 }
 .footer-brand { display: flex; align-items: center; gap: 16px; }
-.footer-logo { height: 18px; filter: invert(1) brightness(2); opacity: 0.85; }
+.footer-logo { height: 18px; width: auto; opacity: 0.85; }
 .footer-brand p {
   font-size: 12.5px;
   color: var(--text-on-dark-secondary);
@@ -743,6 +743,11 @@ a { color: inherit; }
 .footer-links a:hover { color: var(--text-on-dark); }
 
 /* ===== Intro logo animation ===== */
+/* Nur mit JavaScript sichtbar. Falls script.js nicht lädt, gibt die Seite sich nach 5 s selbst frei. */
+.intro-overlay, .intro-logo-wrap { display: none; }
+.js .intro-overlay { display: block; animation: intro-failsafe 0s linear 5s forwards; }
+.js .intro-logo-wrap { display: flex; animation: intro-failsafe 0s linear 5s forwards; }
+@keyframes intro-failsafe { to { visibility: hidden; opacity: 0; pointer-events: none; } }
 .intro-overlay {
   position: fixed;
   inset: 0;
@@ -760,7 +765,6 @@ a { color: inherit; }
   position: fixed;
   inset: 0;
   z-index: 999;
-  display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -780,7 +784,7 @@ a { color: inherit; }
 .nav-logo.intro-target-hidden .logo-img { opacity: 0; }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro-overlay, .intro-logo-wrap { display: none; }
+  .intro-overlay, .intro-logo-wrap, .js .intro-overlay, .js .intro-logo-wrap { display: none; }
 }
 /* ===== Honeypot (Spam-Schutz, für echte Nutzer unsichtbar) ===== */
 .form-honeypot {

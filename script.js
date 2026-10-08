@@ -21,6 +21,14 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
   navLogoLink.classList.add('intro-target-hidden');
   document.documentElement.style.overflow = 'hidden';
 
+  // Notbremse: Falls ein Übergang nicht endet, gibt die Seite sich nach 4,5 s frei
+  const failsafe = setTimeout(() => {
+    overlay.remove();
+    logoWrap.remove();
+    navLogoLink.classList.remove('intro-target-hidden');
+    document.documentElement.style.overflow = '';
+  }, 4500);
+
   function run() {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -70,6 +78,7 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
     overlay.addEventListener('transitionend', function onWipeEnd(e) {
       if (e.propertyName !== 'clip-path') return;
       overlay.removeEventListener('transitionend', onWipeEnd);
+      clearTimeout(failsafe);
       overlay.remove();
       logoWrap.remove();
     });
@@ -105,27 +114,43 @@ const form = document.getElementById('kontaktForm');
 const status = document.getElementById('formStatus');
 
 if (form) {
+  // Fehlermeldung mit direkten Kontaktwegen, damit niemand ohne Ausweg dasteht
+  const showError = (text) => {
+    const mail = document.createElement('a');
+    mail.href = 'mailto:kontakt@hwa-hoehn.de';
+    mail.textContent = 'kontakt@hwa-hoehn.de';
+    const tel = document.createElement('a');
+    tel.href = 'tel:+491706940908';
+    tel.textContent = '0170\u00a06940908';
+    status.replaceChildren(`${text} Schreiben Sie mir direkt an `, mail, ' oder rufen Sie an: ', tel, '.');
+  };
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submitBtn = form.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     status.textContent = 'Wird gesendet …';
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+
     try {
       const res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' },
+        signal: controller.signal,
       });
       if (res.ok) {
         status.textContent = 'Danke! Ihre Anfrage ist angekommen, ich melde mich zeitnah.';
         form.reset();
       } else {
-        status.textContent = 'Das hat leider nicht geklappt. Schreiben Sie mir gerne direkt per E-Mail.';
+        showError('Das hat leider nicht geklappt.');
       }
     } catch (err) {
-      status.textContent = 'Das hat leider nicht geklappt. Schreiben Sie mir gerne direkt per E-Mail.';
+      showError(err.name === 'AbortError' ? 'Die Verbindung hat zu lange gedauert, Ihre Anfrage ist vermutlich nicht angekommen.' : 'Das hat leider nicht geklappt.');
     } finally {
+      clearTimeout(timeout);
       submitBtn.disabled = false;
     }
   });
