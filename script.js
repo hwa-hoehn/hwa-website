@@ -39,7 +39,7 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
     introLogo.addEventListener('transitionend', function onFadeEnd(e) {
       if (e.propertyName !== 'opacity') return;
       introLogo.removeEventListener('transitionend', onFadeEnd);
-      setTimeout(moveToTarget, 150);
+      setTimeout(moveToTarget, 50);
     });
   }
 
@@ -58,7 +58,7 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
     const deltaX = toCenterX - fromCenterX;
     const deltaY = toCenterY - fromCenterY;
 
-    introLogo.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
+    introLogo.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
 
     // Background wipe startet zeitgleich mit der Logo-Bewegung
     overlay.classList.add('intro-reveal');
