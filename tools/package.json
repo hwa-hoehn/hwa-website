@@ -1,0 +1,14 @@
+{
+  "name": "hwa-website-tools",
+  "private": true,
+  "type": "module",
+  "description": "Prüfen vor dem Livegang und Cache-Version erhöhen. Einmalig: cd tools && npm install",
+  "scripts": {
+    "pruefen": "node pruefen.mjs",
+    "version": "node version.mjs"
+  },
+  "devDependencies": {
+    "lighthouse": "12.2.1",
+    "puppeteer-core": "23.11.1"
+  }
+}

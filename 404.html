@@ -6,7 +6,8 @@
 <title>Seite nicht gefunden | HWA – Höhn Web &amp; Automatisierung</title>
 <meta name="robots" content="noindex">
 
-<link rel="stylesheet" href="/style.css?v=2026102404">
+<link rel="preload" href="/assets/fonts/instrument-sans-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css?v=2026102407">
 <link rel="icon" href="/assets/hwa-favicon/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/hwa-favicon/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/assets/hwa-favicon/favicon-16x16.png" type="image/png" sizes="16x16">
@@ -15,46 +16,42 @@
 <style>
   .error-page {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 32px;
+    padding: 40px 20px 64px;
     background: var(--bg-dark);
     color: var(--text-on-dark);
   }
-  .error-page .logo-img { height: 26px; margin-bottom: 56px; }
-  .error-page .error-code {
-    font-family: var(--font-display);
-    font-size: clamp(56px, 10vw, 96px);
-    font-weight: 600;
-    color: var(--text-on-dark-secondary);
-    margin: 0 0 16px;
-    letter-spacing: -0.02em;
-  }
+  .error-inner { width: 100%; max-width: 1136px; margin: 0 auto; display: flex; flex-direction: column; flex: 1; }
+  .error-inner > a { align-self: flex-start; }
+  .error-page .logo-img { height: 26px; }
+  .error-body { margin-top: auto; padding-top: 96px; }
+  .error-page .error-code { font-size: 15px; font-weight: 500; color: var(--text-on-dark-secondary); margin: 0 0 24px; }
   .error-page h1 {
     font-family: var(--font-display);
-    font-size: clamp(24px, 3.5vw, 32px);
+    font-size: clamp(44px, 8.4vw, 116px);
     font-weight: 600;
-    margin: 0 0 16px;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin: 0 0 32px;
   }
-  .error-page p {
-    font-size: 17px;
-    color: var(--text-on-dark-secondary);
-    max-width: 440px;
-    margin: 0 0 40px;
-  }
+  .error-page p.error-text { font-size: 18px; color: var(--text-on-dark-secondary); max-width: 480px; margin: 0 0 40px; }
+  @media (min-width: 700px) { .error-page { padding: 40px 32px 88px; } }
 </style>
 </head>
 <body>
 
 <div class="error-page">
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR8AAABOCAMAAAAuLOKZAAAAflBMVEUAAAD29fD9/fz19O/19O/08+708+308+/08+3s6enZ2dn//7v//9i/v79/f3/w7+z//3+qqqrMzMz/3d3/zMz/f3///wD/v7//qqoAAP/s7Nq/v//y7+z/v//U1P8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMd8mwAAAAIHRSTlMA/QVOjG/QLbIPBwMGBAIlAgMFBwUCAQQDAQ4EUgQGAI0svdYAAAb2SURBVHja7VzZluMqDMTCNuDsPetd//8zh3R3EhWryMT2veeYl5kzEwgUhVSSIEptbWtbm7cRa6/p9+SIL59H/sP/IfQX7DXH+B5MfW9G3pGUS/cjxQbUJB6R92uah5HPn+jUOP51+O7ebMu8hke/geNDNLIRpVz23diA5qe825ieR/LD5vODREfpMjWbVv8sPhyFH8QQ74wQoMfcr02LYeXTGKtfZu/bdhGP3/8+Pv3EJvZNmbF5yLNytuMrFc6EHKcP7cpboNu3TekX4IO8pv3QTCBynD5+REfNh3IkV5o/HEXr9qvho8iABVISt/tmAZ/uJJrKjlufvmJ8qO/EXJsXH9VKIAKb9WnSBN1UL/4itOSebKK1zoIPWgWJC9v9E9DHuxjBXPZmFCOKmxb4lKXx+Qr7WhuVYvqICLSDJdORxP7x3Ueq3Vr4KOByfVRyfYTPSG91+lixRScKGdpLCDQTf8CvdDUm+El0XYpANVTlZo6m+CvMdFyNP6pN1vYJfMYmVAepNATVtt75QhGtqJk+NVhD7VP+sEt9hUCEzoSPN33cHPautLtgfUZpuOABERsTAknf4lnnwiewQKWdAs8yaiGBrqE470Zl6TykGUoXWgef6ydk2sQvjHshLTw0hJFX+XRdOJmRoWotfNCqZA8YQeTlEYEw3uVRdQBkxUX2/FB1DQuekz8gbnMrRfr0NEFwmyeQE0dehNLQ6KFBpc+JjxJoIKRPR5PPIsLCM90UKMpKZAE7EB38tfAJRHRmp2Dyw3vyvBfsL6657B4DrTo1SI+Z8Qn0bcpIhULb/4ux1f0F4zZW6MPPufZRGmBra1HtnPhAJnpKTWTi5+R2mvja09SAQ6hJrD7focR9G1rwoYZWxecIGzUaV5POH1z3B6CmDOirlkpnHO1Dce75ER5VWYUifxpaFZ+wuPAtsVAeeXkovn+Y7CBpmpDDVkyfNz7YRwIWHVoxkRLgc9LixvP6OXlGe10UY6B2fE7+fIO1zH8I7sZTWTmnyiKha5Xy59mWxQd8aWKjufW5//cZWBXDihry74qHTplXT1EQiYeV8FEXVypP0d4kPa3/syBRPCWkNS+Uht4CUjo/VQhj5sUHA+eAQGhGuO/cOZ1HACOvXlzS8QlVUskdKAT/M+MT1Ddho4LIC48RGHbIY2FqaTRT6XD9O4CjytXb9F+0Ej7fA3VG/CIDL5lqGOJQ0Lg5TiR9e7ZmDaUh69bCx680Q6CAB/SlENyeiNKKe6RJXJxHNx44tryBmBkfDLSZ1kCZPwQ6+aByBtRhtzOV6huF+AbivKzGnB0f/8U9hAs53R8GHiYHK+dEMcM+UUn6Rul9Woc/aC+GexQWBe7FyIPhYzP2LLY+ppigw/IQnQX4jNb2Vtb856SJYtjx272JgD6KirDeLzngYOXQabI5H3hrdR8fxacqDkR3t7845RxNjtx128wg5g8Q6HyT+OUQyuchkEC36Y7CCnEgA6iycZn6YpTfoNflNx46J/Y4YeSV6H9IbG+gh8u7wv3ThWpJtvTdQgl/ns1vlKKwGn2io/S+vdV4jncfaoWuoIip00ni+fJjabU3RhmGTCH5qFxQafC9tKz+7DlLdXmDtYHkeIvgExVtSE1An52gKHyFB+lTtD78C+xEkuzHQId18ImPioA+4SG85jadkD7BjpisDMDSdsqLLoKPiqIwK0kAU3hTGLRPIWsTiIOdEMdUKm4hfPinrVJiM4IJEGnRIhCXjoTFn9iPLoRPIKK1FV5dwGNixPQx0hIg4V3bLwkZvww+Bx7G9JmsTMXM9lLr03IzCKim18IHr7TyM78/iotXVpb3aXuqQFyGRqd2ufOVvEN3Va2VuwW2S9+9k2YM6m96dJfPsyzHH7yeLbw8TvG13CopgtSpYOtsvty2GD7pK4DVG26YhH2s4ijcCCvZuYKPXxAflbBAWnB13LTlmyKDS22vFNCcL4dP6gqyNQfBs8KIQGPpKjjtx9Y74LAFPa2FjzIxDy6NsxfQZxBFFrz9BJEInF4Qn/gWqa0/IUjdzS293Qq4IH5kyk2WgSLUcvhg1e+6U1+ET2gC+kz5iG0H5lz6kht9x+kPevH7SiE+wRMj6WtguK5Tls74omdoeOlu05L+Re9zhf2gaCPyLQlYS93gbp5teOWOTo9XoXhKbm7+QCba/qnEj7it+LYFvM+RA7TLZBKXtT8QhcnJDyFAgT4U3Jht+pWE9HsRtD/P/j6AFFeuhvsG48ASiYVw3NPTtr3OyeUqH3t3Ba6/N930uw6PfkZ+Utytj/gnDD6j29tXlQ4NDU+t5fOuVv/Egv7HjV7/8zbz/a5MolfTLI+ybj+eXMtvAbG1rW1ta1vb2ta2trWtbW1r1fYLG5w9JklOHaIAAAAASUVORK5CYII=" width="287" height="78" alt="HWA – Höhn Web & Automatisierung" class="logo-img">
-  <p class="error-code">404</p>
-  <h1>Diese Seite gibt es nicht.</h1>
-  <p>Der Link, dem Sie gefolgt sind, führt ins Leere – vielleicht wurde die Seite verschoben oder existiert nicht mehr.</p>
+  <div class="error-inner">
+  <a href="/"><img src="data:image/png;base64,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" width="287" height="78" alt="HWA – Höhn Web & Automatisierung" class="logo-img"></a>
+  <div class="error-body">
+  <p class="error-code">Fehler 404</p>
+  <h1>Diese Seite gibt es nicht<span class="accent-dot">.</span></h1>
+  <p class="error-text">Der Link, dem Sie gefolgt sind, führt ins Leere – vielleicht wurde die Seite verschoben oder existiert nicht mehr.</p>
   <a href="/" class="btn btn-primary">Zur Startseite</a>
+  </div>
+  </div>
 </div>
 
 </body>

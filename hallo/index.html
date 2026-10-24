@@ -8,65 +8,103 @@
 <title>Hallo! | HWA – Höhn Web &amp; Automatisierung</title>
 <meta name="description" content="Websites und Automatisierung für Betriebe in der Region Bayreuth. Ihr Ansprechpartner: Veit Höhn.">
 <link rel="preload" href="../assets/fonts/instrument-sans-wght.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../style.css?v=2026102404">
+<link rel="stylesheet" href="../style.css?v=2026102407">
 <link rel="icon" href="../assets/hwa-favicon/favicon.ico" sizes="any">
 <link rel="icon" href="../assets/hwa-favicon/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/hwa-favicon/apple-touch-icon.png">
 <style>
-  .hallo-hero { background: var(--bg-dark); color: var(--text-on-dark); padding: 72px 24px 64px; text-align: center; }
-  .hallo-logo { height: 24px; width: auto; margin: 0 auto 48px; }
-  .hallo-photo { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; }
-  .hallo-hero h1 { font-family: var(--font-display); font-size: clamp(30px, 6vw, 44px); font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 16px; }
-  .hallo-hero p { color: var(--text-on-dark-secondary); font-size: 18px; max-width: 520px; margin: 0 auto 32px; }
-  .hallo-actions { display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto; }
+  .hallo-hero { background: var(--bg-dark); color: var(--text-on-dark); padding: 48px 20px 64px; }
+  .hallo-inner { max-width: 760px; margin: 0 auto; }
+  .hallo-logo { display: block; height: 24px; width: auto; margin: 0 0 72px; }
+  .hallo-person { display: flex; align-items: center; gap: 16px; margin: 0 0 32px; }
+  .hallo-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+  .hallo-person p { margin: 0; font-size: 15px; line-height: 1.45; color: var(--text-on-dark-secondary); }
+  .hallo-person strong { color: var(--text-on-dark); font-weight: 500; }
+  .hallo-hero h1 { font-family: var(--font-display); font-size: clamp(44px, 9vw, 84px); font-weight: 600; letter-spacing: -0.035em; line-height: 0.98; margin: 0 0 28px; }
+  .hallo-hero .hallo-lead { color: var(--text-on-dark-secondary); font-size: 18px; max-width: 560px; margin: 0 0 40px; }
+  .hallo-actions { display: grid; gap: 10px; max-width: 420px; }
   .hallo-actions .btn { text-align: center; }
-  .hallo-cards { max-width: 720px; margin: 0 auto; padding: 56px 24px 24px; display: grid; gap: 16px; }
-  .hallo-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 14px; padding: 26px 26px 24px; }
-  .hallo-card h2 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: 0 0 8px; }
-  .hallo-card p { font-size: 16px; color: var(--text-secondary); margin: 0; }
-  .hallo-card .hallo-price { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--text-primary); margin-top: 12px; }
-  .hallo-more { text-align: center; padding: 24px 24px 72px; }
-  .hallo-more a { color: var(--text-primary); font-weight: 500; }
-  .hallo-more + .hallo-more-2 { padding-top: 0; margin-top: -48px; }
+  .hallo-section { max-width: 760px; margin: 0 auto; padding: 88px 20px 0; }
+  .hallo-section h2 { font-family: var(--font-display); font-size: clamp(32px, 6vw, 48px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 40px; }
+  .hallo-item { border-top: 1px solid var(--border-light); padding: 0 0 36px; }
+  .hallo-item::before { content: ''; display: block; width: 40px; height: 2px; background: var(--signal); margin: -1.5px 0 24px; }
+  .hallo-item h3 { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .hallo-item p { font-size: 17px; color: var(--text-secondary); margin: 0; }
+  .hallo-item .hallo-price { font-size: 15px; font-weight: 500; color: var(--text-primary); margin-top: 12px; }
+  .hallo-work { display: grid; gap: 40px; }
+  .hallo-work a { text-decoration: none; color: inherit; }
+  .hallo-work img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--border-light); }
+  .hallo-work h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin: 18px 0 4px; }
+  .hallo-work p { font-size: 15px; color: var(--text-muted); margin: 0; }
+  .hallo-more { max-width: 760px; margin: 0 auto; padding: 72px 20px 96px; }
+  .hallo-more a { font-size: 18px; font-weight: 500; color: var(--text-primary); }
+  @media (min-width: 700px) { .hallo-work { grid-template-columns: 1fr 1fr; gap: 32px; } .hallo-hero { padding: 56px 32px 88px; } .hallo-section, .hallo-more { padding-left: 32px; padding-right: 32px; } }
 </style>
 </head>
 <body>
 
 <main>
   <section class="hallo-hero">
-    <a href="../"><img src="data:image/png;base64,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" width="287" height="78" alt="HWA – Höhn Web & Automatisierung" class="hallo-logo"></a>
-    <picture>
-      <source srcset="../assets/portrait.webp" type="image/webp">
-      <img src="../assets/portrait-optimized.jpg" alt="Veit Höhn" class="hallo-photo" width="112" height="112">
-    </picture>
-    <h1>Schön, dass Sie vorbeischauen.</h1>
-    <p>Ich bin Veit Höhn aus Bad Berneck und entwickle Websites und Automatisierungslösungen für Betriebe jeder Größe und Branche. Rufen Sie einfach an oder schreiben Sie mir, dann schauen wir zusammen, was zu Ihrem Betrieb passt.</p>
-    <div class="hallo-actions">
-      <a href="tel:+491706940908" class="btn btn-primary">Anrufen:&nbsp;0170&nbsp;6940908</a>
-      <a href="../?quelle=flyer#kontakt" class="btn btn-ghost">Nachricht schreiben</a>
+    <div class="hallo-inner">
+      <a href="../"><img src="data:image/png;base64,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" width="287" height="78" alt="HWA – Höhn Web & Automatisierung" class="hallo-logo"></a>
+      <div class="hallo-person">
+        <picture>
+          <source srcset="../assets/portrait-160.webp" type="image/webp">
+          <img src="../assets/portrait-160.jpg" alt="Veit Höhn" class="hallo-photo" width="64" height="64">
+        </picture>
+        <p><strong>Veit Höhn</strong><br>Websites und Automatisierung aus Bad Berneck</p>
+      </div>
+      <h1>Schön, dass Sie vorbeischauen<span class="accent-dot">.</span></h1>
+      <p class="hallo-lead">Ich entwickle Websites und Automatisierungslösungen für Betriebe jeder Größe und Branche. Rufen Sie einfach an oder schreiben Sie mir, dann schauen wir zusammen, was zu Ihrem Betrieb passt.</p>
+      <div class="hallo-actions">
+        <a href="tel:+491706940908" class="btn btn-primary">Anrufen:&nbsp;0170&nbsp;6940908</a>
+        <a href="https://wa.me/491706940908" class="btn btn-ghost" target="_blank" rel="noopener">Per WhatsApp schreiben</a>
+        <a href="../?quelle=flyer#kontakt" class="btn btn-ghost">Anfrage über das Formular</a>
+      </div>
     </div>
   </section>
 
-  <section class="hallo-cards">
-    <article class="hallo-card">
-      <h2>Ihre Website</h2>
+  <section class="hallo-section">
+    <h2>Was ich mache.</h2>
+    <article class="hallo-item">
+      <h3>Ihre Website</h3>
       <p>Individuelles Design statt Baukasten-Vorlage, mit schnellen Ladezeiten und optimiert für Smartphones. Nach Abschluss erhalten Sie alle Nutzungsrechte und Zugänge, ohne laufenden Vertrag.</p>
       <p class="hallo-price">ab 380 € · festes Angebot vorab</p>
     </article>
-    <article class="hallo-card">
-      <h2>Automatisierung</h2>
+    <article class="hallo-item">
+      <h3>Automatisierung</h3>
       <p>Individuelle Programme für wiederkehrende Aufgaben, zum Beispiel Daten aus PDF-Rechnungen übernehmen oder Listen abgleichen. Die Lösung läuft auf Ihrem eigenen Rechner, ohne Abonnement.</p>
       <p class="hallo-price">Festpreis nach einem kurzen Gespräch</p>
     </article>
-    <article class="hallo-card">
-      <h2>Persönlich vor Ort</h2>
+    <article class="hallo-item">
+      <h3>Persönlich vor Ort</h3>
       <p>Gern komme ich persönlich bei Ihnen vorbei. Sie haben einen festen Ansprechpartner von der ersten Idee bis zum fertigen Ergebnis.</p>
     </article>
   </section>
 
-  <p class="hallo-more"><a href="../beispiele/schreinerei/">Beispiel-Website einer Schreinerei ansehen →</a></p>
-  <p class="hallo-more hallo-more-2"><a href="../beispiele/gasthof/">Beispiel-Website eines Gasthofs ansehen →</a></p>
-  <p class="hallo-more hallo-more-2"><a href="../">Zur vollständigen Website mit Preisen, Ablauf und Projekten →</a></p>
+  <section class="hallo-section">
+    <h2>So kann das aussehen.</h2>
+    <div class="hallo-work">
+      <a href="../beispiele/schreinerei/">
+        <picture>
+          <source srcset="../assets/portfolio/portfolio-schreinerei-720.webp" type="image/webp">
+          <img src="../assets/portfolio/portfolio-schreinerei.jpg" alt="Beispiel-Website einer Schreinerei" width="1440" height="900" loading="lazy">
+        </picture>
+        <h3>Schreinerei →</h3>
+        <p>Beispielprojekt, Betrieb frei erfunden</p>
+      </a>
+      <a href="../beispiele/gasthof/">
+        <picture>
+          <source srcset="../assets/portfolio/portfolio-gasthof-720.webp" type="image/webp">
+          <img src="../assets/portfolio/portfolio-gasthof.jpg" alt="Beispiel-Website eines Gasthofs" width="1440" height="900" loading="lazy">
+        </picture>
+        <h3>Gasthof →</h3>
+        <p>Beispielprojekt, Betrieb frei erfunden</p>
+      </a>
+    </div>
+  </section>
+
+  <p class="hallo-more"><a href="../">Zur vollständigen Website mit Preisen, Ablauf und Projekten →</a></p>
 </main>
 
 <footer class="footer">
