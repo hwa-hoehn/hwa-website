@@ -38,7 +38,7 @@
   .hallo-work p { font-size: 15px; color: var(--text-muted); margin: 0; }
   .hallo-more { max-width: 760px; margin: 0 auto; padding: 72px 20px 96px; }
   .hallo-more a { font-size: 18px; font-weight: 500; color: var(--text-primary); }
-  @media (min-width: 700px) { .hallo-work { grid-template-columns: 1fr 1fr; gap: 32px; } .hallo-hero { padding: 56px 32px 88px; } .hallo-section, .hallo-more { padding-left: 32px; padding-right: 32px; } }
+  @media (min-width: 700px) { .hallo-work { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } .hallo-hero { padding: 56px 32px 88px; } .hallo-section, .hallo-more { padding-left: 32px; padding-right: 32px; } }
 </style>
 </head>
 <body>
@@ -99,6 +99,14 @@
           <img src="../assets/portfolio/portfolio-gasthof.jpg" alt="Beispiel-Website eines Gasthofs" width="1440" height="900" loading="lazy">
         </picture>
         <h3>Gasthof →</h3>
+        <p>Beispielprojekt, Betrieb frei erfunden</p>
+      </a>
+      <a href="../beispiele/friseur/">
+        <picture>
+          <source srcset="../assets/portfolio/portfolio-friseur-720.webp" type="image/webp">
+          <img src="../assets/portfolio/portfolio-friseur.jpg" alt="Beispiel-Website eines Friseursalons" width="1440" height="900" loading="lazy">
+        </picture>
+        <h3>Friseur →</h3>
         <p>Beispielprojekt, Betrieb frei erfunden</p>
       </a>
     </div>
