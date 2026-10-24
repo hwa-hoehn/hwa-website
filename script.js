@@ -115,11 +115,16 @@ navBurger.addEventListener('click', () => {
   navBurger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
-document.querySelectorAll('.nav-mobile a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('is-open');
-    navBurger.setAttribute('aria-expanded', 'false');
-  });
+const closeNav = () => {
+  nav.classList.remove('is-open');
+  navBurger.setAttribute('aria-expanded', 'false');
+};
+document.querySelectorAll('.nav-mobile a').forEach(link => link.addEventListener('click', closeNav));
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+    closeNav();
+    navBurger.focus();
+  }
 });
 
 // ===== Contact form (Formspree) =====
@@ -174,12 +179,8 @@ if (form) {
   if (!btn) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 600) {
-      btn.classList.add('is-visible');
-    } else {
-      btn.classList.remove('is-visible');
-    }
-  });
+    btn.classList.toggle('is-visible', window.scrollY > 600);
+  }, { passive: true });
 
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -232,4 +233,19 @@ if (form) {
 
   titles.forEach((el) => observer.observe(el));
   items.forEach((el) => observer.observe(el));
+})();
+
+// ===== Handy-Leiste: sichtbar, sobald der Hero weg ist, ausgeblendet am Kontaktformular =====
+(function mobileBar() {
+  const bar = document.getElementById('mobileBar');
+  const hero = document.getElementById('top');
+  const kontakt = document.getElementById('kontakt');
+  if (!bar || !hero || !kontakt || !('IntersectionObserver' in window)) return;
+
+  let heroVisible = true;
+  let kontaktVisible = false;
+  const update = () => bar.classList.toggle('is-visible', !heroVisible && !kontaktVisible);
+
+  new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; update(); }).observe(hero);
+  new IntersectionObserver(([entry]) => { kontaktVisible = entry.isIntersecting; update(); }, { rootMargin: '0px 0px -30% 0px' }).observe(kontakt);
 })();
