@@ -2,3 +2,6 @@
 
 # Lokale Vorschau-Konfiguration
 .claude/
+
+# Werkzeuge
+tools/node_modules/

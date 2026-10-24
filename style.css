@@ -995,7 +995,7 @@ summary:focus-visible {
     bottom: calc(12px + env(safe-area-inset-bottom));
     z-index: 95;
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 1fr 1fr 1.2fr;
     gap: 8px;
     padding: 8px;
     background: rgba(16, 16, 18, 0.86);
@@ -1014,12 +1014,12 @@ summary:focus-visible {
     justify-content: center;
     min-height: 46px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     text-decoration: none;
   }
   .mobile-bar-call { color: var(--text-on-dark); border: 1px solid var(--border-dark); }
   .mobile-bar-cta { background: var(--accent); color: var(--accent-on-accent); }
   .back-to-top { display: none; }
-  .footer { padding-bottom: 112px; }
+  body:has(.mobile-bar) .footer { padding-bottom: 112px; }
 }
