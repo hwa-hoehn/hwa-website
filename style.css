@@ -904,3 +904,77 @@ summary:focus-visible {
   .portfolio-card-featured.portfolio-card-reverse { grid-template-columns: 1fr; }
   .portfolio-card-reverse .portfolio-media { order: 0; }
 }
+
+/* ===== Scroll-Animationen ===== */
+/* Nur transform und opacity, eine Kurve. Versteckt wird nur, wenn script.js läuft (Klasse .motion auf <html>). */
+:root { --ease-out: cubic-bezier(0.22, 1, 0.36, 1); }
+
+.reveal-line { display: block; }
+.reveal-line > span { display: block; }
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  /* Masken für große Überschriften; Abstand oben/unten, damit Umlaute und Unterlängen nicht abgeschnitten werden */
+  .motion .reveal-line {
+    overflow: hidden;
+    padding: 0.08em 0 0.12em;
+    margin: -0.08em 0 -0.12em;
+  }
+  .motion .reveal-line > span {
+    transform: translateY(110%);
+    transition: transform 1s var(--ease-out);
+  }
+
+  /* Hero: startet, wenn die Startanimation den Vorhang wegzieht (Klasse .hero-in) */
+  .motion .hero-inner > :not(.hero-headline) {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  }
+  .motion .hero-headline .reveal-line:nth-child(2) > span { transition-delay: 0.1s; }
+  .motion .hero-inner > .hero-sub { transition-delay: 0.25s; }
+  .motion .hero-inner > .hero-actions { transition-delay: 0.35s; }
+  .motion .hero-inner > .hero-contact { transition-delay: 0.45s; }
+  .hero-in .hero-inner > :not(.hero-headline),
+  .hero-in .hero-headline .reveal-line > span { opacity: 1; transform: none; }
+
+  /* Abschnitte: Titel fährt aus der Maske, Karten gleiten gestaffelt hoch */
+  .section-title.is-in .reveal-line > span { transform: none; }
+  .motion .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+  .motion .reveal.is-in { opacity: 1; transform: none; }
+
+  /* Details: Linie zieht sich auf, Portfolio-Bilder setzen sich */
+  .motion .service-rule {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s var(--ease-out) 0.3s;
+  }
+  .motion .services-grid.is-in .service-rule { transform: none; }
+  .motion .service-card:nth-child(2) .service-rule { transition-delay: 0.4s; }
+  .motion .service-card:nth-child(3) .service-rule { transition-delay: 0.5s; }
+  .portfolio-media { overflow: hidden; }
+  .motion .portfolio-media-img {
+    transform: scale(1.06);
+    transition: transform 1.4s var(--ease-out) calc(var(--i, 0) * 90ms);
+  }
+  .motion .portfolio-card.is-in .portfolio-media-img { transform: none; }
+}
+
+/* Hero mit Tiefe: Inhalt bleibt beim Scrollen zurück und blendet aus (nur in Browsern mit Scroll-driven Animations) */
+@supports (animation-timeline: view()) {
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .hero { overflow: hidden; view-timeline: --hero block; }
+    .hero-inner {
+      animation: hero-depth linear both;
+      animation-timeline: --hero;
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes hero-depth {
+      to { transform: translateY(22vh) scale(0.96); opacity: 0; }
+    }
+  }
+}

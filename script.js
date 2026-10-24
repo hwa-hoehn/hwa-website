@@ -1,3 +1,9 @@
+// ===== Animationen vorbereiten =====
+// .motion schaltet die Ausgangszustände in style.css frei. Ohne JavaScript oder bei reduzierter Bewegung bleibt alles sofort sichtbar.
+const motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window;
+if (motionOk) document.documentElement.classList.add('motion');
+const showHero = () => document.documentElement.classList.add('hero-in');
+
 // ===== Intro logo animation =====
 (function introAnimation() {
   const overlay = document.getElementById('introOverlay');
@@ -5,7 +11,10 @@
   const introLogo = document.getElementById('introLogo');
   const navLogoLink = document.querySelector('.nav-logo');
   const navLogoImg = document.getElementById('navLogoImg');
-  if (!overlay || !logoWrap || !introLogo || !navLogoImg) return;
+  if (!overlay || !logoWrap || !introLogo || !navLogoImg) {
+    showHero();
+    return;
+  }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const forceReplay = new URLSearchParams(location.search).has('intro');
@@ -15,6 +24,8 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
     overlay.remove();
     logoWrap.remove();
     sessionStorage.setItem('hwaIntroPlayed', '1');
+    // Zwei Frames warten, damit der Ausgangszustand einmal gezeichnet ist und der Übergang läuft
+    requestAnimationFrame(() => requestAnimationFrame(showHero));
     return;
   }
 
@@ -27,6 +38,7 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
     logoWrap.remove();
     navLogoLink.classList.remove('intro-target-hidden');
     document.documentElement.style.overflow = '';
+    showHero();
   }, 4500);
 
   function run() {
@@ -60,8 +72,9 @@ const alreadyPlayed = !forceReplay && sessionStorage.getItem('hwaIntroPlayed') =
 
     introLogo.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
 
-    // Background wipe startet zeitgleich mit der Logo-Bewegung
+    // Background wipe startet zeitgleich mit der Logo-Bewegung, der Hero fährt darunter herein
     overlay.classList.add('intro-reveal');
+    showHero();
 
     requestAnimationFrame(() => {
       introLogo.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${scale})`;
@@ -180,4 +193,43 @@ if (form) {
   if (new URLSearchParams(location.search).get('quelle') === 'flyer') {
     select.value = 'Flyer / persönlicher Besuch';
   }
+})();
+
+// ===== Scroll-Animationen =====
+(function scrollReveal() {
+  if (!motionOk) return;
+
+  // Abschnittstitel in eine Maske legen, damit sie von unten hereinfahren können
+  const titles = document.querySelectorAll('.section-title');
+  titles.forEach((title) => {
+    const line = document.createElement('span');
+    const inner = document.createElement('span');
+    line.className = 'reveal-line';
+    inner.append(...title.childNodes);
+    line.append(inner);
+    title.append(line);
+  });
+
+  const items = document.querySelectorAll([
+    '.section-eyebrow', '.status-badge', '.kontakt-sub',
+    '.services-grid', '.ablauf-grid > *', '.pricing-grid > *',
+    '.portfolio-grid > *', '.about-photo', '.faq-list', '.kontakt-grid > *',
+  ].join(','));
+  items.forEach((el) => el.classList.add('reveal'));
+
+  // Gestaffelt wird nur innerhalb dessen, was gleichzeitig ins Bild kommt, sonst warten Karten am Handy unnötig
+  const observer = new IntersectionObserver((entries) => {
+    entries
+      .filter((entry) => entry.isIntersecting)
+      .map((entry) => entry.target)
+      .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1))
+      .forEach((el, i) => {
+        if (el.classList.contains('reveal')) el.style.setProperty('--i', i);
+        el.classList.add('is-in');
+        observer.unobserve(el);
+      });
+  }, { rootMargin: '0px 0px -10% 0px' });
+
+  titles.forEach((el) => observer.observe(el));
+  items.forEach((el) => observer.observe(el));
 })();
