@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F3EEE7">
+<title>Marlene Vogt – Friseur am Marktplatz | Beispielprojekt</title>
+<meta name="description" content="Beispielprojekt von HWA: Website eines fiktiven Friseursalons im Fichtelgebirge – Preise, Team, Farbe und Terminanfrage.">
+<meta property="og:title" content="Marlene Vogt Friseur – Beispielprojekt von HWA">
+<meta property="og:description" content="Demo-Website eines fiktiven Friseursalons im Fichtelgebirge, gestaltet von HWA – Höhn Web &amp; Automatisierung.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hwa-hoehn.de/beispiele/friseur/">
+<meta property="og:image" content="https://hwa-hoehn.de/beispiele/friseur/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Salon Marlene Vogt mit drei Friseurstühlen, Beispielprojekt von HWA">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/noto-serif-display-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/funnel-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('motion');</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B1714'/%3E%3Cpath d='M5 21c5 0 7-10 12-10s6 6 10 6' fill='none' stroke='%23F3EEE7' stroke-width='1.5'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="demo-bar" role="note">
+  <p>Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Salon, Personen, Preise und Kontaktdaten sind frei erfunden, die Bilder KI-generiert.</p>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="#top" class="wordmark" aria-label="Marlene Vogt Friseur, zum Seitenanfang">Marlene Vogt <em>Friseur</em></a>
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <a href="#preise">Preise</a>
+      <a href="#team">Team</a>
+      <a href="#farbe">Farbe</a>
+      <a href="#wissen">Gut zu wissen</a>
+      <a href="#termin" class="nav-termin">Termin</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav">Menü</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== Kopf: Name wie ein Zeitschriftentitel ===== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <h1 class="masthead" id="hero-title">Marlene Vogt<span class="sr-only">, Friseur in Lindenreuth</span></h1>
+      <div class="hero-grid">
+        <div class="hero-side">
+          <p class="hero-intro"><em>Friseur</em> am Marktplatz in Lindenreuth, seit&nbsp;2011.</p>
+          <p class="open-status" id="openStatus"><span id="openStatusText"></span></p>
+          <a href="#termin" class="link-line">Termin anfragen</a>
+        </div>
+        <figure class="hero-figure img-reveal">
+          <img src="img/salon-800.webp" srcset="img/salon-800.webp 800w, img/salon-1264.webp 1264w" sizes="(min-width: 900px) 66vw, calc(100vw - 40px)" alt="Leerer Salon mit drei schwarzen Friseurstühlen vor runden Spiegeln, hohe Fenster mit Blick auf Fachwerkhäuser am Marktplatz, alte Holzdielen" width="1264" height="848" fetchpriority="high">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Einleitung ===== -->
+  <section class="intro" aria-label="Über den Salon">
+    <div class="wrap intro-grid">
+      <p class="statement reveal">Ein kleiner Salon im ersten Stock, vier Plätze und genug Zeit für jeden Kopf. Vor dem ersten Schnitt setzen wir uns zusammen und reden darüber, wie Ihr Haar im <em>Alltag</em> liegen soll.</p>
+      <figure class="intro-figure img-reveal">
+        <img src="img/schnitt-800.webp" srcset="img/schnitt-800.webp 800w, img/schnitt-928.webp 928w" sizes="(min-width: 900px) 30vw, 70vw" alt="Hände schneiden mit Kamm und Schere eine Strähne nassen Haares, dahinter das Fenster zum Marktplatz" width="928" height="1152" loading="lazy">
+        <figcaption>Schneiden, nass und in Ruhe.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Preise ===== -->
+  <section class="section" id="preise" aria-labelledby="preise-title">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2 id="preise-title">Preise</h2>
+        <p>Inklusive Beratung. Bei sehr langem oder dichtem Haar nennen wir den Preis vorher.</p>
+      </div>
+
+      <div class="menu">
+        <div class="menu-group reveal">
+          <div class="menu-head">
+            <h3>Damen</h3>
+            <div class="length" role="group" aria-label="Haarlänge für die Damenpreise">
+              <button type="button" data-laenge="0" aria-pressed="false">kurz</button>
+              <button type="button" data-laenge="1" aria-pressed="true">schulterlang</button>
+              <button type="button" data-laenge="2" aria-pressed="false">lang</button>
+            </div>
+          </div>
+          <ul>
+            <li><span class="item">Waschen, Schneiden, Föhnen</span><span class="price" data-preis="44,52,61">52 €</span></li>
+            <li><span class="item">Schneiden, an der Luft trocknen</span><span class="price" data-preis="36,40,46">40 €</span></li>
+            <li><span class="item">Waschen und Föhnen</span><span class="price" data-preis="26,30,36">30 €</span></li>
+            <li><span class="item">Hochsteckfrisur, mit Probetermin</span><span class="price">ab 55 €</span></li>
+            <li><span class="item">Pony nachschneiden</span><span class="price">8 €</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-group reveal">
+          <div class="menu-head"><h3>Herren</h3></div>
+          <ul>
+            <li><span class="item">Schneiden</span><span class="price">29 €</span></li>
+            <li><span class="item">Waschen, Schneiden, Styling</span><span class="price">34 €</span></li>
+            <li><span class="item">Maschinenschnitt</span><span class="price">18 €</span></li>
+            <li><span class="item">Bart, mit Messer und warmem Tuch</span><span class="price">15 €</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-group reveal">
+          <div class="menu-head"><h3>Farbe</h3></div>
+          <ul>
+            <li><span class="item">Ansatz, bis 2 cm</span><span class="price">ab 42 €</span></li>
+            <li><span class="item">Farbe komplett</span><span class="price">ab 58 €</span></li>
+            <li><span class="item">Strähnen in Folie</span><span class="price">ab 64 €</span></li>
+            <li><span class="item">Balayage mit Glossing</span><span class="price">ab 120 €</span></li>
+            <li><span class="item">Glossing</span><span class="price">ab 32 €</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-group reveal">
+          <div class="menu-head"><h3>Kinder</h3></div>
+          <ul>
+            <li><span class="item">bis 6 Jahre</span><span class="price">15 €</span></li>
+            <li><span class="item">bis 12 Jahre</span><span class="price">20 €</span></li>
+            <li><span class="item">bis 16 Jahre</span><span class="price">26 €</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Team ===== -->
+  <section class="section section-tint" id="team" aria-labelledby="team-title">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2 id="team-title">Das Team</h2>
+        <p>Wer Sie beim ersten Mal schneidet, schneidet Sie auch beim nächsten Mal.</p>
+      </div>
+      <div class="team">
+        <figure class="person person-lead">
+          <div class="img-reveal"><img src="img/team-marlene-800.webp" srcset="img/team-marlene-800.webp 800w, img/team-marlene-928.webp 928w" sizes="(min-width: 900px) 40vw, calc(100vw - 40px)" alt="Marlene Vogt, Friseurmeisterin, im schwarzen Hemd am Fenster des Salons" width="928" height="1152" loading="lazy"></div>
+          <figcaption class="reveal"><span class="person-name">Marlene Vogt</span> <em>Meisterin, seit 2011</em><span class="person-text">Kurzhaarschnitte und alles, was ohne Föhn gut aussehen soll.</span></figcaption>
+        </figure>
+        <figure class="person">
+          <div class="img-reveal"><img src="img/team-selin-800.webp" srcset="img/team-selin-800.webp 800w, img/team-selin-928.webp 928w" sizes="(min-width: 900px) 24vw, calc(100vw - 40px)" alt="Selin Aydın, Friseurin, mit Färbepinsel und Farbschale an ihrem Arbeitsplatz" width="928" height="1152" loading="lazy"></div>
+          <figcaption class="reveal"><span class="person-name">Selin Aydın</span> <em>Farbe, seit 2018</em><span class="person-text">Balayage und leise Wechsel, die erst auf den zweiten Blick auffallen.</span></figcaption>
+        </figure>
+        <figure class="person person-wide">
+          <div class="img-reveal"><img src="img/team-jonas-800.webp" srcset="img/team-jonas-800.webp 800w, img/team-jonas-1264.webp 1264w" sizes="(min-width: 900px) 48vw, calc(100vw - 40px)" alt="Jonas Pfeiffer, Friseur, mit Kamm in der Hand an einen Friseurstuhl gelehnt" width="1264" height="848" loading="lazy"></div>
+          <figcaption class="reveal"><span class="person-name">Jonas Pfeiffer</span> <em>Herren, seit 2021</em><span class="person-text">Klassische Schnitte mit sauberem Übergang, Bärte mit dem Messer.</span></figcaption>
+        </figure>
+        <p class="team-note reveal">Dazu Lea, im zweiten Lehrjahr. Wir bilden jedes Jahr aus, ein Probetag ist jederzeit möglich.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Farbe ===== -->
+  <section class="section" id="farbe" aria-labelledby="farbe-title">
+    <div class="wrap farbe-grid">
+      <figure class="farbe-figure img-reveal">
+        <img src="img/farbe-800.webp" srcset="img/farbe-800.webp 800w, img/farbe-1264.webp 1264w" sizes="(min-width: 900px) 56vw, calc(100vw - 40px)" alt="Mit schwarzem Handschuh und Pinsel wird Farbe auf eine Strähne in Alufolie aufgetragen, die Kundin sitzt am Fenster" width="1264" height="848" loading="lazy">
+      </figure>
+      <div class="farbe-text">
+        <h2 class="reveal" id="farbe-title">Farbe</h2>
+        <p class="farbe-lead reveal">Eine neue Farbe machen wir in kleinen Schritten.</p>
+        <p class="reveal"><em>Der Hauttest.</em> Vor der ersten Färbung prüfen wir 48 Stunden vorher an einer kleinen Stelle, ob Sie die Farbe vertragen.</p>
+        <p class="reveal"><em>Die Probesträhne.</em> Bei einem großen Wechsel färben wir zuerst eine Strähne im Nacken. Sie sehen das Ergebnis, bevor wir weitermachen.</p>
+        <p class="reveal"><em>Der Preis.</em> Steht nach der Beratung fest. Wird es mehr, fragen wir vorher.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Zitat ===== -->
+  <section class="section quote-section" aria-label="Zitat von Marlene Vogt">
+    <div class="wrap quote-grid">
+      <blockquote class="quote reveal">
+        <p>„Lieber zwei Zentimeter zu wenig als einen zu viel. <em>Nachschneiden geht immer.</em>“</p>
+        <footer>Marlene Vogt</footer>
+      </blockquote>
+      <figure class="quote-figure img-reveal">
+        <img src="img/spiegel-800.webp" srcset="img/spiegel-800.webp 800w, img/spiegel-848.webp 848w" sizes="(min-width: 900px) 34vw, 80vw" alt="Kundin mit frisch geschnittenem Bob prüft ihre Frisur im Handspiegel, Marlene Vogt schaut lächelnd zu" width="848" height="1264" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Termin ===== -->
+  <section class="section section-dark" id="termin" aria-labelledby="termin-title">
+    <div class="wrap termin-grid">
+      <div class="termin-main">
+        <h2 class="reveal" id="termin-title">Termin</h2>
+
+        <form class="termin-form reveal" id="terminForm" novalidate>
+          <p class="sentence">
+            Ich möchte gern
+            <label class="sr-only" for="leistung">Leistung</label>
+            <select id="leistung" name="leistung">
+              <option>einen Schnitt</option>
+              <option>Farbe oder Strähnen</option>
+              <option>einen Herrenschnitt</option>
+              <option>einen Kinderhaarschnitt</option>
+              <option>eine Hochsteckfrisur</option>
+              <option>eine Beratung</option>
+            </select>,
+            am liebsten
+            <label class="sr-only" for="tag">Wunschtag</label>
+            <select id="tag" name="tag">
+              <option>nächste Woche</option>
+              <option>so bald wie möglich</option>
+            </select>
+            <label class="sr-only" for="zeit">Tageszeit</label>
+            <select id="zeit" name="zeit">
+              <option>vormittags</option>
+              <option>nachmittags</option>
+              <option value="abends">abends</option>
+            </select>.
+          </p>
+
+          <div class="fields">
+            <div class="field">
+              <label for="name">Ihr Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+              <p class="field-error" id="name-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="telefon">Telefon für den Rückruf</label>
+              <input type="tel" id="telefon" name="telefon" autocomplete="tel" required aria-describedby="telefon-error">
+              <p class="field-error" id="telefon-error" hidden></p>
+            </div>
+            <div class="field field-wide">
+              <label for="notiz">Anmerkung, wenn Sie mögen</label>
+              <input type="text" id="notiz" name="notiz" placeholder="zum Beispiel: zum ersten Mal hier">
+            </div>
+          </div>
+
+          <div class="form-end">
+            <button type="submit" class="btn">Anfrage senden</button>
+            <p class="form-hint">Wir rufen innerhalb eines Werktags zurück. In dieser Demo wird nichts verschickt.</p>
+          </div>
+        </form>
+
+        <div class="termin-success" id="terminSuccess" hidden tabindex="-1">
+          <p class="success-title" id="successTitle">Danke.</p>
+          <p class="success-text" id="successText"></p>
+          <p class="form-hint">Demo: Diese Anfrage wurde nicht verschickt.</p>
+          <button type="button" class="link-line" id="terminRestart">Neue Anfrage</button>
+        </div>
+      </div>
+
+      <aside class="kontakt reveal" aria-label="Kontakt und Öffnungszeiten">
+        <p><a href="tel:+491713920057">0171&nbsp;39200&nbsp;57</a><br><a href="mailto:salon@marlene-vogt.example">salon@marlene-vogt.example</a></p>
+        <p>Marktplatz 7, erster Stock<br>Lindenreuth im Fichtelgebirge</p>
+        <table class="hours" id="hours">
+          <caption class="sr-only">Öffnungszeiten</caption>
+          <tbody>
+          <tr data-day="2"><th scope="row">Dienstag</th><td>8:30–18</td></tr>
+          <tr data-day="3"><th scope="row">Mittwoch</th><td>8:30–18</td></tr>
+          <tr data-day="4"><th scope="row">Donnerstag</th><td>8:30–20</td></tr>
+          <tr data-day="5"><th scope="row">Freitag</th><td>8:30–18</td></tr>
+          <tr data-day="6"><th scope="row">Samstag</th><td>8–13</td></tr>
+          </tbody>
+        </table>
+        <p class="kontakt-note">Sonntag und Montag geschlossen.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== Gut zu wissen ===== -->
+  <section class="section" id="wissen" aria-labelledby="wissen-title">
+    <div class="wrap">
+      <h2 class="reveal" id="wissen-title">Gut zu wissen</h2>
+      <dl class="wissen">
+        <div class="reveal"><dt>Ohne Termin?</dt><dd>Zum Pony-Nachschneiden ja. Sonst lieber kurz anrufen, oft ist am selben Tag noch ein Platz frei.</dd></div>
+        <div class="reveal"><dt>Bezahlen</dt><dd>Mit Karte, Handy oder bar.</dd></div>
+        <div class="reveal"><dt>Parken</dt><dd>Am Marktplatz, zwei Stunden mit Parkscheibe. Zum Salon führt eine Treppe mit Geländer auf beiden Seiten.</dd></div>
+        <div class="reveal"><dt>Nicht zufrieden?</dt><dd>Sagen Sie es uns innerhalb einer Woche. Wir schneiden nach, ohne Kosten.</dd></div>
+        <div class="reveal"><dt>Absagen</dt><dd>Bitte bis zum Vortag, dann bekommt jemand anderes den Platz.</dd></div>
+        <div class="reveal"><dt>Gutscheine</dt><dd>Über jeden Betrag, im Salon oder auf Anfrage per Post.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="scheitel" aria-hidden="true">
+      <svg viewBox="0 0 1200 80" preserveAspectRatio="none"><path d="M0 64 C 260 64, 360 16, 600 16 S 940 52, 1200 30"/></svg>
+    </div>
+    <p class="footer-mark">Marlene Vogt</p>
+    <div class="footer-grid">
+      <p>Marktplatz 7<br>Lindenreuth im Fichtelgebirge</p>
+      <p><a href="tel:+491713920057">0171&nbsp;39200&nbsp;57</a><br><a href="mailto:salon@marlene-vogt.example">salon@marlene-vogt.example</a></p>
+      <nav aria-label="Rechtliches"><a href="/impressum.html">Impressum</a><br><a href="/datenschutz.html">Datenschutz</a></nav>
+    </div>
+    <p class="footer-note">Marlene Vogt Friseur ist ein fiktiver Salon. Diese Seite ist ein Beispielprojekt von <a href="/">HWA – Höhn Web &amp; Automatisierung</a>. Bilder KI-generiert. Schriften: Noto Serif Display und Funnel Sans (SIL Open Font License).</p>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+491713920057">Anrufen</a>
+  <a href="#termin" class="mobile-bar-cta">Termin anfragen</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
