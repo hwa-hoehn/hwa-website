@@ -3,18 +3,20 @@
 Alle Bilder dieser Beispielseite sind KI-generiert und zeigen keine realen
 Räume oder Personen. Der Salon Marlene Vogt Friseur ist fiktiv.
 
-**Stand:** Noch Platzhalter („Bild folgt“). Die Bilder werden mit den Prompts
-unten erzeugt, als WebP in 800 und 1600 px Breite abgelegt und hier eingetragen.
+Bildgrößen: WebP in 800 px und in der Originalbreite (Qualität 78/80).
+**Stand 25.10.2026:** Sechs Bilder sind da, `farbe` ist noch ein Platzhalter („Bild folgt“).
+Jonas kam im Querformat und wird im Querformat gezeigt (eigene breite Spalte im Team).
 
 | Datei | Format | Motiv | Erstellt mit |
 |---|---|---|---|
-| salon | 3:2 quer | Salon im ersten Stock, Morgenlicht, keine Personen | – |
-| schnitt | 4:5 hoch | Hände schneiden nasses Haar | – |
-| team-marlene | 4:5 hoch | Marlene Vogt, Meisterin | – |
-| team-selin | 4:5 hoch | Selin Aydın, Farbe | – |
-| team-jonas | 4:5 hoch | Jonas Pfeiffer, Herren | – |
-| farbe | 4:5 hoch | Farbe wird auf Strähnen in Folie aufgetragen | – |
-| spiegel | 2:3 hoch | Kundin prüft ihren Bob im Handspiegel | – |
+| salon | 3:2 quer, 1264 px | Leerer Salon, Fenster zum Marktplatz | KI (von Veit generiert) |
+| schnitt | 4:5 hoch, 928 px | Hände schneiden nasses Haar | KI (von Veit generiert) |
+| team-marlene | 4:5 hoch, 928 px | Marlene Vogt, Meisterin | KI (von Veit generiert) |
+| team-selin | 4:5 hoch, 928 px | Selin Aydın, Farbe | KI (von Veit generiert) |
+| team-jonas | 3:2 quer, 1264 px | Jonas Pfeiffer, Herren | KI (von Veit generiert) |
+| spiegel | 2:3 hoch, 848 px | Kundin prüft ihren Bob im Handspiegel | KI (von Veit generiert) |
+| farbe | 4:5 hoch | Farbe wird auf Strähnen in Folie aufgetragen | fehlt noch |
+| og.jpg | 1200 × 630 | Vorschaubild für geteilte Links, aus salon | – |
 
 ## Prompts
 
