@@ -1,4 +1,4 @@
-# Kundenbriefing (fiktiv) – Friseur Vogt
+# Kundenbriefing (fiktiv) – Marlene Vogt Friseur
 
 > Beispielprojekt von HWA – Höhn Web & Automatisierung. Salon, Personen,
 > Preise, Adresse und Telefonnummer sind frei erfunden. Die Telefonnummer stammt
@@ -7,7 +7,7 @@
 
 ## Der Betrieb
 
-- **Friseur Vogt**, Marktplatz 7 (1. Stock), Lindenreuth im Fichtelgebirge, seit 2011
+- **Marlene Vogt Friseur**, Marktplatz 7 (erster Stock), Lindenreuth im Fichtelgebirge, seit 2011
 - Inhaberin: Friseurmeisterin **Marlene Vogt**
 - Vier Plätze, drei Friseurinnen und Friseure, eine Auszubildende
 - Schwerpunkte: Damen- und Herrenschnitte, Farbe und Strähnen, Bart, Kinder, Hochsteckfrisuren
@@ -15,7 +15,7 @@
 
 ## Was die Kundin sich wünscht (O-Ton aus dem Erstgespräch)
 
-1. „Keine Schere als Logo, keine Glitzer-Schrift. Ruhig und hochwertig, wie ein guter Stadtsalon, aber ohne Getue.“
+1. „Keine Schere als Logo, nichts Verspieltes. Es soll edel sein, wie ein Laden, in den man sich gern setzt.“
 2. „Die meisten Anrufe sind: Was kostet das, und habt ihr am Donnerstag noch was frei?“
 3. „Die Leute sollen sehen, wer sie schneidet. Bei uns hat jeder seine feste Friseurin.“
 4. „Vor Farbe haben viele Angst. Erklären, wie wir das machen.“
@@ -26,14 +26,14 @@
 
 | Wunsch | Lösung auf der Seite |
 |---|---|
-| Ruhig und hochwertig | Warmes Weiß, Tiefschwarz, Kupfer als einziger Akzent; große kontrastreiche Serif (Gloock) für Überschriften und Preise, Funnel Sans für Text. Motiv: eine geschwungene Scheitel-Linie, nur über Leerflächen |
-| Preise und freie Tage | Preisliste mit Reitern (Damen, Herren, Farbe, Kinder), Damenpreise wechseln mit der Haarlänge; Öffnungsstatus nach Uhrzeit im Kopfbereich |
-| Feste Ansprechperson | Team mit Foto, Rolle und „Am liebsten“ |
+| Edel, ruhig | Aufbau wie ein Modemagazin: der Name als großer Titel, Elfenbein und Schwarz, keine Kästen und keine Symbole. Noto Serif Display Light mit Kursiv für Überschriften und Preise, Funnel Sans für Text. Motiv: eine feine Scheitel-Linie im Fuß |
+| Preise und freie Tage | Preise wie eine Karte (Damen, Herren, Farbe, Kinder), Damenpreise wechseln mit der Haarlänge; Öffnungsstatus nach Uhrzeit im Kopf |
+| Feste Ansprechperson | Team mit großen Porträts, versetzt wie in einer Bildstrecke |
 | Angst vor Farbe | Abschnitt mit Hauttest, Probesträhne und Preis vorher |
-| Anfrage statt Buchung | Formular mit Leistung, den nächsten Öffnungstagen, Tageszeit (abends nur donnerstags) und Rückrufnummer |
+| Anfrage statt Buchung | Anfrage als Satz („Ich möchte gern … am liebsten … vormittags“) mit den nächsten Öffnungstagen, abends nur donnerstags, dazu Name und Rückrufnummer |
 | Handy | Feste Leiste „Anrufen“ und „Termin anfragen“ am unteren Rand |
 
 ## Lizenzen
 
-- Schriften: Gloock und Funnel Sans, SIL Open Font License 1.1 (Lizenztexte im Ordner `fonts/`), lokal eingebunden
-- Bilder: KI-generiert, auf der Seite gekennzeichnet; Nachweis in `img/BILDNACHWEIS.md`
+- Schriften: Noto Serif Display und Funnel Sans, SIL Open Font License 1.1 (Lizenztexte im Ordner `fonts/`), lokal eingebunden
+- Bilder: KI-generiert, auf der Seite gekennzeichnet; Nachweis und Prompts in `img/BILDNACHWEIS.md`

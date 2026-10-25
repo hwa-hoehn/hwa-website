@@ -1,32 +1,40 @@
 # Bildnachweis
 
 Alle Bilder dieser Beispielseite sind KI-generiert und zeigen keine realen
-Räume oder Personen. Der Salon Friseur Vogt ist fiktiv.
+Räume oder Personen. Der Salon Marlene Vogt Friseur ist fiktiv.
 
 **Stand:** Noch Platzhalter („Bild folgt“). Die Bilder werden mit den Prompts
-unten erzeugt, als WebP in 800 und 1600 px Breite abgelegt (Teamfotos nur 800)
-und hier mit dem Werkzeug eingetragen.
+unten erzeugt, als WebP in 800 und 1600 px Breite abgelegt und hier eingetragen.
 
 | Datei | Format | Motiv | Erstellt mit |
 |---|---|---|---|
-| salon | 4:5 hoch | Salon mit drei Spiegelplätzen, hohe Fenster zum Marktplatz | – |
-| schnitt | 3:2 quer | Hände schneiden nasses Haar mit Kamm und Schere | – |
-| team-marlene | 4:5 hoch | Marlene Vogt, Friseurmeisterin | – |
-| team-selin | 4:5 hoch | Selin Aydın, Farbe und Strähnen | – |
-| team-jonas | 4:5 hoch | Jonas Pfeiffer, Herren und Bart | – |
-| farbe | 4:5 hoch | Farbe wird mit dem Pinsel auf Strähnen in Folie aufgetragen | – |
-| spiegel | 3:2 quer | Kundin prüft ihren neuen Bob im Handspiegel | – |
+| salon | 3:2 quer | Salon im ersten Stock, Morgenlicht, keine Personen | – |
+| schnitt | 4:5 hoch | Hände schneiden nasses Haar | – |
+| team-marlene | 4:5 hoch | Marlene Vogt, Meisterin | – |
+| team-selin | 4:5 hoch | Selin Aydın, Farbe | – |
+| team-jonas | 4:5 hoch | Jonas Pfeiffer, Herren | – |
+| farbe | 4:5 hoch | Farbe wird auf Strähnen in Folie aufgetragen | – |
+| spiegel | 2:3 hoch | Kundin prüft ihren Bob im Handspiegel | – |
 
 ## Prompts
 
-Für alle gilt, an den Prompt anhängen: *Fotografie, natürliches Tageslicht,
-natürliche Hauttöne und Farben, ruhige Bildsprache, kein Text, keine Logos,
-keine Markennamen, mindestens 2000 px an der langen Seite.*
+Auf Englisch, weil die Bildmodelle damit genauer arbeiten. Jeder Prompt
+besteht aus dem Motiv und dem gemeinsamen Stil-Block am Ende; den Stil-Block
+immer mit anhängen, damit alle Bilder aus einem Guss wirken.
 
-1. **salon (4:5):** Kleiner Friseursalon im ersten Stock eines alten Bürgerhauses an einem Marktplatz in einer fränkischen Kleinstadt. Hohe Sprossenfenster, alte Holzdielen, weiß gestrichene Wände, drei Spiegelplätze mit schlichten schwarzen Friseurstühlen, Vormittagslicht fällt auf den Boden. Keine Personen. Aufgenommen auf Augenhöhe, 35 mm.
-2. **schnitt (3:2):** Nahaufnahme von zwei Händen einer Friseurin, die mit Kamm und Schere eine Strähne nassen, dunkelblonden Haares abschneidet. Hintergrund unscharf, Schulter der Kundin mit schwarzem Umhang angeschnitten. 85 mm, geringe Schärfentiefe.
-3. **team-marlene (4:5):** Porträt einer Friseurmeisterin um die 45, kurzes dunkles Haar mit grauen Strähnen, schwarzes Hemd, steht im hellen Salon am Fenster, freundlich, leichtes Lächeln, Blick in die Kamera. Halbnah, Hintergrund unscharf.
-4. **team-selin (4:5):** Porträt einer Friseurin um die 30, lange dunkle Haare, schlichtes dunkles Oberteil, hält einen Farbpinsel, steht am Arbeitsplatz mit Farbschalen, freundlicher Blick in die Kamera. Halbnah, gleicher Salon, gleiches Licht wie Bild 3.
-5. **team-jonas (4:5):** Porträt eines Friseurs um die 28, kurz geschnittene Seiten, gepflegter Bart, schwarzes T-Shirt, hält Haarschneidemaschine und Kamm, entspannt, Blick in die Kamera. Halbnah, gleicher Salon, gleiches Licht wie Bild 3.
-6. **farbe (4:5):** Nahaufnahme: Mit einem Färbepinsel wird Farbe auf einzelne Haarsträhnen aufgetragen, die auf Alufolie liegen. Hand mit schwarzem Handschuh, Farbschale am Rand. Warmes Licht.
-7. **spiegel (3:2):** Kundin um die 35 mit frisch geschnittenem kinnlangem Bob sitzt vor dem Spiegel und betrachtet ihren Hinterkopf in einem Handspiegel, den die Friseurin (Bild 3) hält. Beide lächeln, aufgenommen schräg von hinten, Spiegelbild sichtbar. Heller Salon.
+**Stil-Block (an jeden Prompt anhängen):**
+
+> Shot on medium format film, Kodak Portra 400, soft natural daylight from tall windows, gentle film grain, true-to-life colours, muted palette of ivory, warm oak, black and a touch of brass. Real skin texture with pores and small imperfections, natural unstyled hair movement, no retouching look. Quiet, unposed editorial mood like a portrait in a European design magazine. The salon: first floor of an old town house on a small Bavarian market square, lime-washed white walls, wide old oak floorboards, tall white mullioned windows with linen curtains, round mirrors with thin brass frames, vintage black leather salon chairs, a small walnut side table. No text, no logos, no brand names, no watermarks, no extra fingers, no symmetrical stock-photo composition, no glossy CGI look, no heavy bokeh balls.
+
+1. **salon (3:2 quer):** Wide interior view of the empty salon in the early morning, seen at eye level from the doorway. Three workstations along the wall, light falling across the floorboards in long stripes, a folded black towel on one chair, a few scissors and combs neatly laid out on the walnut table. Calm, still, nobody in the room. 35 mm lens. Landscape 3:2.
+2. **schnitt (4:5 hoch):** Close-up of a hairdresser's hands cutting a strand of damp, dark blonde hair between two fingers with slim steel scissors, a fine comb held in the other hand. The client's shoulder in a black cape is cut off at the edge. Shallow depth of field, the window light softly behind. 85 mm lens. Portrait 4:5.
+3. **team-marlene (4:5 hoch):** Portrait of a German master hairdresser in her late forties, short tousled dark hair with natural grey strands, no makeup look, black cotton shirt with sleeves pushed up, standing by the window of her salon, looking calmly into the camera with a slight, genuine smile. Half body, hands relaxed. 80 mm lens. Portrait 4:5.
+4. **team-selin (4:5 hoch):** Portrait of a hairdresser around thirty with long dark brown hair loosely tied back, dark knit top, holding a colour brush, standing at a workstation with a small black colour bowl, looking into the camera with a warm, quiet expression. Same salon, same light as the other portraits. 80 mm lens. Portrait 4:5.
+5. **team-jonas (4:5 hoch):** Portrait of a male barber in his late twenties, short neat haircut with a soft fade, well-kept short beard, plain black t-shirt, a comb in his hand, leaning lightly against a vintage leather chair, relaxed and friendly, looking into the camera. Same salon, same light as the other portraits. 80 mm lens. Portrait 4:5.
+6. **farbe (4:5 hoch):** Close-up from slightly above: a gloved hand paints hair colour with a flat brush onto a thin strand of brown hair lying on a sheet of aluminium foil, more folded foils in the background. Warm light, the texture of the colour cream visible. 100 mm macro lens. Portrait 4:5.
+7. **spiegel (2:3 hoch):** A woman in her thirties with a freshly cut chin-length bob sits in a vintage leather chair and checks the back of her hair in a hand mirror, held by the hairdresser from portrait 3 who stands beside her. Seen from slightly behind, both faces visible in the round brass-framed wall mirror, both smiling naturally. 50 mm lens. Portrait 2:3.
+
+## Danach
+
+- Größe: mindestens 2000 px an der langen Seite erzeugen (bei Gemini/ChatGPT das Format im Prompt nennen).
+- Wenn ein Bild „zu perfekt“ aussieht (glatte Haut, glänzend, symmetrisch): mit „less polished, more like a candid film photo“ neu erzeugen.
