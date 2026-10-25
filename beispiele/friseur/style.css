@@ -139,8 +139,8 @@ figcaption { font-family: var(--display); font-style: italic; font-size: 17px; c
 
 /* ===== Farbe ===== */
 .farbe-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 56px clamp(20px, 2vw, 32px); align-items: center; }
-.farbe-figure { grid-column: 1 / 6; overflow: hidden; }
-.farbe-text { grid-column: 7 / 12; }
+.farbe-figure { grid-column: 1 / 8; overflow: hidden; }
+.farbe-text { grid-column: 9 / 13; }
 .farbe-lead { font-family: var(--display); font-size: clamp(26px, 2.4vw, 34px); line-height: 1.25; margin: 28px 0 40px; }
 .farbe-text p:not(.farbe-lead) { color: var(--ink-2); max-width: 30em; margin-top: 20px; }
 
@@ -230,6 +230,8 @@ figcaption { font-family: var(--display); font-style: italic; font-size: 17px; c
   .menu { column-gap: 56px; }
   .wissen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .quote { grid-column: 1 / 8; }
+  .farbe-figure { grid-column: 1 / 7; }
+  .farbe-text { grid-column: 8 / 13; }
   .termin-main { grid-column: 1 / -1; }
   .kontakt { grid-column: 1 / 7; }
 }
@@ -249,7 +251,7 @@ figcaption { font-family: var(--display); font-style: italic; font-size: 17px; c
   .person:nth-child(2) { grid-column: 8 / -1; margin-top: clamp(80px, 16vw, 160px); }
   .person-wide { grid-column: 2 / -1; grid-row: auto; }
   .team-note { grid-column: 1 / -1; grid-row: auto; }
-  .farbe-figure { grid-column: 1 / 10; }
+  .farbe-figure { grid-column: 1 / -1; }
   .farbe-text { grid-column: 1 / -1; }
   .quote { grid-column: 1 / -1; }
   .quote-figure { grid-column: 5 / -1; }

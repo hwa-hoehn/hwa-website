@@ -4,8 +4,8 @@ Alle Bilder dieser Beispielseite sind KI-generiert und zeigen keine realen
 Räume oder Personen. Der Salon Marlene Vogt Friseur ist fiktiv.
 
 Bildgrößen: WebP in 800 px und in der Originalbreite (Qualität 78/80).
-**Stand 25.10.2026:** Sechs Bilder sind da, `farbe` ist noch ein Platzhalter („Bild folgt“).
-Jonas kam im Querformat und wird im Querformat gezeigt (eigene breite Spalte im Team).
+**Stand 25.10.2026:** Alle sieben Bilder sind da. Jonas und Farbe kamen im Querformat
+und werden im Querformat gezeigt (eigene breitere Spalten).
 
 | Datei | Format | Motiv | Erstellt mit |
 |---|---|---|---|
@@ -15,7 +15,7 @@ Jonas kam im Querformat und wird im Querformat gezeigt (eigene breite Spalte im 
 | team-selin | 4:5 hoch, 928 px | Selin Aydın, Farbe | KI (von Veit generiert) |
 | team-jonas | 3:2 quer, 1264 px | Jonas Pfeiffer, Herren | KI (von Veit generiert) |
 | spiegel | 2:3 hoch, 848 px | Kundin prüft ihren Bob im Handspiegel | KI (von Veit generiert) |
-| farbe | 4:5 hoch | Farbe wird auf Strähnen in Folie aufgetragen | fehlt noch |
+| farbe | 3:2 quer, 1264 px | Farbe wird auf eine Strähne in Folie aufgetragen | KI (von Veit generiert) |
 | og.jpg | 1200 × 630 | Vorschaubild für geteilte Links, aus salon | – |
 
 ## Prompts
