@@ -712,13 +712,15 @@ a { color: inherit; }
   margin: 0;
   line-height: 1.5;
 }
-.footer-links { display: flex; gap: 24px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
 .footer-links a {
   text-decoration: none;
   font-size: 13px;
   color: var(--text-on-dark-secondary);
 }
 .footer-links a:hover { color: var(--text-on-dark); }
+.footer-linkedin { display: inline-flex; align-items: center; gap: 7px; }
+.footer-linkedin svg { flex-shrink: 0; }
 
 /* ===== Intro logo animation ===== */
 /* Nur mit JavaScript sichtbar. Falls script.js nicht lädt, gibt die Seite sich nach 5 s selbst frei. */
