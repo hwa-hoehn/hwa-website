@@ -901,6 +901,64 @@ summary:focus-visible {
   .portfolio-card-reverse .portfolio-media { order: 0; }
 }
 
+/* ===== Portfolio: Beispielprojekte als kleine Reihe ===== */
+.portfolio-more {
+  margin-top: 120px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-light);
+}
+.portfolio-more-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 32px;
+  margin-bottom: 40px;
+}
+.portfolio-more-head h3 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.portfolio-more-head p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0;
+}
+.portfolio-more-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.portfolio-card-small .portfolio-body { padding: 20px 0 0; }
+.portfolio-card-small h4 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+.portfolio-card-small .portfolio-body p { font-size: 15px; margin: 0 0 12px; }
+.portfolio-card-small .portfolio-link { font-size: 15px; }
+@media (max-width: 860px) {
+  .portfolio-more { margin-top: 88px; }
+  .portfolio-more-grid { grid-template-columns: 1fr; gap: 28px; }
+  .portfolio-card-small {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 20px;
+    align-items: center;
+  }
+  .portfolio-card-small .portfolio-body { padding: 0; }
+  .portfolio-card-small .portfolio-media { border-radius: 8px; }
+}
+@media (max-width: 400px) {
+  .portfolio-card-small { gap: 14px; }
+  .portfolio-card-small h4 { font-size: 17px; }
+  .portfolio-card-small .portfolio-body p { font-size: 14px; margin-bottom: 8px; }
+}
+
 /* ===== Scroll-Animationen ===== */
 /* Nur transform und opacity, eine Kurve. Versteckt wird nur, wenn script.js läuft (Klasse .motion auf <html>). */
 
