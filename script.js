@@ -214,7 +214,7 @@ if (form) {
   const items = document.querySelectorAll([
     '.section-eyebrow', '.status-badge', '.kontakt-sub',
     '.services-grid', '.ablauf-grid > *', '.pricing-grid > *',
-    '.portfolio-grid > *', '.about-photo', '.faq-list', '.kontakt-grid > *',
+    '.portfolio-grid > *', '.portfolio-more-head', '.portfolio-more-grid > *', '.about-photo', '.faq-list', '.kontakt-grid > *',
   ].join(','));
   items.forEach((el) => el.classList.add('reveal'));
 
